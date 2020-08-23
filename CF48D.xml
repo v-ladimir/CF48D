@@ -16,35 +16,25 @@
 		<filesize>1024kb</filesize>
 	</romid>
 
-NOTES;
-VTC could mean Variable Timing Control OR Variable Throttle Control 
+Important RAM addresses;
+vADVTRMHR- Trim MAP high-octane regular difference ignition timing
+vADVTRMAP- Trimming -map reference value
+vADVTRMPH- Trimming map reference value high octane
+avADVTRM- Trimming map compensation value
+avADVADJ- ADV adjustment value
+vADV- Ignition Timing
+vADVADJ- ADV adjustment value
+vADVBF- The ignition timing before addition of DLTADV
+vADVBL- IN front of the limiter, ignition timing
 
-
-
-
-These are possibly HR only but VERIFY???
-ALLLLLL mAGB maps!!!!! 
-ALLLLLL mDTF maps!!!!!
-ALLLLLL mDSP maps!!!!!
-ALLLLLL mBRK maps!!!!!
-
-	NEEDS TO BE VERIFIED
-	<table name="mDTDIACT1" storageaddress="0x878A"/>  
-	<table name="mDTDIACT2" storageaddress="0x878C"/>
-	<table name="mDTDISTP1" storageaddress="0x878E"/>
-	<table name="mDTDISTP2" storageaddress="0x8790"/> 
-	<table name="mDTDTMR" storageaddress="0x7D61"/> 
-	<table name="mDTDTMRU" storageaddress="0x7D62"/>
 
 \\
 Ram addresses needing added to logger (multiple maps probably depend on bit mask) 
 \\
 
-vAVTPD 0xFFFF1D20 
+vADCG 0xFFFF2330 (Additional charge condition)
 fACCFAIL 0xFFFF241E
 fA5TP1 0xFFFF23B6
-vA0MODEL 0xFFFF10B4 (Possibly already have and includes r_#1 but not r_#2)
-vCYLCNT 0xFFFF8614
 vCRUCON 0xFFFF2614 (CC state)
 fFLEAN 0xFFFF3A93 (Could be multiple RAM maps)
 vFCADV 0xFFFF1000 
@@ -53,29 +43,47 @@ wvAA 0xFFFF84C8
 vAACTV0 0xFFFF2630 (ISC, very, throttle open-degree)
 mNEINJT 0xFFFF84AA (could be multiple)
 wvCYLCNT 0xFFFF85DC
-wvTP 0xFFFF8468 (Cylinder intake quantity equivalent pulse width) 
+vCYLCNT 0xFFFF8614
 bvALPHA 0xFFFF2270 (Also _R#1)
 bvALPHA_R#2 0xFFFF2272
-wvBATSENK 0xFFFF84A0
+wvBATSENK 0xFFFF84A0 
 vAADNV 0xFFFF1DA8
 fEVAPGO 0xFFFF2410 (Could be multiple maps)
 avADCG 0xFFFF22B6
 vTREF 0xFFFF85CC
-wvITAC 0xFFFF846C
+vITAC 0xFFFF846E
+wvITAC 0xFFFF846C (Cylinder intake filling up efficiency, same desc. as vITAC. Check functions)
 bvADVCD5 0xFFFF228C
-bfFULTVO 0xFFFF23AE (Could be multiple maps)
-bfREGGAS 0xFFFF23AC (High OCtane/ regular) (Could be multiple maps)
+bfREGGAS 0xFFFF23AE High Octane / Regular Judgement (multiple, DIFFERENT FROM ONE BELOW)
 bfREGGASz2 0xFFFF23AD (Could be multiple) 
 fFDTTDST 0xFFFF23AF (Multiple)
 fQCK0CP 0xFFFF23B0 (Multiple)
 fVTERI 0xFFFF23B1 (Multiple)
 afAPSSNG 0xFFFF2418 (Multiple) 
 vADDNE 0xFFFF9CD8
-
+wvTP 0xFFFF8468 (Cylinder Intake Equivalent Pulse Width)
+bfFSKNK 0xFFFF3922 (Knock Fail Safe) 
+vA 0xFFFF1F10 (VEVOUTT- (the last vEVOUT)
+vAACTVO 0xFFFF2630 (ISC, very, throttle open degree)
+wvAA 0xFFFF84C8 (A total duct area)
+vAFSAF 0xFFFF26F0 and 0xFFFF26F2 (According to Ika)
+wvACMNISR 0xFFFF97F4 
 \\
 
 Axis'
 \\
+	<table name="mTXSATMP" storageaddress="0xC39C"/> (Add)
+	<table name="mTXHRTMP" storageaddress="0xC38C"/> (Add)
+	<table name="mVTCTWJ" storageaddress="0xC3DC"/> (Add)
+	<table name="mVTCNEJ" storageaddress="0xC3BC"/> (Add)
+	<table name="mJKNI16" storageaddress="0xC5C6"/> (Add)
+	<table name="mJKN" storageaddress="0xC5B6"/> (Add)
+	<table name="mLTQHOS" storageaddress="0xC726"/> (Add)
+	<table name="mLROUTE" storageaddress="0xC6E6"/> (Add)
+	<table name="mLQARANGE" storageaddress="0xC6C6"/> (Add)
+	<table name="HLSOSQ" storageaddress="0xC696"/> (Add)
+	<table name="mLHOSRCV" storageaddress="0xC676"/> (Add)
+	<table name="mLHOSNTP" storageaddress="0xC656"/> (Add)
 	<table name="mQKTRM" storageaddress="0xB50A"/> (Add to A2L)
 	<table name="mLFGAGE" storageaddress="0xC636"/> (Add to A2L)
 	<table name="mfFCTCS" storageaddress="0x82FA"/> (Add to A2L) (TCS form choice flag!!! and could be multiple maps) 
@@ -101,6 +109,7 @@ Axis'
 \\
 Maps
 \\	
+	<table name="mfSTFSARI" storageaddress="0x82F8"/> (APOFS shaft conversion treatment flag. Add to A2L??? How to add a flag???)
 	<table name="Inverse Filter Constant Shifts" storageaddress="0x8C40"/> 
 	<table name="TTEPTD Torque Compensation Map" storageaddress="0xAE8C"/> 
 	<table name="Torque Converter Load Compensation Coefficient" storageaddress="0xBEF8"/> 
@@ -137,6 +146,7 @@ Maps
 	<table name="Standard Condition Filling Up Efficiency Table" storageaddress="0xBA18"/>
 	<table name="Atmospheric Pressure Filling Up Efficiency Table" storageaddress="0xBD76"/>
 	<table name="Accelerator Full Open Threshold" storageaddress="0x8720"/>
+	<table name="MAX Accelerator Open Degree" storageaddress="0x8728"/> 
 	<table name="Accelerator Full Open Judgement Hysteresis" storageaddress="0x877E"/>
 	<table name="TVO_N High Flow Quantity Table" storageaddress="0xCE98"/>
 	<table name="TVO_N Low Flow Quantity Table" storageaddress="0xCEB8"/>
@@ -144,10 +154,10 @@ Maps
 	<table name="Volume Low-Quantity Ratio Table" storageaddress="0xD256"/>
 	<table name="Target Basis QH0 Table" storageaddress="0xD216"/>	
 	<table name="QH0 Vehicle Speed Upper Limit Table" storageaddress="0xCEF8"/>	
-	<table name="APOFS Shaft Conversion" storageaddress="0xD036"/>	
+	<table name="APOFS Shaft Conversion" storageaddress="0xCAD0"/>
+	<table name="APOFS Shaft Conversion 2" storageaddress="0xD036"/>	
 	<table name="Target Throttle Open Degree Conversion Table" storageaddress="0xD1A6"/>
 	<table name="Target Throttle Open Degree Conversion Table 2" storageaddress="0xE06C"/>
-	<table name="Base Throttle Open Degree Table" storageaddress="0xCAD0"/>
 	<table name="AFR Conversion Table" storageaddress="0xCB40"/>
 	<table name="Accelerator Open-Degree" storageaddress="0x872E"/> 
 	<table name="Maximum Retard Degree Reference Angle" storageaddress="0x7BB9"/>
@@ -157,8 +167,8 @@ Maps
 	<table name="War Way Speed Weight Constant" storageaddress="0x804C"/>
 	<table name="Target WOT Duty Ratio 1" storageaddress="0x7EF4"/>
 	<table name="Target WOT Duty Ratio 2" storageaddress="0x7EF5"/>
-	<table name="Ignition Adjustment Upper Limit" storageaddress="0x7F8F"/>
-	<table name="Ignition Adjustment Lower Limit" storageaddress="0x7F90"/>
+	<table name="Ignition Adjustment Upper Limit (Filling Up Efficiency)" storageaddress="0x7F8F"/>
+	<table name="Ignition Adjustment Lower Limit (Filling Up Efficiency)" storageaddress="0x7F90"/>
 	<table name="Volume High-Quantity Ratio Table" storageaddress="0xDFE2"/>
 	<table name="Target Basis QH0 Table 2" storageaddress="0xE022"/>
 	<table name="Torque Going Down Rate Decrease Rate (DownShift)" storageaddress="0x9CD1"/> 
@@ -169,7 +179,7 @@ Maps
 	<table name="High IAT Retard Permission" storageaddress="0x8323"/> 
 	<table name="Idle Retard Side Limiter" storageaddress="0x7AF6"/>
 	<table name="Idle Retard Side Limiter (PI Control)" storageaddress="0x7AF7"/>
-	<table name="Retard Side Maximum Change Width" storageaddress="0x816C"/>
+	<table name="Retard Side Maximum Change Width" storageaddress="0x8221"/>
 	<table name="ADV Compensation Retard Limiter" storageaddress="0x826E"/> 
 	<table name="Idle Steady State Deviation (Retard)" storageaddress="0x7F60"/>
 	<table name="Idle Steady State Deviation (Advance)" storageaddress="0x7F61"/>
@@ -188,8 +198,8 @@ Maps
 	<table name="Intake Manifold (Absolute Pressure)" storageaddress="0x8B3E"/> 
 	<table name="Vehicle Speed Condition Upper Limit" storageaddress="0x81C7"/> 
 	<table name="Vehicle Speed Condition Upper Limit 2" storageaddress="0x81C8"/>
-	<table name="Vehicle Speed Condition Lower Limit" storageaddress="0x81C9"/> 
-	<table name="Vehicle Speed Condition Lower Limit 2" storageaddress="0x81CA"/> (FIX!!!)
+	<table name="Vehicle Speed Condition Lower Limit" storageaddress="0x81CA"/> 
+	<table name="Vehicle Speed Condition Lower Limit 2" storageaddress="0x7E24"/>
 	<table name="PS Lean Fixed Permission Vehicle Speed" storageaddress="0x81CC"/> 
 	<table name="C-VTC Activation Coolant Temp Upper Limit" storageaddress="0x81CD"/> 
 	<table name="C-VTC Activation Coolant Temp Lower Limit" storageaddress="0x81CE"/> 
@@ -235,12 +245,11 @@ Maps
 	<table name="APS Output Normality Range Lower Limit (MainCPU)" storageaddress="0x873A"/>
 	<table name="Kick Going Down Prevention Upper Limit" storageaddress="0x870C"/> 
 	<table name="mVDeg Conversion Coefficient" storageaddress="0x890C"/> 
-	<table name="Throttle Open Product Table" storageaddress="0xCA70"/>
+	<table name="Throttle Ceremony Road Surface Product Table" storageaddress="0xCA70"/>
 	<table name="mMWTOY" storageaddress="0xAD8C"> 
 		<table type="X Axis" storageaddress="0xC5C6" />
 		<table type="Y Axis" storageaddress="0xC5E6" />
 	</table> 
-	
 	<table name="mMYTOW" storageaddress="0xAE0C"> 
 		<table type="X Axis" storageaddress="0xC5B6" />
 		<table type="Y Axis" storageaddress="0xC5F6" />
@@ -260,7 +269,7 @@ Maps
 	<table name="Low Speed Air Learning Lower Limit" storageaddress="0x7AFC"/>
 	<table name="Low Speed Air Learning Upper Limit" storageaddress="0x7AFD"/>
 	<table name="O2 Sensor Failure Target AFR" storageaddress="0xC450"/>
-	<table name="O2 Sensor Failure Target AFR Initial Value" storageaddress="0xC470"/>
+	<table name="O2 Sensor Failure Target AFR Initial Value" storageaddress="0xC470"/> 
 	<table name="O2 Sensor Failure Target AFR (Idle)" storageaddress="0xC490"/>
 	<table name="Misfire Judgement Catalyst Criteria" storageaddress="0xB272"/>
 	<table name="O2 Sensor Failure Target AFR Change Rate" storageaddress="0xC510"/>
@@ -302,6 +311,7 @@ Maps
 	<table name="CVTC Deviation Dead Zone" storageaddress="0x855E"/>
 	<table name="Filtering Constant for Vehicle Speed" storageaddress="0x854D"/>
 	<table name="Target AFR Upper Limit Value" storageaddress="0x8B24"/>
+	<table name="Target AFR Lower Limit Value" storageaddress="0x8946"/>
 	<table name="Non-Lockup Judgement Time" storageaddress="0x84D5"/> 
 	<table name="Actual Lockup Release Delay Time Threshold" storageaddress="0x84D6"/>
 	<table name="Ignition Timing During Torque Control" storageaddress="0x843D"/>
@@ -309,7 +319,6 @@ Maps
 	<table name="ADV Adjustment Value Upper Limit" storageaddress="0x7AD0"/>
 	<table name="ADV Adjustment Value Lower Limit" storageaddress="0x7AD1"/>
 	<table name="Advance Side Limiter" storageaddress="0x7AD2"/> 
-	<table name="Retard Side Maximum Change Width 2" storageaddress="0x7B36"/> 
 	<table name="Addition Drive Power Subtraction Value" storageaddress="0x87A6"/>
 	<table name="Addition Drive Power Addition Value" storageaddress="0x87A8"/>
 	<table name="Addition Drive Power Subtraction Value 1" storageaddress="0x87AA"/>
@@ -324,7 +333,7 @@ Maps
 	<table name="Alley Alley VSP Slope" storageaddress="0x8B56"/>
 	<table name="Pumping Loss Operation Coefficient" storageaddress="0x8904"/>
 	<table name="Torque Limiter (Vehicle Speed R/L)" storageaddress="0x8A4A"/>
-	<table name="Power Hop Upper Limit Table" storageaddress="0xCB30"/>
+	<table name="Power Hop Upper Limit Table" storageaddress="0xCB30"/> (VERIFY IN IDA)
 	<table name="High Coolant Temp. Torque Limit" storageaddress="0xCDC0"/>
 	<table name="Friction Torque Table" storageaddress="0xD0E6"/>
 	<table name="T/M Requirement Steady State Torque Control Recover Speed" storageaddress="0x8B04"/>
@@ -467,8 +476,8 @@ Maps
 	<table name="AC Cut Speed" storageaddress="0x8089"/>
 	<table name="AC Recover Speed" storageaddress="0x808A"/>
 	<table name="AC Recover Speed (Idle)" storageaddress="0x808C"/>
-	<table name="Ignition Adjustment Upper Limit 2" storageaddress="0x808E"/>
-	<table name="Ignition Adjustment Lower Limit 2" storageaddress="0x808F"/>
+	<table name="Ignition Adjustment Upper Limit (Speed)" storageaddress="0x808E"/>
+	<table name="Ignition Adjustment Lower Limit (Speed)" storageaddress="0x808F"/>
 	<table name="Region A/B Judgement Speed" storageaddress="0x8098"/>
 	<table name="Estimated Learning Region Judgement Speed" storageaddress="0x8099"/>
 	<table name="MNRPM Condition Lower Limit" storageaddress="0x809B"/>
@@ -523,8 +532,6 @@ Maps
 	<table name="AFM Time Constant Coefficient (For Low Frequency)" storageaddress="0x7B58"/>
 	<table name="AFM Time Constant Coefficient (For High Frequency)" storageaddress="0x7B63"/>
 	<table name="AFR Deviation Allowable Value for AFR Enactment" storageaddress="0x7B71"/>
-	<table name="Delay, Retard Rate Judgment Constant High Octane" storageaddress="0x7FD8"/>
-	<table name="Delay, Retard Rate Judgment Constant Regular" storageaddress="0x7FD9"/>
 	<table name="Data for KSi Computation" storageaddress="0x806D"/>
 	<table name="Lambda Point Compensation Value Initial Value" storageaddress="0x85F0"/>
 	<table name="VB Decline Judgement Voltage" storageaddress="0x7B48"/>
@@ -537,77 +544,190 @@ Maps
 	<table name="AFM Power Supply NG Judgemnet Lower Limit Value" storageaddress="0x86DE"/>
 	<table name="AFR Sensor Breakage Diagnosis VB Upper Limit Value" storageaddress="0x7B77"/>
 	<table name="AFR Sensor Breakage Diagnosis VB Lower Limit Value" storageaddress="0x7B78"/>
-	<table name="Steady State Judgement Smoothing Coefficient Map" storageaddress="0x9151"/>
+	<table name="Steady State Judgement Smoothing Coefficient Map" storageaddress="0x9151">
+		<table type="X Axis" storageaddress="0xB27B"/>
+		<table type="Y Axis" storageaddress="0xB277"/>
+	</table>
 	<table name="SLOW Driving Mode Factor MAP" storageaddress="0x9111"/>
 	<table name="Extreme Short Rest Time Map" storageaddress="0x9841"/>
 	<table name="Suspension Time/Operation Time Ratio Map" storageaddress="0x9851"/>
 	<table name="VTC Target Operation Angle Regular Compensation Value Computed Map" storageaddress="0x98B1"/>
 	<table name="Stability Rotation Load Compensation Table" storageaddress="0x98C1"/> 
 	<table name="Torque Atmospheric Pressure Compensation Coefficient Map" storageaddress="0xA28C"/>
-
 	<table name="AFM Backup TP" storageaddress="0x8C7D"/>
-	<table name="Misfire Judgement Catalst Criteria" storageaddress="0xB272"/>
-	<table name="PI Per Cent Table for DUETTE" storageaddress="0xB4E2"/>
+	<table name="PI Per Cent Table for DUETTE" storageaddress="0xB4E2"/> 
 	<table name="At Time of Resetting, HSOSQ Minimum Value" storageaddress="0xC3F4"/>
 	<table name="LSOSQ Maximum Value" storageaddress="0xC3F8"/>
 	<table name="LSOSQ Minimum Value" storageaddress="0xC3FC"/> 
 	<table name="Intermediate Coolant Temperature Retard Basic Value Table" storageaddress="0xB5CB"/>
 	<table name="Intermediate Coolant Temperature Retard Coolant Compensation Table" storageaddress="0xB5D4"/>
 	<table name="Jar Sound Compensation Table (Coolant Temperature)" storageaddress="0xB604"/>
+	<table name="JAR Sound Compensation Table (Engine RPM)" storageaddress="0xB614"/>
+	<table name="AFM Function Upper Limit Diagnosis Criteria Gain table" storageaddress="0xB644"/>
+	<table name="Lean, Shift Learning Quantity RRO2 Voltage Layout Table" storageaddress="0xC9A0"/>
+	<table name="Rich, Shift Learning Quantity RRO2 Voltage Layout Table" storageaddress="0xC9B0"/>
+	<table name="At Time of Acceleration, AC Cut Judgement VAPO Table" storageaddress="0xCA40"/>
+	<table name="Atomospheric Pressure Compensation Coefficient Table" storageaddress="0xB668"/>
+	<table name="Boot Rise Purge Rate Addition Quantity Computed Table" storageaddress="0xB678"/> 
+	<table name="Table for CNGMS Reference" storageaddress="0xB6EC"/>
+	<table name="CRADV Table" storageaddress="0xB6F4"/>
+	<table name="CRTEM Reference Table" storageaddress="0xCBA0"/>
+	<table name="CRTIA Reference Table" storageaddress="0xCBA8"/>
+	<table name="Torque Converter Load Loss Compensation Quantity Table" storageaddress="0xC160"/>
+	<table name="Base Torque Table" storageaddress="0xC1C8"/>
+	<table name="Full Close Position Coolant Temperature Compensation Table" storageaddress="0xC1E0"/>
+	<table name="Coolant Temperature Table 2" storageaddress="0xC210"/>
+	<table name="Coolant Temperature Table" storageaddress="0xC218"/>
+	<table name="TWFM1 Reference Table" storageaddress="0xC228"/>
+	<table name="Coolant Temperature Normalized Table" storageaddress="0xC230"/>
+	<table name="Injection Quantity Upper Limit Table Vehicle Speed Sensor Diagnosis" storageaddress="0xC260"/>
+	<table name="Injection Quantity Lower Limit Table Vehicle Speed Sensor Diagnosis" storageaddress="0xC270"/>
+	<table name="Neutral Position DUTY Ratio Computed Table" storageaddress="0xC280"/>
+	<table name="Left Bank Neutral Position DUTY Ratio Computed Table" storageaddress="0xC288"/>
+	<table name="VTCNK Knock Retard Quantity Table" storageaddress="0xC2C0"/>
+	<table name="VTCMBT Compensation Quantity Table" storageaddress="0xC2D4"/>
+	<table name="VTCNK Threshold TP Table" storageaddress="0xC31C"/>
+	<table name="At Least, IAT High Time TWTMR Table" storageaddress="0xC374"/>
+	<table name="At Least, IAT Low Time TWTMR Table" storageaddress="0xC37C"/>
+	<table name="IDLHOS Gain Coolant Temperature Table" storageaddress="0xC3AC"/>
+	<table name="Engine Displacement/Manifold Capacity Ratio" storageaddress="0x851E"/>
+	<table name="Intermediate Coolant Temperature Retard Rotation Compensation Table" storageaddress="0xB5BC"/>
+	<table name="P-Gain Computed Map" storageaddress="0x9271"/> 
+	<table name="Left Bank P-Gain Computed Map" storageaddress="0x92B1"/>
+	<table name="Quantity Rate Basic Value" storageaddress="0x9231"/>
+	<table name="AFR Sensor Rich Side NG Criteria" storageaddress="0x85FC"/>
+	<table name="AFR Sensor Lean Side NG Criteria" storageaddress="0x85FE"/>
+	<table name="LSOSQ/HSOSQ Release Rate" storageaddress="0x873C"/>
+	<table name="Weighted Average Coefficient for .02 Slosh Judgement" storageaddress="0x7BB0"/>
+	<table name="Model Matching Gain Constant" storageaddress="0x8746"/>
+	<table name="At Time of Initialization, Target AFR" storageaddress="0x8754"/> 
+	<table name="Calibration QH0 Limitation Value" storageaddress="0x7BEA"/>
+	<table name="Calibration Target AFR Limitation Value" storageaddress="0x7BEE"/>
+	<table name="At Time of Control for Catalyst Diagnosis, Lambda Compensation" storageaddress="0x861E"/>
+	<table name="Atomospheric Pressure Ratio Minimum Value" storageaddress="0x7C4E"/>
+	<table name="IAT Ratio Minimum Value" storageaddress="0x7C4F"/>
+	<table name="IAT Ratio Maximum Value" storageaddress="0x7C50"/>
+	<table name="Crank Corner Detection Count Value Slice Level" storageaddress="0x7C59"/>
+	<table name="Cylinder Distinction NG Count Value Slice Level" storageaddress="0x7C90"/>
+	<table name="Delta AFR Monotone Increasing Judgement Value" storageaddress="0x8622"/>
+	<table name="Response Deterioration Diagnosis Criteria" storageaddress="0x877A"/>
+	<table name="Ignition Timing Time COmpensation Rate Decrease Value" storageaddress="0x8794"/>
+	<table name="Canister Model Desorption Coefficient" storageaddress="0x8796"/>
+	<table name="Weighted Average for DLTOUTR" storageaddress="0x7D31"/>
+	<table name="Slosh Judgement Value for .02" storageaddress="0x87C2"/>
+	<table name="Canister Model Desorption Index Number" storageaddress="0x7D54"/>
+	<table name="AC Start+Drive, Amount of Compensation Difference Air" storageaddress="0x7B15"/>
+	<table name="Right After Start, Idle Rise Quantity Decline Rate" storageaddress="0xD4D1"/>
+	<table name="Duty Rise Coefficient" storageaddress="0x890E"/>
+	<table name="TP -> QH0 Gain for Offset Learning" storageaddress="0x8374"/>
+	<table name="Pull Down F/B Convergent Judgement Criteria" storageaddress="0x7C11"/>
+	<table name="Gear Ratio Table" storageaddress="0xCF88"/> 
+	<table name="Gear Ratio Table 2" storageaddress="0xE062"/> 
+	<table name="The Amount of Knock Advance" storageaddress="0x8624"/> 
+	<table name="ROM Inclusion Byte" storageaddress="0x82FF"/> 
+	<table name="Estimated Learning Region Judgement TP" storageaddress="0x8421"/> 
+	<table name="TP Condition Lower Limit" storageaddress="0x8422"/> 
+	<table name="TP Condition Lower Limit 4" storageaddress="0x8423"/> 
+	<table name="Misfire Cancellation Going Down Judgement TP" storageaddress="0x8424"/>
+	<table name="Diagnosis Permission TP Upper Limit Value" storageaddress="0x8425"/>
+	<table name="Diagnosis Permission TP Lower Limit Value" storageaddress="0x8426"/> 
+	<table name="TPUL2 Decrement Interval" storageaddress="0x8427"/> 
+	<table name="Purge Check Continuation Time" storageaddress="0x8429"/> 
+	<table name="Empty Purge Judgement Continuation Time" storageaddress="0x842A"/> 
+	<table name="At Start, TP Maintenance Time" storageaddress="0x842B"/> 
+	<table name="Control REF Judgement Permission CRACNT Value" storageaddress="0x842C"/> 
+	<table name="Control REF Judgement Permission CRACNT Value 2" storageaddress="0x842D"/> 
+	<table name="Learning TP Condition Upper Limit" storageaddress="0x842E"/> 
+	<table name="Learning TP Condition Lower Limit" storageaddress="0x842F"/> 
+	<table name="Misfire Judgement Cancellation TP Condition 2" storageaddress="0x8430"/> 
+	<table name="TP Condition Upper Limit 3" storageaddress="0x8431"/>
+	<table name="TP Condition Lower Limit 3" storageaddress="0x8432"/> 
+	<table name="The Head POS Signal Judgement Periodic Ratio" storageaddress="0x8433"/>
+	<table name="Knock Permission Coolant Temperature" storageaddress="0x8496"/> 
+	<table name="Slowdown Lean Clamp Judgement Coolant Temperature" storageaddress="0x8497"/> 
+	<table name="At Time of Acceleration, Judgement Coolant Temperature Lower Limit" storageaddress="0x8499"/> 
+	<table name="Learning Start Coolant Temperature" storageaddress="0x849A"/> 
+	<table name="Misfire Count Rise Permission Coolant Temperature Upper Limit" storageaddress="0x849B"/>
+	<table name="Coolant Temperature Condition for Misfire Cancellation Delta-TVO Setup" storageaddress="0x849C"/> 
+	<table name="Misfire Count Rise Permission, at Start, Coolant Temperature" storageaddress="0x849D"/> 
+	<table name="Full Increase Judgement VAPO Table" storageaddress="0xB854"/> 
+	<table name="TFBAY0 Hysteresis" storageaddress="0x8355"/>
+	<table name="TFBAY0 Hysteresis 2" storageaddress="0x8356"/> 
+	<table name="TFBYA Limiter" storageaddress="0x8357"/> 
+	<table name="TFBAY0 Hysteresis 3" storageaddress="0x8359"/> 
+	<table name="KMR Delay Prohibition Coolant Temperature" storageaddress="0x8495"/> 
+	<table name="I-Gain Gain" storageaddress="0x7FBD"/> 
+	<table name="I-Gain Gain (Left Bank)" storageaddress="0x7FC2"/> 
+	<table name="Filter Time Constant Compensation Coefficient" storageaddress="0x7FC3"/>
+	<table name="Amount of AC Load Small Time Assistant Air" storageaddress="0x7FC4"/> 
+	<table name="High EGT Stage Delay 1" storageaddress="0x7FC5"/> 
+	<table name="High EGT Stage Delay 2" storageaddress="0x7FC6"/> 
+	<table name="Low Rotation Stage Delay 1" storageaddress="0x7FC7"/> 
+	<table name="Low Rotation Stage Delay 2" storageaddress="0x7FC8"/> 
+	<table name="MATH1 Compensation Coefficient" storageaddress="0x7FC9"/> 
+	<table name="MATH2 Compensation Coefficient" storageaddress="0x7FCA"/> 
+	<table name="MATH3 Compensation Coefficient" storageaddress="0x7FCB"/> 
+	<table name="MATH5 Compensation Coefficient" storageaddress="0x7FCC"/> 
+	<table name="MATH6 Compensation Coefficient" storageaddress="0x7FCD"/>
+	<table name="MATGK Compensation Coefficient" storageaddress="0x7FCE"/> 	
+	<table name="MCTH1 Compensation Coefficient" storageaddress="0x7FCF"/> 
+	<table name="MCTH2 Compensation Coefficient" storageaddress="0x7FD0"/> 	
+	<table name="MCTH3 Compensation Coefficient" storageaddress="0x7FD1"/> 	
+	<table name="MCTH5 Compensation Coefficient" storageaddress="0x7FD2"/> 	
+	<table name="MCTH6 Compensation Coefficient" storageaddress="0x7FD3"/> 	
+	<table name="MCTH7 Compensation Coefficient" storageaddress="0x7FD4"/> 	
+	<table name="MCTH8 Compensation Coefficient" storageaddress="0x7FD5"/>	
+	<table name="MGTH3 Compensation Coefficient" storageaddress="0x7FD6"/> 
+	<table name="MGTGK Compensation Coefficient" storageaddress="0x7FD7"/>
+	<table name="At the Time of Delay, Retard Rate Judgement Constant High Octane" storageaddress="0x7FD8"/> 
+	<table name="At the Time of Delay, Retard Rate Judgement Constant Regular" storageaddress="0x7FD9"/> 
+	<table name="A Full Increase Stage Delay" storageaddress="0x7FDB"/>
+	<table name="At the Time of KMR Stage Switchover, Delay" storageaddress="0x7FDC"/> 
+	<table name="At the Time of the Delay, Retard Rate 1 High Octane" storageaddress="0x7FDD"/> 
+	<table name="At the Time of the Delay, Retard Rate 1 Regular" storageaddress="0x7FDE"/> 
+	<table name="At the Time of the Delay, Retard Rate 2 High Octane" storageaddress="0x7FDF"/> 
+	<table name="At the Time of the Delay, Retard Rate 2 Regular" storageaddress="0x7FE0"/>
+	<table name="Urgent Acceleration Judgement Delta-TVO" storageaddress="0x7FE3"/>
+	<table name="At the Time of the Start, TFBYA0 Maintenance Time" storageaddress="0x7FE4"/> 
+	<table name="METH1 Compensation Coefficient (Idle)" storageaddress="0x7FE7"/> 
+	<table name="METH1 Compensation Coefficient (Non-Idle)" storageaddress="0x7FE8"/> 
+	<table name="Upper Limit Voltage For Knock Sensor Diagnosis" storageaddress="0x7FEA"/> 
+	<table name="Lower Limit Voltage For Knock Sensor Diagnosis" storageaddress="0x7FEB"/> 	
+
+	
+
+COULD FIND NATS CODING BY DUMPING ROM, THEN USE NDS2 TO PROGRAM YOUR KEY, THEN DUMP THE NEW ROM? :o
+ORRRRR could just compare your ROM to stock european ROM
+
+53E8 is a value! same as ZB060 dword_237D4 but A2L doesn't show anything^ Same function as 500C
+500C looks like a MASSIVE amount of maps!!! 16 bit!!! (Same as dword_233F8 in A2L)\
+
+.0078125 would be torque related. 0-511 
+.00078125 could be Ignition timing related??? 0-51 
+.000015259 could be throttle related? 0.00-1.00
+.00390625 Ehhhh maybe torque based. 0-256 
+
+A98C 16x16 uint16 :o
+
+5B34 Some map(s) that could be 16 bit OR 8 bit :o 
+C168 might be a small 16 bit map?
+7F52 MAYBE NATS disable???? Not really sure tbh. Need to learn more about bitmask. (potentially mfINHIBVLR)
 
 
+851F is a single value map
+8355 and 8359 are probably single value maps found in target AFR function
+6350 potential axis
+AC8C AND AD0C IS A 8X8 UINT16 MAP NOT FOUND IN A2L OR IDA (has a check map)
+91B1 IS A POTENTIAL MAP uint8
+FAE6 Ehhh maybeee uint16. Could be regular code
+9E360 Could be something? uint16 
+C1A8 has some maps, similar to mTTST_R1
+8908 found in QH0 torque conversion function
+same for 8674^
+DE10 is an axis or something
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table name="mTWVTSLH" storageaddress="0x84C6"/> (ADD TO A2L)
-<table name="mTWVTSLL" storageaddress="0x84C7"/> (ADD TO A2L)
+<table name="VTC Target Angle Switching Coolant Temp HIGH Side" storageaddress="0x84C6"/>
+<table name="VTC Target Angle Switching Coolant Temp LOW Side" storageaddress="0x84C7"/> 
 <table name="mfWOTTP" storageaddress="0x851F"/> (ADD TO A2L)
 <table name="Maximum Idle Speed Tuning Target From Diagnostic Tool" storageaddress="0"/> (FIND BOTH)
 <table name="Minimum Idle Speed Tuning Target From Diagnostic Tool" storageaddress="0"/>
@@ -643,7 +763,7 @@ Maps
 		<table type="Y Axis" storageaddress="0xB624"/>
 	</table>
 
-	<table name="Fuel Target" storageaddress="0x9701">
+	<table name="Target AFR" storageaddress="0x9701">
 		<table type="X Axis" storageaddress="0xB2DD"/>
 		<table type="Y Axis" storageaddress="0xB486"/>
 	</table>
@@ -681,7 +801,7 @@ Maps
 
 	<table name="High Temp Fuel Comp" storageaddress="0x8DC1"/>
 
-	<table name="QH0/ torque conversion map" storageaddress="0xA78C">
+	<table name="QH0/ torque conversion map" storageaddress="0xA78C"> BDF2 and 1000C for ZB060
 		<table type="X Axis" storageaddress="0xC842"/>
 		<table type="Y Axis" storageaddress="0xb4ca"/>
 	</table>
@@ -717,6 +837,7 @@ Maps
 		<table type="X Axis" storageaddress="0xB369"/>
 		<table type="Y Axis" storageaddress="0xb389"/>
 	</table>
+	
 	<table name="MSATHB" storageaddress="0x9DF1">
 		<table type="X Axis" storageaddress="0xB369"/>
 		<table type="Y Axis" storageaddress="0xb389"/>	
@@ -733,7 +854,7 @@ Maps
 
 	<table name="Radiator Fan High Coolant" storageaddress="0x8261"/>
 
-	<table name="Fuel Injection Multiplier" storageaddress="0x88E8"/>
+	<table name="K-Value" storageaddress="0x88E8"/>
 
 	<table name="Individual Cylinder Fuel Trims" storageaddress="0xBE86" sizey="6"/>
 
@@ -755,15 +876,15 @@ Maps
 
 	<table name="Crank Fueling TP value" storageaddress="0xd1f6"/>
 
-	<table name="mTDENS" storageaddress="0xB2CD"/>
+	<table name="Unburnt Gas Density Table" storageaddress="0xB2CD"/>
 
-	<table name="mTFLTW" storageaddress="0xB834"/>
+	<table name="Coolant Temperature Compensation Table" storageaddress="0xB834"/>
 
 	<table name="High Octane Knock Limit" storageaddress="0xB421"/>
 
 	<table name="Regular Knock Limit" storageaddress="0xB42A"/>
 
-	<table name="Knock Slice Table" storageaddress="0xB10C"/>
+	<table name="Knock Slice Table" storageaddress="0xB10C"/> 
 
 	<table name="Dwell RPM table" storageaddress="0xB794"/>
 
