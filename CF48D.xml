@@ -39,7 +39,6 @@ vCRUCON 0xFFFF2614 (CC state)
 fFLEAN 0xFFFF3A93 (Could be multiple RAM maps)
 vFCADV 0xFFFF1000 
 wfBRKSW 0xFFFF866B (Could be multiple RAM maps)
-wvAA 0xFFFF84C8 
 vAACTV0 0xFFFF2630 (ISC, very, throttle open-degree)
 mNEINJT 0xFFFF84AA (could be multiple)
 wvCYLCNT 0xFFFF85DC
@@ -64,7 +63,6 @@ vADDNE 0xFFFF9CD8
 wvTP 0xFFFF8468 (Cylinder Intake Equivalent Pulse Width)
 bfFSKNK 0xFFFF3922 (Knock Fail Safe) 
 vA 0xFFFF1F10 (VEVOUTT- (the last vEVOUT)
-vAACTVO 0xFFFF2630 (ISC, very, throttle open degree)
 wvAA 0xFFFF84C8 (A total duct area)
 vAFSAF 0xFFFF26F0 and 0xFFFF26F2 (According to Ika)
 wvACMNISR 0xFFFF97F4 
@@ -72,6 +70,23 @@ wvACMNISR 0xFFFF97F4
 
 Axis'
 \\
+	<table name="mCDLYNEJ" storageaddress="0xB262"/> (Add)
+	<table name="mADVPIAT" storageaddress="0xB21C"/> (A2L)
+	<table name="mTGADNH_S" storageaddress="0xDF62"/> (Add)
+	<table name="mTGADNV_S" storageaddress="0xDFA2"/> (Add)
+	<table name="mJKW" storageaddress="0xC5E6"/> (Add)
+	<table name="mJKPABF" storageaddress="0xC5D6"/> (Add)
+	<table name="mNEDWN" storageaddress="0xB47B"/> (Add)
+	<table name="mTRLVSP" storageaddress="0xCFBC"/> (Add)
+	<table name="mTXSROSC" storageaddress="0xD4A6"/> (Add)
+	<table name="mTXSAOSC" storageaddress="0xD496"/> (Add)
+	<table name="mTXHROSC" storageaddress="0xD486"/> (Add)
+	<table name="mTXHAOSC" storageaddress="0xD476"/> (Add)
+	<table name="mTXGTGIN" storageaddress="0xD466"/> (Add)
+	<table name="mTXAFSFTR" storageaddress="0xD436"/> (Add)
+	<table name="mTXAFSFTL" storageaddress="0xD426"/> (Add)
+	<table name="mTXAFSFT" storageaddress="0xD406"/> (Add)
+	<table name="mTTKWCT" storageaddress="0xD1E6"/> (Add)
 	<table name="mTXSATMP" storageaddress="0xC39C"/> (Add)
 	<table name="mTXHRTMP" storageaddress="0xC38C"/> (Add)
 	<table name="mVTCTWJ" storageaddress="0xC3DC"/> (Add)
@@ -105,6 +120,44 @@ Axis'
 	<table name="mNEDWN" storageaddress="0xB47B"/> (Add to A2L)
 	<table name="mJKYPA" storageaddress="0xC5F6"/> (Add to A2L) 
 	0xC5B6 is the X Axis^
+	<table name="mITANDNE" storageaddress="0xB2C5"/> (A2L)
+	mITANDQH 0xB2CD
+	mITANI 0xB2D5
+	mITANN 0xB2D9
+	mKHOTN 0xB32D
+	mKHTTP 0xB331
+	mLHPAMB 0xB345
+	mLKUBIC 0xB355
+	mLKUBN 0xB35D
+	mLKUBTW 0xB365
+	mLNMIS 0xB369
+	mLPAMB 0xB379
+	mLPMIS 0xB389
+	mLTINJDTW 0xB3A1
+	mLTMHOS 0xB3A9
+	mLVBHOS 0xB3B1
+	mLVTCD 0xB3B9
+	mNKUBTW 0xB4BE
+	mNSLP 0xB4C2
+	mTDAGBDBP 0xB724
+	mTHIPAMB 0xB928
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 \\
 Maps
@@ -148,11 +201,13 @@ Maps
 	<table name="Accelerator Full Open Threshold" storageaddress="0x8720"/>
 	<table name="MAX Accelerator Open Degree" storageaddress="0x8728"/> 
 	<table name="Accelerator Full Open Judgement Hysteresis" storageaddress="0x877E"/>
-	<table name="TVO_N High Flow Quantity Table" storageaddress="0xCE98"/>
-	<table name="TVO_N Low Flow Quantity Table" storageaddress="0xCEB8"/>
+	<table name="TVO_N High Flow Quantity Table" storageaddress="0xCE98"/> 
+	<table name="TVO_N Low Flow Quantity Table" storageaddress="0xCEB8"/> 
 	<table name="QH0 Upper Limit Table" storageaddress="0xCED8"/>
-	<table name="Volume Low-Quantity Ratio Table" storageaddress="0xD256"/>
+	<table name="Volume Low-Quantity Ratio Table" storageaddress="0xE022"/>
+	<table name="Volume High-Quantity Ratio Table" storageaddress="0xDFE2"/>
 	<table name="Target Basis QH0 Table" storageaddress="0xD216"/>	
+	<table name="Target Basis QH0 Table 2" storageaddress="0xD256"/>
 	<table name="QH0 Vehicle Speed Upper Limit Table" storageaddress="0xCEF8"/>	
 	<table name="APOFS Shaft Conversion" storageaddress="0xCAD0"/>
 	<table name="APOFS Shaft Conversion 2" storageaddress="0xD036"/>	
@@ -169,8 +224,6 @@ Maps
 	<table name="Target WOT Duty Ratio 2" storageaddress="0x7EF5"/>
 	<table name="Ignition Adjustment Upper Limit (Filling Up Efficiency)" storageaddress="0x7F8F"/>
 	<table name="Ignition Adjustment Lower Limit (Filling Up Efficiency)" storageaddress="0x7F90"/>
-	<table name="Volume High-Quantity Ratio Table" storageaddress="0xDFE2"/>
-	<table name="Target Basis QH0 Table 2" storageaddress="0xE022"/>
 	<table name="Torque Going Down Rate Decrease Rate (DownShift)" storageaddress="0x9CD1"/> 
 	<table name="Torque Going Down Rate Choice Parameter (DownShift)" storageaddress="0x9CE1"/>
 	<table name="Catalyst Temperature (Before Activated Judgement)" storageaddress="0x98D1"/> 
@@ -341,7 +394,7 @@ Maps
 	<table name="Top Judgement Gear Constant for Fuel Cut" storageaddress="0x7FB9"/>
 	<table name="Top Judgement Gear Constant for ADV Phase Control" storageaddress="0x7FB7"/> 
 	<table name="MAF Conversion Coefficient" storageaddress="0x89DE"/>
-	<table name="AFR Compensation Table" storageaddress="0xBE90"/>
+	<table name="AFR Compensation Table" storageaddress="0xB824"/>
 	<table name="Space Capacity Conversion Table" storageaddress="0xCD50"/>
 	<table name="Vehicle Speed Compensation Coefficent Table" storageaddress="0xBA70"/> 
 	<table name="MFPCA1 Reference" storageaddress="0xBC18"/>
@@ -695,6 +748,106 @@ Maps
 	<table name="Lower Limit Voltage For Knock Sensor Diagnosis" storageaddress="0x7FEB"/> 	
 
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<table name="mTTQATH" storageaddress="0xD206"/> (Add to A2L)
+	<table name="Target AFR P-Gain Table" storageaddress="0xD186"/> (mTTGTGIN A2L)
+	<table name="Target AFR P-Gain Table (Bank 2)" storageaddress="0xD196"/> (mTTGTGIN2 A2L)	
+	<table name="PTD On/Off Switchover Step Value Table" storageaddress="0xD026"/> (mTSTPTRN A2L)
+	<table name="PTD On/Off Switchover Step Value Table (Low Speed)" storageaddress="0xD02E"/> (mTSTPTRL A2L)
+	<table name="Air Quantity Compensation Coefficient" storageaddress="0xCF08"/> (mTQHOS A2L)
+	<table name="Air Quantity Compensation Coefficient (Bank 2)" storageaddress="0xCF28"/> (mTQHOS2 A2L)
+	<table name="At Diagnosis Rich, Amount of Lack of O2" storageaddress="0xCF48"/> (mTQO2S A2L)
+	<table name="At Diagnosis Rich, Amount of Lack of O2 (Bank 2)" storageaddress="0xCF58"/> (mTQO2S2 A2L)
+	<table name="QZIKKI Table" storageaddress="0xCF68"/> (mTQZIKI A2L)
+	<table name="Flat Road Running Resistance Table" storageaddress="0xCFAC"/> (mTRLDFD A2L)
+	<table name="RDVPn Reference Table" storageaddress="0xCFCC"/> (mTROUTE A2L)
+	<table name="Integral Gain QA Compensation Table" storageaddress="0xCE68"/> (mTQAIGN A2L)
+	<table name="Integral Gain QA Compensation Table (Bank 2)" storageaddress="0xCE78"/> (mTQAIGN2 A2L)	
+	<table name="Adhesion Magnification Rotation Compensation Rate" storageaddress="0xCE48"/> (mTMFHNK A2L) 
+	<table name="Slowdown Load Compensation Quantity Table" storageaddress="0xCDE0"/> (mTISBCP A2L)
+	<table name="Minus KTW Basic Value Table" storageaddress="0xB20C"/> (mTMKTW A2L)
+	<table name="TWF Change Time Constant Table" storageaddress="0xB82C"/> (mTFLTSP A2L)
+	<table name="Fuel Rise Waiting Time Table" storageaddress="0xB83C"/> (mTFPON A2L)
+	<table name="Basic Purge Invalid Pulse Width Table" storageaddress="0xB7D4"/> (mTEVOPB A2L Probably the right map, but verify for certainty)
+	<table name="Slowdown Loss in Weight Compensation Rate Load Clause" storageaddress="0xB86C"/> (mTGHFQC A2L)
+	<table name="GOV Table" storageaddress="0xB884"/> (mTGOV A2L)
+	<table name="Right After Start, Idle Rise Rate Table" storageaddress="0xB87C"/> (mTGNSTST2 A2L) 
+	<table name="GOV3 Table" storageaddress="0xB88C"/> (mTGOV3 A2L)
+	<table name="GOV Table (At Time of Lean)" storageaddress="0xB894"/> (mTGOVL A2L)
+	<table name="At Time of CHOSn Temperature Non-Balance, Compensation Rate" storageaddress="0xB89C"/> (mTGZAS A2L)
+	<table name="Interrupt Injection Time Compensation Rate (Mild Acceleration) By the Cylinder" storageaddress="0xB8A4"/> (mTGZCLS A2L)
+	<table name="Interrupt Injection Time Compensation Rate (Urgent Acceleration) By the Cylinder" storageaddress="0xB8AC"/> (mTGZCYL A2L)
+	<table name="Wall Way Compensation Magnification (Slowdown) Rotation Compensation Table By the Cylinder" storageaddress="0xB8B4"/> (mTGZMN A2L)
+	<table name="Interrupt Injection Compensation Magnification Rotation Compensation Rate By the Cylinder" storageaddress="0xB8BC"/> (mTGZN A2L)
+	<table name="Wall Way Compensation Magnification (Acceleration) Rotation Compensation Table By the Cylinder" storageaddress="0xB8C4"/> (mTGZPN A2L)
+	<table name="Wall Way Compensation Magnification Load Compensation Table By the Cylinder" storageaddress="0xB8CC"/> (mTGZTP A2L)
+	<table name="Interrupt Injection Compensation Magnification By the Cylinder" storageaddress="0xB8D4"/> (mTGZTW A2L)
+	<table name="Wall Way Compensation Magnification (Slowdown) Table By the Cylinder" storageaddress="0xB8EC"/> (mTGZTWMM A2L)
+	<table name="Wall Way Compensation Magnification (Acceleration) Table By the Cylinder" storageaddress="0xB8FC"/> (mTGZTWPP A2L)
+	<table name="Catalyst Temperature O2 Adsorption Rate Table" storageaddress="0xB90C"/> (mTHATMP A2L)
+	<table name="N~TP Compensation Table" storageaddress="0xB950"/> (mTHOSNTP A2L)
+	<table name="N~TP Compensation Table 2" storageaddress="0xB960"/> (mTHOSRCV A2L)
+	<table name="Fuel Temperature Compensation Coefficient Table" storageaddress="0xB970"/> (mTHOSTF A2L)
+	<table name="Atomospheric Pressure Compensation Coefficient" storageaddress="0xB980"/> (mTHPAMB A2L)
+	<table name="Catalyst Temperature O2 Release Rate Table" storageaddress="0xB998"/> (mTHRTMP A2L)
+	<table name="Fuel Temperature Compensation Coefficient Table" storageaddress="0xB9A0"/> (mTHSTF2 A2L)
+	<table name="CLOSE Control Switchover Table" storageaddress="0xB9B0"/> (mTIDELAY A2L) (POTENTIAL BASE IGNITION TIMING????)
+	<table name="QFBI Initial Value" storageaddress="0xB9C0"/> (mTIDUTY A2L)
+	<table name="At the Time of Start, CLOSE Control Prohibition Time Table" storageaddress="0xB9D8"/> (mTINLDTE A2L)
+	<table name="TWF Initial Value Table" storageaddress="0xB9E8"/> (mTINWFT A2L)
+	<table name="Atomospheric Pressure Compensation Table" storageaddress="0xB9F0"/> (mTISCPAMB A2L)
+	<table name="IAT Compensation Table" storageaddress="0xBA08"/> (mTISCTA A2L)
+	<table name="High Coolant Temperature Increase Compensation Table" storageaddress="0xBAB0"/> (mTKHTTW1 A2L)
+	<table name="Quantity Rotation Compensation Rate" storageaddress="0xBAC0"/> (mTKMFN A2L)
+	<table name="Torque Going Down Stage Retard Quantity Table High-Octane" storageaddress="0xBAC8"/> (mTKMRTRQH A2L) 
+	<table name="Torque Going Down Stage Retard Quantity Table Regular" storageaddress="0xBAD8"/> (mTKMRTRQR A2L)
+	<table name="Continuous NO. Load KML Table" storageaddress="0xBB20"/> (mTKNL A2L)
+	<table name="Rotation Compensation Table" storageaddress="0xBB30"/> (mTKNST A2L)
+	<table name="Difference Pressure Compensation Coefficient Table" storageaddress="0xBB40"/> (mTKPB A2L)
+	<table name="Atomospheric Pressure Compensation Coefficient VIP Greater Than 0 Table" storageaddress="0xBB70"/> (mTKPIPL A2L)
+	<table name="Atomospheric Pressure Compensation Coefficient VIP Less Than 0 Table" storageaddress="0xBB74"/> (mTKPIPL A2L)	
+	<table name="MFTPA1 Reference Table" storageaddress="0xBBF8"/> (mTMFPA1 A2L)
+	<table name="MFTPA3 Reference Table" storageaddress="0xBC08"/> (mTMFPA3 A2L)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<table name="U1" storageaddress="0xAC8C"/> 
+	<table name="U2" storageaddress="0xAD0C"/>
+	
+	
+	
+B7E5 could be timing related?? 
+DF42, DF22, DF02 is a map. Throttle related 100%. Shows up in IDA but not in A2L
+	
+	
+	
+CF92 is a curve
+D2F6 has three axis maps! Throttle related?
+D396 has a check map RIGHT below it!
 
 COULD FIND NATS CODING BY DUMPING ROM, THEN USE NDS2 TO PROGRAM YOUR KEY, THEN DUMP THE NEW ROM? :o
 ORRRRR could just compare your ROM to stock european ROM
@@ -760,7 +913,7 @@ DE10 is an axis or something
 
 	<table name="Fuel Compensation" storageaddress="0x9471">
 		<table type="X Axis" storageaddress="0xB50A"/>
-		<table type="Y Axis" storageaddress="0xB624"/>
+		<table type="Y Axis" storageaddress="0xB4AE"/>
 	</table>
 
 	<table name="Target AFR" storageaddress="0x9701">
@@ -876,7 +1029,7 @@ DE10 is an axis or something
 
 	<table name="Crank Fueling TP value" storageaddress="0xd1f6"/>
 
-	<table name="Unburnt Gas Density Table" storageaddress="0xB2CD"/>
+	<table name="Unburnt Gas Density Table" storageaddress="0"/>
 
 	<table name="Coolant Temperature Compensation Table" storageaddress="0xB834"/>
 

@@ -8496,7 +8496,56 @@
 	<description>VTC target angle computed map switching coolant temperature LOW side</description>
 	</table>
 
+	<table type="3D" name="U1" category="FIGURE OUT" storagetype="uint16" endian="big" sizex="8" sizey="8" userlevel="5" logparam="?">
+		<scaling units="?" expression="x" to_byte="x" format="0" fineincrement="1" coarseincrement="10" />
+		<table type="Static X Axis" name="-" format="0" sizex="8">
+			<data>0</data>
+			<data>10</data>
+			<data>20</data>
+			<data>30</data>
+			<data>40</data>
+			<data>50</data>
+			<data>60</data>
+			<data>70</data>       
+		</table>
+		<table type="Static Y Axis" name="-" format="0" sizey="8">
+			<data>400</data>
+			<data>800</data>
+			<data>1200</data>
+			<data>1600</data>
+			<data>2000</data>
+			<data>2400</data>
+			<data>2800</data>
+			<data>3200</data>
+		</table>
+		<description>AD0C Check map</description>
+	</table>
 
+	<table type="3D" name="U2" category="FIGURE OUT" storagetype="uint16" endian="big" sizex="8" sizey="8" userlevel="5" logparam="?">
+		<scaling units="?" expression="x" to_byte="x" format="0" fineincrement="1" coarseincrement="10" />
+		<table type="Static X Axis" name="-" format="0" sizex="8">
+			<data>0</data>
+			<data>10</data>
+			<data>20</data>
+			<data>30</data>
+			<data>40</data>
+			<data>50</data>
+			<data>60</data>
+			<data>70</data>       
+		</table>
+		<table type="Static Y Axis" name="-" format="0" sizey="8">
+			<data>400</data>
+			<data>800</data>
+			<data>1200</data>
+			<data>1600</data>
+			<data>2000</data>
+			<data>2400</data>
+			<data>2800</data>
+			<data>3200</data>
+		</table>
+		<description>Most likely a check map for AC8C</description>
+	</table>
+x/10-3276.8
 
 
 
