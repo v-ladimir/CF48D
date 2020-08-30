@@ -38908,7 +38908,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
 					</conversions>
 				</ecuparam>
 
-
+				//bitmask 0x20 byteorder MSB_FIRST Format %8.2 Errormask 0x0 Addrtype DIRECT FLAG Lower 0 upper 1 
 				<ecuparam id="Z5" name="afADVCYO" desc="Ignition timing adjustment flag" target="1">
 					<ecu id="CF48D">
 						<address>0xFF39B8</address>
@@ -38917,7 +38917,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
 						<conversion units="%" expr="x" format="0" />
 					</conversions>
 				</ecuparam>
-
+				// bitmask 0x80 FLAG
 				<ecuparam id="Z6" name="bfFSKNK" desc="Knock Fail Safe" target="1">
 					<ecu id="CF48D">
 						<address>0xFF23B6</address>
@@ -38929,28 +38929,28 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
 
 				<ecuparam id="Z7" name="vKDL" desc="Knock Frequency Element" target="1">
 					<ecu id="CF48D">
-						<address>0xFF1FEE</address>
+						<address length="2">0xFF1FEE</address>
 					</ecu>
 					<conversions>
-						<conversion units="l" expr="x*.00390625" format="0.00" />
+						<conversion units="l" storagetype="uint16" expr="x*.00390625" format="0.00" />
 					</conversions>
 				</ecuparam>
 
 				<ecuparam id="Z8" name="vKDLMON" desc="A label for the monitor by knock frequency element cylinder" target="1">
 					<ecu id="CF48D">
-						<address>0xFF1FFE</address>
+						<address length="2">0xFF1FFE</address>
 					</ecu>
 					<conversions>
-						<conversion units="l" expr="x*.00390625" format="0.00" />
+						<conversion units="l" storagetype="2" expr="x*.00390625" format="0.00" />
 					</conversions>
 				</ecuparam>
 
 				<ecuparam id="Z9" name="vKDLW" desc="Knock frequency element" target="1">
 					<ecu id="CF48D">
-						<address>0xFF205E</address>
+						<address length="2">0xFF205E</address>
 					</ecu>
 					<conversions>
-						<conversion units="l" expr="x*.00390625" format="0.00" />
+						<conversion units="l" storagetype="2" expr="x*.00390625" format="0.00" />
 					</conversions>
 				</ecuparam>
 
@@ -38983,46 +38983,46 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
 
 				<ecuparam id="Z13" name="vAVTPD" desc="At the time of the steady state W.O.T, after the weighted average, pulse width" target="1">
 					<ecu id="CF48D">
-						<address>0xFF1D20</address>
+						<address length="2">0xFF1D20</address>
 					</ecu>
 					<conversions>
-						<conversion units="ms" expr="x*.000488281" format="0" />
+						<conversion units="ms" storagetype="uint16" expr="x*.000488281" format="0" />
 					</conversions>
 				</ecuparam>
 
-				<ecuparam id="Z14" name="vA0MODEL_R#1" desc="System line A0" target="1">
+				<ecuparam id="Z14" name="vA0MODEL" desc="System line A0" target="1">
 					<ecu id="CF48D">
-						<address>0xFF10B4</address>
+						<address length="2">0xFF10B4</address>
 					</ecu>
 					<conversions>
-						<conversion units="-" expr="x*.0001" format="0" />
+						<conversion units="-" storagetype="int16" expr="x*.0001" format="0" />
 					</conversions>
 				</ecuparam>
 
 				<ecuparam id="Z15" name="vA0MODEL_R#2" desc="System line A0" target="1">
 					<ecu id="CF48D">
-						<address>0xFF10B6</address>
+						<address length="2">0xFF10B6</address>
 					</ecu>
 					<conversions>
-						<conversion units="-" expr="x*.0001" format="0" />
+						<conversion units="-" storagetype="int16" expr="x*.0001" format="0" />
 					</conversions>
 				</ecuparam>
 
 				<ecuparam id="Z16" name="vAVTPR" desc="After the weighted average, pulse width" target="1">
 					<ecu id="CF48D">
-						<address>0xFF1D22</address>
+						<address length="2">0xFF1D22</address>
 					</ecu>
 					<conversions>
-						<conversion units="ms" expr="x*.000488281" format="0" />
+						<conversion units="ms" storagetype="uint16" expr="x*.000488281" format="0" />
 					</conversions>
 				</ecuparam>
 
 				<ecuparam id="Z17" name="vBATSENK" desc="Battery electric current sensor output voltage weighted average value" target="1">
 					<ecu id="CF48D">
-						<address>0xFF10B6</address>
+						<address length="2">0xFF10B6</address>
 					</ecu>
 					<conversions>
-						<conversion units="mV" expr="x*5" format="0" />
+						<conversion units="mV" storagetype="uint16" expr="x*5" format="0" />
 					</conversions>
 				</ecuparam>
 				
