@@ -64,7 +64,6 @@ wvTP 0xFFFF8468 (Cylinder Intake Equivalent Pulse Width)
 bfFSKNK 0xFFFF3922 (Knock Fail Safe) 
 vA 0xFFFF1F10 (VEVOUTT- (the last vEVOUT)
 wvAA 0xFFFF84C8 (A total duct area)
-vAFSAF 0xFFFF26F0 and 0xFFFF26F2 (According to Ika)
 wvACMNISR 0xFFFF97F4 
 \\
 
@@ -141,12 +140,14 @@ Axis'
 	mNSLP 0xB4C2
 	mTDAGBDBP 0xB724
 	mTHIPAMB 0xB928
-	
-	
-	
-	
-	
-	
+	mTVTHNEI 0xC30C
+	mHADDVSP 0xC596
+	mMTFKVSP 0xC7A2
+	mMTFKAPO 0xC782
+	mATGTVO_S 0xDE22
+	mMTFKAP_S 0xDE62
+	mMTFKVS_S 0xDE82
+	mQHTTE_S 0xDEA2
 	
 	
 	
@@ -386,7 +387,7 @@ Maps
 	<table name="Alley Alley VSP Slope" storageaddress="0x8B56"/>
 	<table name="Pumping Loss Operation Coefficient" storageaddress="0x8904"/>
 	<table name="Torque Limiter (Vehicle Speed R/L)" storageaddress="0x8A4A"/>
-	<table name="Power Hop Upper Limit Table" storageaddress="0xCB30"/> (VERIFY IN IDA)
+	<table name="Power Hop Upper Limit Table" storageaddress="0xCB30"/> 
 	<table name="High Coolant Temp. Torque Limit" storageaddress="0xCDC0"/>
 	<table name="Friction Torque Table" storageaddress="0xD0E6"/>
 	<table name="T/M Requirement Steady State Torque Control Recover Speed" storageaddress="0x8B04"/>
@@ -757,15 +758,15 @@ Maps
 	
 	
 	
-	<table name="mTTQATH" storageaddress="0xD206"/> (Add to A2L)
-	<table name="Target AFR P-Gain Table" storageaddress="0xD186"/> (mTTGTGIN A2L)
-	<table name="Target AFR P-Gain Table (Bank 2)" storageaddress="0xD196"/> (mTTGTGIN2 A2L)	
-	<table name="PTD On/Off Switchover Step Value Table" storageaddress="0xD026"/> (mTSTPTRN A2L)
-	<table name="PTD On/Off Switchover Step Value Table (Low Speed)" storageaddress="0xD02E"/> (mTSTPTRL A2L)
-	<table name="Air Quantity Compensation Coefficient" storageaddress="0xCF08"/> (mTQHOS A2L)
-	<table name="Air Quantity Compensation Coefficient (Bank 2)" storageaddress="0xCF28"/> (mTQHOS2 A2L)
-	<table name="At Diagnosis Rich, Amount of Lack of O2" storageaddress="0xCF48"/> (mTQO2S A2L)
-	<table name="At Diagnosis Rich, Amount of Lack of O2 (Bank 2)" storageaddress="0xCF58"/> (mTQO2S2 A2L)
+	<table name="A Table for TOQATH" storageaddress="0xD206"/>
+	<table name="Target AFR P-Gain Table" storageaddress="0xD186"/>
+	<table name="Target AFR P-Gain Table (Bank 2)" storageaddress="0xD196"/>
+	<table name="PTD On/Off Switchover Step Value Table" storageaddress="0xD026"/>
+	<table name="PTD On/Off Switchover Step Value Table (Low Speed)" storageaddress="0xD02E"/>
+	<table name="Air Quantity Compensation Coefficient" storageaddress="0xCF08"/> 
+	<table name="Air Quantity Compensation Coefficient (Bank 2)" storageaddress="0xCF28"/> 
+	<table name="At Diagnosis Rich, Amount of Lack of O2" storageaddress="0xCF48"/> 
+	<table name="At Diagnosis Rich, Amount of Lack of O2 (Bank 2)" storageaddress="0xCF58"/>
 	<table name="QZIKKI Table" storageaddress="0xCF68"/> (mTQZIKI A2L)
 	<table name="Flat Road Running Resistance Table" storageaddress="0xCFAC"/> (mTRLDFD A2L)
 	<table name="RDVPn Reference Table" storageaddress="0xCFCC"/> (mTROUTE A2L)
@@ -817,6 +818,35 @@ Maps
 	<table name="MFTPA1 Reference Table" storageaddress="0xBBF8"/> (mTMFPA1 A2L)
 	<table name="MFTPA3 Reference Table" storageaddress="0xBC08"/> (mTMFPA3 A2L)
 	
+	<table name="Maximum Purge Rate Concentration Limitation Table" storageaddress="0xBDBE"/> (mTPDNSLIM A2L)
+	<table name="NMEMH Reference Table" storageaddress="0xBCF6"/> (mTNMEMH A2L)
+	<table name="D Range NSET0 Maintenance Air Quantity Table" storageaddress="0xBD0E"/> (mTNQD1 A2L)
+	<table name="N Range NSET0 Maintenance Air Quantity Table" storageaddress="0xBD2E"/> (mTNQN1 A2L)
+	<table name="First-Ordered Filter Weight" storageaddress="0xC770"/> (mMTFDFK A2L)
+	<table name="Throttle Map 1" storageaddress="0xCAF0"/> (A2L Not found in A2L)
+	<table name="Throttle Map 2" storageaddress="0xCAB0"/> (A2L Not found in A2L)	
+	<table name="Throttle Map 3" storageaddress="0xCB10"/> (A2L Not found in A2L)	
+	<table name="Throttle Map 4" storageaddress="0xD2F6"/> (A2L Not found in A2L)
+	<table name="Throttle Map 5" storageaddress="0xD316"/> (A2L Not found in A2L)	
+	<table name="Throttle Map 6" storageaddress="0xD336"/> (A2L Not found in A2L)	
+	<table name="Throttle Map 7" storageaddress="0xDF02"/> (A2L Not Found in A2L)
+	<table name="Throttle Map 8" storageaddress="0xDF22"/> (A2L not found in A2L)
+	<table name="Throttle Map 9" storageaddress="0xDF42"/> (A2L not found in A2L)
+	<table name="Throttle Map 10" storageaddress="0xE0CC"/> (A2L not found in A2L)
+	<table name="Throttle Map 11" storageaddress="0xE0EC"/> (A2L not found in a2l)
+	<table name="Throttle Map 12" storageaddress="0xE10C"/> (A2L not found in A2L)
+	Throttle maps most likely have check maps with one another so you'll need to go into ida to verify the check maps.
+	<table name="Rotation Compensation Value Upper Limit Table" storageaddress="0xCD70"/> (mTFNALMT A2L)
+	<table name="Time of Start, Ignition Timing Rotation Compensation Value Table" storageaddress="0xCD80"/> (mTFNCRADV A2L)
+	<table name="O2 Adsorption Rate Table" storageaddress="0xCDA0"/> (mTHAOSC A2L)
+	<table name="O2 Release Rate Table" storageaddress="0xCDB0"/> (mTHROSC A2L)
+	<table name="Filter Time Constant Table" storageaddress="0xCE08"/> (mTKWCT1 A2L)
+	<table name="TPMAX Value Table" storageaddress="0xC114"/> (mTTPMAX)
+	
+	
+	
+	
+	
 	
 	
 	
@@ -837,16 +867,32 @@ Maps
 	
 	<table name="U1" storageaddress="0xAC8C"/> 
 	<table name="U2" storageaddress="0xAD0C"/>
+	<table name="U3" storageaddress="0xCC10"/> (A2L Either an axis or a curve)
+	<table name="U4" storageaddress="0xCBC0"/> (A2L Either an axis or a curve)
+	<table name="U5" storageaddress="0xCBE0"/> (A2L Either an Axis or a curve)
+	<table name="U6" storageaddress="0xCE58"/> (A2L Either an axis or a curve)
+	<table name="U7" storageaddress="0xCD30"/> (A2L Either an axis or a curve 0-150)
+	<table name="U8" storageaddress="0xCCA0"/> (A2L Either an axis or a curve)
+	<table name="U9" storageaddress="0xCF92"/> (A2L Curve? Could be 5 or 8 long)
+	<table name="U10" storageaddress="0xDEF2"/> (A2L, curve or axis)
+	<table name="U11" storageaddress="0xB7AC"/> (A2L, could be uint8 1x8 or uint16 1x4, maybe axis or curve)
+	<table name="U12" storageaddress="0xA98C"/> (A2L, uint16 16x16 No clue if it's even a map or if it's byte related)
+	<table name="U13" storageaddress="0x9681"/> (A2L, uint8 1x8 values are extremely close to one another)
+	<table name="U14" storageaddress="0x8C6D"/> (A2L, uint8 and probably a curve of some sort.)
+	<table name="U15" storageaddress="0x91F1"/> (A2L)
+	<table name="U16" storageaddress="0xB33D"/> (A2L uint8 probably a curve or axis)
+	<table name="U17" storageaddress="0xB399"/> (A2l, tons of hits in Ida uint8)
+	<table name="U18" storageaddress="0xB3C9"/> (A2L uint8 axis or curve)
+	<table name="U19" storageaddress="0xC6A6"/> (A2L uint16 32x1)
+	<table name="U20" storageaddress="0xC6D6"/> (A2L uint16 8x1)
+	<table name="U21" storageaddress="0xC706"/> (A2L uint16 8x1)
+	<table name="U22" storageaddress="0xC716"/> (A2L Uint16 8x1)
+	
 	
 	
 	
 B7E5 could be timing related?? 
-DF42, DF22, DF02 is a map. Throttle related 100%. Shows up in IDA but not in A2L
 	
-	
-	
-CF92 is a curve
-D2F6 has three axis maps! Throttle related?
 D396 has a check map RIGHT below it!
 
 COULD FIND NATS CODING BY DUMPING ROM, THEN USE NDS2 TO PROGRAM YOUR KEY, THEN DUMP THE NEW ROM? :o
@@ -954,7 +1000,7 @@ DE10 is an axis or something
 
 	<table name="High Temp Fuel Comp" storageaddress="0x8DC1"/>
 
-	<table name="QH0/ torque conversion map" storageaddress="0xA78C"> BDF2 and 1000C for ZB060
+	<table name="QH0/ torque conversion map" storageaddress="0xA78C"> 
 		<table type="X Axis" storageaddress="0xC842"/>
 		<table type="Y Axis" storageaddress="0xb4ca"/>
 	</table>

@@ -8496,6 +8496,229 @@
 	<description>VTC target angle computed map switching coolant temperature LOW side</description>
 	</table>
 
+	<table type="2D" name="A Table for TOQATH" category="Unknown" storagetype="uint16" sizey="8" endian="big" userlevel="5" >
+		<scaling units="l" expression="x" to_byte="x" format="0"/>
+	<table type="Y Axis" name="Z" sizey="8">
+			<data>-20</data>
+			<data>-10</data>
+			<data>0</data>
+			<data>10</data>
+			<data>20</data>
+			<data>30</data>
+			<data>40</data>
+			<data>50</data>
+	</table>
+	<description>A table for TOQATH</description>
+	</table>
+
+	<table type="2D" name="Target AFR P-Gain Table" category="Unknown" storagetype="uint16" sizey="8" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*.000061035" to_byte="x/.000061035" format="0.000"/>
+	<table type="Y Axis" name="-" sizey="8">
+			<data>0</data>
+			<data>60</data>
+			<data>100</data>
+			<data>160</data>
+			<data>220</data>
+			<data>300</data>
+			<data>480</data>
+			<data>700</data>
+	</table>
+	<description>Target A/F P-gain table</description>
+	</table>
+
+	<table type="2D" name="Target AFR P-Gain Table (Bank 2)" category="Unknown" storagetype="uint16" sizey="8" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*.000061035" to_byte="x/.000061035" format="0.000"/>
+	<table type="Y Axis" name="-" sizey="8">
+			<data>0</data>
+			<data>60</data>
+			<data>100</data>
+			<data>160</data>
+			<data>220</data>
+			<data>300</data>
+			<data>480</data>
+			<data>700</data>
+	</table>
+	<description>Target A/F P-gain table (bank2)</description>
+	</table>
+
+	<table type="2D" name="PTD On/Off Switchover Step Value Table" category="Unknown" storagetype="uint16" sizey="4" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*.000015259" to_byte="x/.000015259" format="0.0000"/>
+	<table type="Y Axis" name="-" sizey="4">
+			<data>0</data>
+			<data>256</data>
+			<data>512</data>
+			<data>768</data>
+	</table>
+	<description>PTD ON/ off switchover step value table</description>
+	</table>
+
+	<table type="2D" name="PTD On/Off Switchover Step Value Table (Low Speed)" category="Unknown" storagetype="uint16" sizey="4" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*.000015259" to_byte="x/.000015259" format="0.0000"/>
+	<table type="Y Axis" name="-" sizey="4">
+			<data>0</data>
+			<data>256</data>
+			<data>512</data>
+			<data>768</data>
+	</table>
+	<description>PTD ON/ off switchover step value table (low speed)</description>
+	</table>
+
+	<table type="2D" name="Air Quantity Compensation Coefficient" category="Unknown" storagetype="uint16" sizey="16" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*.0078125" to_byte="x/.0078125" format="0.0000"/>
+	<table type="Y Axis" name="-" sizey="16">
+			<data>200</data>
+			<data>240</data>
+			<data>260</data>
+			<data>320</data>
+			<data>360</data>
+			<data>400</data>
+			<data>440</data>
+			<data>480</data>
+			<data>520</data>
+			<data>560</data>
+			<data>600</data>
+			<data>640</data>
+			<data>680</data>
+			<data>720</data>
+			<data>760</data>
+			<data>800</data>
+	</table>
+	<description>Air quantity compensation coefficient</description>
+	</table>
+
+	<table type="2D" name="Air Quantity Compensation Coefficient (Bank 2)" category="Unknown" storagetype="uint16" sizey="16" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*.0078125" to_byte="x/.0078125" format="0.0000"/>
+	<table type="Y Axis" name="-" sizey="16">
+			<data>200</data>
+			<data>240</data>
+			<data>260</data>
+			<data>320</data>
+			<data>360</data>
+			<data>400</data>
+			<data>440</data>
+			<data>480</data>
+			<data>520</data>
+			<data>560</data>
+			<data>600</data>
+			<data>640</data>
+			<data>680</data>
+			<data>720</data>
+			<data>760</data>
+			<data>800</data>
+	</table>
+	<description>Air quantity compensation coefficient (bank 2)</description>
+	</table>
+
+	<table type="2D" name="At Diagnosis Rich, Amount of Lack of O2" category="Unknown" storagetype="uint16" sizey="8" endian="big" userlevel="5" >
+		<scaling units="-" expression="x" to_byte="x" format="0.0000"/>
+	<table type="Y Axis" name="-" sizey="8">
+			<data>200</data>
+			<data>290</data>
+			<data>380</data>
+			<data>470</data>
+			<data>550</data>
+			<data>650</data>
+			<data>740</data>
+			<data>800</data>
+	</table>
+	<description>At the time of the diagnosis rich, the amount of lack of O2</description>
+	</table>
+
+	<table type="2D" name="At Diagnosis Rich, Amount of Lack of O2 (Bank 2)" category="Unknown" storagetype="uint16" sizey="8" endian="big" userlevel="5" >
+		<scaling units="-" expression="x" to_byte="x" format="0.0000"/>
+	<table type="Y Axis" name="-" sizey="8">
+			<data>200</data>
+			<data>290</data>
+			<data>380</data>
+			<data>470</data>
+			<data>550</data>
+			<data>650</data>
+			<data>740</data>
+			<data>800</data>
+	</table>
+	<description>At the time of the diagnosis rich, the amount of lack of O2 (Bank 2)</description>
+	</table>
+
+	<table type="2D" name="QZIKKI Table" category="Unknown" storagetype="uint16" sizey="16" endian="big" userlevel="5" >
+		<scaling units="l" expression="x" to_byte="x" format="0"/>
+	<table type="Y Axis" name="Z" sizey="16">
+			<data>-40</data>
+			<data>-30</data>
+			<data>-20</data>
+			<data>-10</data>
+			<data>0</data>
+			<data>10</data>
+			<data>20</data>
+			<data>30</data>
+			<data>40</data>
+			<data>50</data>
+			<data>60</data>
+			<data>70</data>
+			<data>80</data>
+			<data>90</data>
+			<data>100</data>
+			<data>110</data>
+	</table>
+	<description>QZIKKI table</description>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	<table type="3D" name="U1" category="FIGURE OUT" storagetype="uint16" endian="big" sizex="8" sizey="8" userlevel="5" logparam="?">
 		<scaling units="?" expression="x" to_byte="x" format="0" fineincrement="1" coarseincrement="10" />
 		<table type="Static X Axis" name="-" format="0" sizex="8">
@@ -8545,7 +8768,34 @@
 		</table>
 		<description>Most likely a check map for AC8C</description>
 	</table>
-x/10-3276.8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
