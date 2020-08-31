@@ -2492,6 +2492,284 @@
 	</table>
 	<description>Throttle full-close position learning initial value</description>
 	</table>
+	//FOLLOWING THROTTLE MAPS NEED TO BE EXAMINED FURTHER TO FIGURE OUT EXACT FUNCTION. ALL SHOWS UP IN IDA, BUT A2L SHOWS NOTHING. SAME AS APOFS SHAFT MAPS//
+	
+		<table type="2D" name="Throttle Map 1" category="Electronic Throttle (VERIFY)" storagetype="uint16" sizex="1" sizey="16" endian="big" userlevel="5">
+	<scaling units="Deg" expression="x*0.11" to_byte="x/0.11" format="0.00"/> 
+	<table type="Y Axis" name="Deg" sizey="16" format="0.00">
+			<data>0.00</data> 
+			<data>5.60</data>
+			<data>11.20</data> 
+			<data>16.80</data>
+			<data>22.40</data> 
+			<data>28.00</data>
+			<data>33.60</data>
+			<data>39.20</data> 
+			<data>44.80</data> 
+			<data>50.40</data>
+			<data>56.00</data> 
+			<data>61.60</data>
+			<data>67.20</data> 
+			<data>72.80</data>
+			<data>78.40</data>
+			<data>84.00</data> 
+	</table>
+	<description>Unknown Throttle Map</description>
+	</table>
+	
+		<table type="2D" name="Throttle Map 2" category="Electronic Throttle (VERIFY)" storagetype="uint16" sizex="1" sizey="16" endian="big" userlevel="5">
+	<scaling units="Deg" expression="x*0.11" to_byte="x/0.11" format="0.00"/> 
+	<table type="Y Axis" name="Deg" sizey="16" format="0.00">
+			<data>0.00</data> 
+			<data>5.60</data>
+			<data>11.20</data> 
+			<data>16.80</data>
+			<data>22.40</data> 
+			<data>28.00</data>
+			<data>33.60</data>
+			<data>39.20</data> 
+			<data>44.80</data> 
+			<data>50.40</data>
+			<data>56.00</data> 
+			<data>61.60</data>
+			<data>67.20</data> 
+			<data>72.80</data>
+			<data>78.40</data>
+			<data>84.00</data> 
+	</table>
+	<description>Unknown Throttle Map</description>
+	</table>
+
+		<table type="2D" name="Throttle Map 3" category="Electronic Throttle (VERIFY)" storagetype="uint16" sizex="1" sizey="16" endian="big" userlevel="5">
+	<scaling units="Deg" expression="x*0.11" to_byte="x/0.11" format="0.00"/> 
+	<table type="Y Axis" name="Deg" sizey="16" format="0.00">
+			<data>0.00</data> 
+			<data>5.60</data>
+			<data>11.20</data> 
+			<data>16.80</data>
+			<data>22.40</data> 
+			<data>28.00</data>
+			<data>33.60</data>
+			<data>39.20</data> 
+			<data>44.80</data> 
+			<data>50.40</data>
+			<data>56.00</data> 
+			<data>61.60</data>
+			<data>67.20</data> 
+			<data>72.80</data>
+			<data>78.40</data>
+			<data>84.00</data> 
+	</table>
+	<description>Unknown Throttle Map</description>
+	</table>
+
+		<table type="2D" name="Throttle Map 4" category="Electronic Throttle (VERIFY)" storagetype="uint16" sizex="1" sizey="16" endian="big" userlevel="5">
+	<scaling units="Deg" expression="x*0.11" to_byte="x/0.11" format="0.00"/> 
+	<table type="Y Axis" name="Deg" sizey="16" format="0.00">
+			<data>0.00</data> 
+			<data>5.60</data>
+			<data>11.20</data> 
+			<data>16.80</data>
+			<data>22.40</data> 
+			<data>28.00</data>
+			<data>33.60</data>
+			<data>39.20</data> 
+			<data>44.80</data> 
+			<data>50.40</data>
+			<data>56.00</data> 
+			<data>61.60</data>
+			<data>67.20</data> 
+			<data>72.80</data>
+			<data>78.40</data>
+			<data>84.00</data> 
+	</table>
+	<description>Unknown Throttle Map</description>
+	</table>
+
+		<table type="2D" name="Throttle Map 5" category="Electronic Throttle (VERIFY)" storagetype="uint16" sizex="1" sizey="16" endian="big" userlevel="5">
+	<scaling units="Deg" expression="x*0.11" to_byte="x/0.11" format="0.00"/> 
+	<table type="Y Axis" name="Deg" sizey="16" format="0.00">
+			<data>0.00</data> 
+			<data>5.60</data>
+			<data>11.20</data> 
+			<data>16.80</data>
+			<data>22.40</data> 
+			<data>28.00</data>
+			<data>33.60</data>
+			<data>39.20</data> 
+			<data>44.80</data> 
+			<data>50.40</data>
+			<data>56.00</data> 
+			<data>61.60</data>
+			<data>67.20</data> 
+			<data>72.80</data>
+			<data>78.40</data>
+			<data>84.00</data> 
+	</table>
+	<description>Unknown Throttle Map</description>
+	</table>
+
+		<table type="2D" name="Throttle Map 6" category="Electronic Throttle (VERIFY)" storagetype="uint16" sizex="1" sizey="16" endian="big" userlevel="5">
+	<scaling units="Deg" expression="x*0.11" to_byte="x/0.11" format="0.00"/> 
+	<table type="Y Axis" name="Deg" sizey="16" format="0.00">
+			<data>0.00</data> 
+			<data>5.60</data>
+			<data>11.20</data> 
+			<data>16.80</data>
+			<data>22.40</data> 
+			<data>28.00</data>
+			<data>33.60</data>
+			<data>39.20</data> 
+			<data>44.80</data> 
+			<data>50.40</data>
+			<data>56.00</data> 
+			<data>61.60</data>
+			<data>67.20</data> 
+			<data>72.80</data>
+			<data>78.40</data>
+			<data>84.00</data> 
+	</table>
+	<description>Unknown Throttle Map</description>
+	</table>
+
+		<table type="2D" name="Throttle Map 7" category="Electronic Throttle (VERIFY)" storagetype="uint16" sizex="1" sizey="16" endian="big" userlevel="5">
+	<scaling units="Deg" expression="x*0.11" to_byte="x/0.11" format="0.00"/> 
+	<table type="Y Axis" name="Deg" sizey="16" format="0.00">
+			<data>0.00</data> 
+			<data>5.60</data>
+			<data>11.20</data> 
+			<data>16.80</data>
+			<data>22.40</data> 
+			<data>28.00</data>
+			<data>33.60</data>
+			<data>39.20</data> 
+			<data>44.80</data> 
+			<data>50.40</data>
+			<data>56.00</data> 
+			<data>61.60</data>
+			<data>67.20</data> 
+			<data>72.80</data>
+			<data>78.40</data>
+			<data>84.00</data> 
+	</table>
+	<description>Unknown Throttle Map</description>
+	</table>
+	
+		<table type="2D" name="Throttle Map 8" category="Electronic Throttle (VERIFY)" storagetype="uint16" sizex="1" sizey="16" endian="big" userlevel="5">
+	<scaling units="Deg" expression="x*0.11" to_byte="x/0.11" format="0.00"/> 
+	<table type="Y Axis" name="Deg" sizey="16" format="0.00">
+			<data>0.00</data> 
+			<data>5.60</data>
+			<data>11.20</data> 
+			<data>16.80</data>
+			<data>22.40</data> 
+			<data>28.00</data>
+			<data>33.60</data>
+			<data>39.20</data> 
+			<data>44.80</data> 
+			<data>50.40</data>
+			<data>56.00</data> 
+			<data>61.60</data>
+			<data>67.20</data> 
+			<data>72.80</data>
+			<data>78.40</data>
+			<data>84.00</data> 
+	</table>
+	<description>Unknown Throttle Map</description>
+	</table>
+
+		<table type="2D" name="Throttle Map 9" category="Electronic Throttle (VERIFY)" storagetype="uint16" sizex="1" sizey="16" endian="big" userlevel="5">
+	<scaling units="Deg" expression="x*0.11" to_byte="x/0.11" format="0.00"/> 
+	<table type="Y Axis" name="Deg" sizey="16" format="0.00">
+			<data>0.00</data> 
+			<data>5.60</data>
+			<data>11.20</data> 
+			<data>16.80</data>
+			<data>22.40</data> 
+			<data>28.00</data>
+			<data>33.60</data>
+			<data>39.20</data> 
+			<data>44.80</data> 
+			<data>50.40</data>
+			<data>56.00</data> 
+			<data>61.60</data>
+			<data>67.20</data> 
+			<data>72.80</data>
+			<data>78.40</data>
+			<data>84.00</data> 
+	</table>
+	<description>Unknown Throttle Map</description>
+	</table>
+
+		<table type="2D" name="Throttle Map 10" category="Electronic Throttle (VERIFY)" storagetype="uint16" sizex="1" sizey="16" endian="big" userlevel="5">
+	<scaling units="Deg" expression="x*0.11" to_byte="x/0.11" format="0.00"/> 
+	<table type="Y Axis" name="Deg" sizey="16" format="0.00">
+			<data>0.00</data> 
+			<data>5.60</data>
+			<data>11.20</data> 
+			<data>16.80</data>
+			<data>22.40</data> 
+			<data>28.00</data>
+			<data>33.60</data>
+			<data>39.20</data> 
+			<data>44.80</data> 
+			<data>50.40</data>
+			<data>56.00</data> 
+			<data>61.60</data>
+			<data>67.20</data> 
+			<data>72.80</data>
+			<data>78.40</data>
+			<data>84.00</data> 
+	</table>
+	<description>Unknown Throttle Map</description>
+	</table>
+
+		<table type="2D" name="Throttle Map 11" category="Electronic Throttle (VERIFY)" storagetype="uint16" sizex="1" sizey="16" endian="big" userlevel="5">
+	<scaling units="Deg" expression="x*0.11" to_byte="x/0.11" format="0.00"/> 
+	<table type="Y Axis" name="Deg" sizey="16" format="0.00">
+			<data>0.00</data> 
+			<data>5.60</data>
+			<data>11.20</data> 
+			<data>16.80</data>
+			<data>22.40</data> 
+			<data>28.00</data>
+			<data>33.60</data>
+			<data>39.20</data> 
+			<data>44.80</data> 
+			<data>50.40</data>
+			<data>56.00</data> 
+			<data>61.60</data>
+			<data>67.20</data> 
+			<data>72.80</data>
+			<data>78.40</data>
+			<data>84.00</data> 
+	</table>
+	<description>Unknown Throttle Map</description>
+	</table>
+
+		<table type="2D" name="Throttle Map 12" category="Electronic Throttle (VERIFY)" storagetype="uint16" sizex="1" sizey="16" endian="big" userlevel="5">
+	<scaling units="Deg" expression="x*0.11" to_byte="x/0.11" format="0.00"/> 
+	<table type="Y Axis" name="Deg" sizey="16" format="0.00">
+			<data>0.00</data> 
+			<data>5.60</data>
+			<data>11.20</data> 
+			<data>16.80</data>
+			<data>22.40</data> 
+			<data>28.00</data>
+			<data>33.60</data>
+			<data>39.20</data> 
+			<data>44.80</data> 
+			<data>50.40</data>
+			<data>56.00</data> 
+			<data>61.60</data>
+			<data>67.20</data> 
+			<data>72.80</data>
+			<data>78.40</data>
+			<data>84.00</data> 
+	</table>
+	<description>Unknown Throttle Map</description>
+	</table>
+	/////////////////////////////////////
 	
 	\\Electronic Throttle (Limiters//
 	
@@ -8662,28 +8940,1053 @@
 	<description>QZIKKI table</description>
 	</table>
 
+	<table type="2D" name="Flat Road Running Resistance Table" category="Scaling" storagetype="uint16" sizey="8" endian="big" userlevel="5" >
+		<scaling units="N" expression="x" to_byte="x" format="0"/>
+	<table type="Y Axis" name="Km/h" sizey="8">
+			<data>20</data>
+			<data>40</data>
+			<data>60</data>
+			<data>80</data>
+			<data>100</data>
+			<data>120</data>
+			<data>140</data>
+			<data>160</data>
+	</table>
+	<description>mTRLDFD- Flat road running resistance table</description>
+	</table>
 
+	<table type="2D" name="RDVPn Reference Table" category="Unknown" storagetype="uint16" sizey="16" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*.078125" to_byte="x/.078125" format="0.000"/>
+	<table type="Y Axis" name="mV" sizey="16">
+			<data>0</data>
+			<data>5</data>
+			<data>10</data>
+			<data>15</data>
+			<data>20</data>
+			<data>25</data>
+			<data>30</data>
+			<data>40</data>
+			<data>60</data>
+			<data>100</data>
+			<data>160</data>
+			<data>240</data>
+			<data>360</data>
+			<data>560</data>
+			<data>840</data>
+			<data>1280</data>
+	</table>
+	<description>mTROUTE- RDVPn reference table</description>
+	</table>
 
+	<table type="2D" name="Integral Gain QA Compensation Table" category="Unknown" storagetype="uint16" sizey="8" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*.1" to_byte="x/.1" format="0"/>
+	<table type="Y Axis" name="l/min" sizey="8">
+			<data>0</data>
+			<data>200</data>
+			<data>400</data>
+			<data>550</data>
+			<data>750</data>
+			<data>1200</data>
+			<data>2000</data>
+			<data>3000</data>
+	</table>
+	<description>mTQAIGN- An integral gain QA compensation table</description>
+	</table>
 
+	<table type="2D" name="Integral Gain QA Compensation Table (Bank 2)" category="Unknown" storagetype="uint16" sizey="8" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*.1" to_byte="x/.1" format="0"/>
+	<table type="Y Axis" name="l/min" sizey="8">
+			<data>0</data>
+			<data>200</data>
+			<data>400</data>
+			<data>550</data>
+			<data>750</data>
+			<data>1200</data>
+			<data>2000</data>
+			<data>3000</data>
+	</table>
+	<description>mTQAIGN2- An integral gain QA compensation table (bank2)</description>
+	</table>
 
+	<table type="2D" name="Adhesion Magnification Rotation Compensation Rate" category="Unknown" storagetype="uint16" sizey="8" endian="big" userlevel="5" >
+		<scaling units="l" expression="x*.000030518" to_byte="x/.000030518" format="0.000"/>
+	<table type="Y Axis" name="RPM" sizey="8">
+			<data>0</data>
+			<data>800</data>
+			<data>1600</data>
+			<data>2400</data>
+			<data>3200</data>
+			<data>4000</data>
+			<data>4800</data>
+			<data>5600</data>
+	</table>
+	<description>mTMFHNK- Adhesion magnification rotation compensation rate</description>
+	</table>
 
+	<table type="2D" name="Slowdown Load Compensation Quantity Table" category="Unknown" storagetype="uint16" sizey="4" endian="big" userlevel="5" >
+		<scaling units="L/min" expression="x*.0078125" to_byte="x/.0078125" format="0"/>
+	<table type="Y Axis" name="RPM" sizey="4">
+			<data>75</data>
+			<data>100</data>
+			<data>150</data>
+			<data>200</data>
+	</table>
+	<description>mTISBCP- Slowdown load compensation quantity table</description>
+	</table>
 
+	<table type="2D" name="Minus KTW Basic Value Table" category="Unknown" storagetype="uint16" sizey="16" endian="big" userlevel="5" >
+		<scaling units="l" expression="x*.015625" to_byte="x/.015625" format="0"/>
+	<table type="Y Axis" name="Z" sizey="16">
+			<data>-40</data>
+			<data>-30</data>
+			<data>-20</data>
+			<data>-10</data>
+			<data>0</data>
+			<data>10</data>
+			<data>20</data>
+			<data>30</data>
+			<data>40</data>
+			<data>50</data>
+			<data>60</data>
+			<data>70</data>
+			<data>80</data>
+			<data>90</data>
+			<data>100</data>
+			<data>110</data>
+	</table>
+	<description>mTMKTW- Minus KTW basic value table</description>
+	</table>
 
+	<table type="2D" name="TWF Change Time Constant Table" category="Unknown" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="l" expression="x*.000488281" to_byte="x/.000488281" format="0.0000"/>
+	<table type="Y Axis" name="1" sizey="8">
+			<data>0</data>
+			<data>0.12</data>
+			<data>0.25</data>
+			<data>0.38</data>
+			<data>0.50</data>
+			<data>0.62</data>
+			<data>0.75</data>
+			<data>0.88</data>
+	</table>
+	<description>mTFLTSP- TWF change time constant table</description>
+	</table>
 
+	<table type="2D" name="Fuel Rise Waiting Time Table" category="Unknown" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*10" to_byte="x/10" format="0"/>
+	<table type="Y Axis" name="Z" sizey="8">
+			<data>-40</data>
+			<data>-20</data>
+			<data>0</data>
+			<data>20</data>
+			<data>40</data>
+			<data>60</data>
+			<data>80</data>
+			<data>100</data>
+	</table>
+	<description>mTFPON- Fuel rise waiting time table</description>
+	</table>
 
+	<table type="2D" name="Basic Purge Invalid Pulse Width Table" category="Unknown" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*64" to_byte="x/64" format="0"/>
+	<table type="Y Axis" name="us" sizey="8">
+			<data>0</data>
+			<data>2</data>
+			<data>5</data>
+			<data>6</data>
+			<data>8</data>
+			<data>10</data>
+			<data>12</data>
+			<data>14</data>
+	</table>
+	<description>mTEVOPB- A basic purge invalid pulse width table</description>
+	</table>
 
+	<table type="2D" name="Slowdown Loss in Weight Compensation Rate Load Clause" category="Unknown" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="l" expression="x*.0078125" to_byte="x/.0078125" format="0.000"/>
+	<table type="Y Axis" name="%" sizey="8">
+			<data>0.0</data>
+			<data>12.5</data>
+			<data>25.0</data>
+			<data>37.5</data>
+			<data>50.0</data>
+			<data>62.5</data>
+			<data>75.0</data>
+			<data>87.5</data>
+	</table>
+	<description>mTGHFQC- Slowdown loss in weight compensation rate load clause</description>
+	</table>
 
+	<table type="2D" name="GOV Table" category="Unknown" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="Deg" expression="x-128" to_byte="x+128" format="0"/>
+	<table type="Y Axis" name="RPM" sizey="8">
+			<data>0</data>
+			<data>400</data>
+			<data>800</data>
+			<data>1200</data>
+			<data>1600</data>
+			<data>2000</data>
+			<data>2400</data>
+			<data>2800</data>
+	</table>
+	<description>mTGOV- GOV table</description>
+	</table>
 
+	<table type="2D" name="GOV3 Table" category="Unknown" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="Deg" expression="x-128" to_byte="x+128" format="0"/>
+	<table type="Y Axis" name="RPM" sizey="8">
+			<data>0</data>
+			<data>400</data>
+			<data>800</data>
+			<data>1200</data>
+			<data>1600</data>
+			<data>2000</data>
+			<data>2400</data>
+			<data>2800</data>
+	</table>
+	<description>mTGOV3- GOV3 table</description>
+	</table>
 
+	<table type="2D" name="GOV Table (At Time of Lean)" category="Unknown" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="Deg" expression="x-128" to_byte="x+128" format="0"/>
+	<table type="Y Axis" name="RPM" sizey="8">
+			<data>0</data>
+			<data>400</data>
+			<data>800</data>
+			<data>1200</data>
+			<data>1600</data>
+			<data>2000</data>
+			<data>2400</data>
+			<data>2800</data>
+	</table>
+	<description>mTGOVL- GOV table (at time of lean)</description>
+	</table>
 
+	<table type="2D" name="Right After Start, Idle Rise Rate Table" category="Unknown" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="%" expression="x*.390625" to_byte="x/.390625" format="0"/>
+	<table type="Y Axis" name="Z" sizey="8">
+			<data>-40</data>
+			<data>-20</data>
+			<data>0</data>
+			<data>20</data>
+			<data>40</data>
+			<data>60</data>
+			<data>80</data>
+			<data>100</data>
+	</table>
+	<description>mTGNSTST2- Right after the start, idle rise rate table</description>
+	</table>
 
+	<table type="2D" name="At Time of CHOSn Temperature Non-Balance, Compensation Rate" category="Unknown" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="l" expression="x*.015625" to_byte="x/.015625" format="0"/>
+	<table type="Y Axis" name="Z" sizey="8">
+			<data>-40</data>
+			<data>-20</data>
+			<data>0</data>
+			<data>20</data>
+			<data>40</data>
+			<data>60</data>
+			<data>80</data>
+			<data>100</data>
+	</table>
+	<description>mTGZAS- At the time of a CHOSn temperature non-balance, compensation rate</description>
+	</table>
 
+	<table type="2D" name="Interrupt Injection Time Compensation Rate (Mild Acceleration) By the Cylinder" category="Unknown" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*.015625" to_byte="x/.015625" format="0.000"/>
+	<table type="Y Axis" name="Long" sizey="8">
+			<data>0</data>
+			<data>1</data>
+			<data>2</data>
+			<data>3</data>
+			<data>4</data>
+			<data>5</data>
+			<data>6</data>
+			<data>7</data>
+	</table>
+	<description>mTGZCLS- An interrupt injection injection time compensation rate (mild acceleration) by the cylinder</description>
+	</table>
 
+	<table type="2D" name="Interrupt Injection Time Compensation Rate (Urgent Acceleration) By the Cylinder" category="Unknown" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*.015625" to_byte="x/.015625" format="0.000"/>
+	<table type="Y Axis" name="Long" sizey="8">
+			<data>0</data>
+			<data>1</data>
+			<data>2</data>
+			<data>3</data>
+			<data>4</data>
+			<data>5</data>
+			<data>6</data>
+			<data>7</data>
+	</table>
+	<description>mTGZCYL- An interrupt injection injection time compensation rate (urgent acceleration) by the cylinder</description>
+	</table>
 
+	<table type="2D" name="Wall Way Compensation Magnification (Slowdown) Rotation Compensation Table By the Cylinder" category="Unknown" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*.0078125" to_byte="x/.0078125" format="0.000"/>
+	<table type="Y Axis" name="RPM" sizey="8">
+			<data>0</data>
+			<data>800</data>
+			<data>1600</data>
+			<data>2400</data>
+			<data>3200</data>
+			<data>4000</data>
+			<data>4800</data>
+			<data>5600</data>
+	</table>
+	<description>mTGZMN- A wall way compensation magnification (slowdown) rotation compensation table by the cylinder</description>
+	</table>
 
+	<table type="2D" name="Interrupt Injection Compensation Magnification Rotation Compensation Rate By the Cylinder" category="Unknown" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*.0078125" to_byte="x/.0078125" format="0.000"/>
+	<table type="Y Axis" name="RPM" sizey="8">
+			<data>0</data>
+			<data>800</data>
+			<data>1600</data>
+			<data>2400</data>
+			<data>3200</data>
+			<data>4000</data>
+			<data>4800</data>
+			<data>5600</data>
+	</table>
+	<description>mTGZN- An interrupt injection compensation magnification rotation compensation rate by the cylinder</description>
+	</table>
 
+	<table type="2D" name="Wall Way Compensation Magnification (Acceleration) Rotation Compensation Table By the Cylinder" category="Unknown" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*.0078125" to_byte="x/.0078125" format="0.000"/>
+	<table type="Y Axis" name="RPM" sizey="8">
+			<data>0</data>
+			<data>800</data>
+			<data>1600</data>
+			<data>2400</data>
+			<data>3200</data>
+			<data>4000</data>
+			<data>4800</data>
+			<data>5600</data>
+	</table>
+	<description>mTGZPN- A wall way compensation magnification (acceleration) rotation compensation table by the cylinder</description>
+	</table>
 
+	<table type="2D" name="Wall Way Compensation Magnification Load Compensation Table By the Cylinder" category="Unknown" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*.0078125" to_byte="x/.0078125" format="0"/>
+	<table type="Y Axis" name="ms" sizey="8">
+			<data>0</data>
+			<data>2</data>
+			<data>4</data>
+			<data>6</data>
+			<data>8</data>
+			<data>10</data>
+			<data>12</data>
+			<data>14</data>
+	</table>
+	<description>mTGZTP- A wall way compensation magnification load compensation table by the cylinder</description>
+	</table>
 
+	<table type="2D" name="Interrupt Injection Compensation Magnification By the Cylinder" category="Scaling" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="-" expression="x" to_byte="x" format="0"/>
+	<table type="Y Axis" name="Z" sizey="8">
+			<data>-40</data>
+			<data>-20</data>
+			<data>0</data>
+			<data>20</data>
+			<data>40</data>
+			<data>60</data>
+			<data>80</data>
+			<data>100</data>
+	</table>
+	<description>mTGZTW- Interrupt injection compensation magnification by the cylinder</description>
+	</table>
+
+	<table type="2D" name="Wall Way Compensation Magnification (Slowdown) Table By the Cylinder" category="Scaling" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="-" expression="x" to_byte="x" format="0"/>
+	<table type="Y Axis" name="Z" sizey="8">
+			<data>-40</data>
+			<data>-20</data>
+			<data>0</data>
+			<data>20</data>
+			<data>40</data>
+			<data>60</data>
+			<data>80</data>
+			<data>100</data>
+	</table>
+	<description>mTGZTWMM- A wall way compensation magnification (slowdown) table by the cylinder</description>
+	</table>
+
+	<table type="2D" name="Wall Way Compensation Magnification (Acceleration) Table By the Cylinder" category="Scaling" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="-" expression="x" to_byte="x" format="0"/>
+	<table type="Y Axis" name="Z" sizey="8">
+			<data>-40</data>
+			<data>-20</data>
+			<data>0</data>
+			<data>20</data>
+			<data>40</data>
+			<data>60</data>
+			<data>80</data>
+			<data>100</data>
+	</table>
+	<description>mTGZTWPP- A wall way compensation magnification (acceleration) table by the cylinder</description>
+	</table>
+
+	<table type="2D" name="Catalyst Temperature O2 Adsorption Rate Table" category="Unknown" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*.0078125" to_byte="x/.0078125" format="0"/>
+	<table type="Y Axis" name="Z" sizey="8">
+			<data>0</data>
+			<data>100</data>
+			<data>200</data>
+			<data>300</data>
+			<data>400</data>
+			<data>500</data>
+			<data>600</data>
+			<data>700</data>
+	</table>
+	<description>mTHATMP- Catalyst temperature O2 adsorption rate table</description>
+	</table>
+
+	<table type="2D" name="N~TP Compensation Table" category="Unknown" storagetype="uint8" sizey="16" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*.0078125" to_byte="x/.0078125" format="0.000"/>
+	<table type="Y Axis" name="RPM*ms" sizey="16">
+			<data>2100</data>
+			<data>2200</data>
+			<data>2400</data>
+			<data>2800</data>
+			<data>3000</data>
+			<data>3200</data>
+			<data>3400</data>
+			<data>3600</data>
+			<data>3800</data>
+			<data>4000</data>
+			<data>4100</data>
+			<data>4200</data>
+			<data>4400</data>
+			<data>4500</data>
+			<data>4600</data>
+			<data>4800</data>
+	</table>
+	<description>mTHOSNTP- N~TP compensation table</description>
+	</table>
+
+	<table type="2D" name="N~TP Compensation Table 2" category="Unknown" storagetype="uint8" sizey="16" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*.0078125" to_byte="x/.0078125" format="0.000"/>
+	<table type="Y Axis" name="RPM*ms" sizey="16">
+			<data>0</data>
+			<data>1600</data>
+			<data>2000</data>
+			<data>2400</data>
+			<data>2500</data>
+			<data>2600</data>
+			<data>2700</data>
+			<data>2800</data>
+			<data>2900</data>
+			<data>3000</data>
+			<data>3400</data>
+			<data>3800</data>
+			<data>4200</data>
+			<data>4400</data>
+			<data>4600</data>
+			<data>10000</data>
+	</table>
+	<description>mTHOSRCV- N~TP compensation table 2</description>
+	</table>
+
+	<table type="2D" name="Fuel Temperature Compensation Coefficient Table" category="Unknown" storagetype="uint8" sizey="16" endian="big" userlevel="5" >
+		<scaling units="l" expression="x*.0078125" to_byte="x/.0078125" format="0.000"/>
+	<table type="Y Axis" name="Z" sizey="16">
+			<data>-40</data>
+			<data>-30</data>
+			<data>-20</data>
+			<data>-10</data>
+			<data>0</data>
+			<data>10</data>
+			<data>20</data>
+			<data>30</data>
+			<data>40</data>
+			<data>50</data>
+			<data>60</data>
+			<data>70</data>
+			<data>80</data>
+			<data>90</data>
+			<data>100</data>
+			<data>110</data>
+	</table>
+	<description>mTHOSTF- Fuel temperature compensation coefficient table</description>
+	</table>
+
+	<table type="2D" name="Atomospheric Pressure Compensation Coefficient" category="Unknown" storagetype="uint8" sizey="16" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*.0078125" to_byte="x/.0078125" format="0.000"/>
+	<table type="Y Axis" name="mV" sizey="16">
+			<data>400</data>
+			<data>480</data>
+			<data>500</data>
+			<data>780</data>
+			<data>1140</data>
+			<data>1500</data>
+			<data>1860</data>
+			<data>2220</data>
+			<data>2580</data>
+			<data>2960</data>
+			<data>3320</data>
+			<data>3680</data>
+			<data>4120</data>
+			<data>4120</data>
+			<data>4120</data>
+			<data>4120</data>
+	</table>
+	<description>mTHPAMB- Atomospheric pressure compensation coefficient</description>
+	</table>
+
+	<table type="2D" name="Catalyst Temperature O2 Release Rate Table" category="Unknown" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*.0078125" to_byte="x/.0078125" format="0"/>
+	<table type="Y Axis" name="Z" sizey="8">
+			<data>0</data>
+			<data>200</data>
+			<data>400</data>
+			<data>600</data>
+			<data>800</data>
+			<data>1000</data>
+			<data>1012</data>
+			<data>1020</data>
+	</table>
+	<description>mTHRTMP- Catalyst temperature O2 release rate table</description>
+	</table>
+
+	<table type="2D" name="Fuel Temperature Compensation Coefficient Table" category="Unknown" storagetype="uint8" sizey="16" endian="big" userlevel="5" >
+		<scaling units="l" expression="x*.0078125" to_byte="x/.0078125" format="0.000"/>
+	<table type="Y Axis" name="Z" sizey="16">
+			<data>-40</data>
+			<data>-30</data>
+			<data>-20</data>
+			<data>-10</data>
+			<data>0</data>
+			<data>10</data>
+			<data>20</data>
+			<data>30</data>
+			<data>40</data>
+			<data>50</data>
+			<data>60</data>
+			<data>70</data>
+			<data>80</data>
+			<data>90</data>
+			<data>100</data>
+			<data>110</data>
+	</table>
+	<description>mTHSTF2- Fuel temperature compensation coefficient table</description>
+	</table>
+
+	<table type="2D" name="CLOSE Control Switchover Table" category="Unknown" storagetype="uint8" sizey="16" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*100" to_byte="x/100" format="0"/>
+	<table type="Y Axis" name="RPM" sizey="16">
+			<data>0</data>
+			<data>400</data>
+			<data>800</data>
+			<data>1200</data>
+			<data>1600</data>
+			<data>2000</data>
+			<data>2400</data>
+			<data>2800</data>
+			<data>3200</data>
+			<data>3600</data>
+			<data>4000</data>
+			<data>4400</data>
+			<data>4800</data>
+			<data>5200</data>
+			<data>5600</data>
+			<data>6000</data>
+	</table>
+	<description>mTIDELAY- CLOSE control switchover table//Could be ignition timing with scaling x???</description>
+	</table>
+
+	<table type="2D" name="QFBI Initial Value" category="Unknown" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="L/min" expression="x" to_byte="x" format="0"/>
+	<table type="Y Axis" name="Z" sizey="8">
+			<data>-40</data>
+			<data>-20</data>
+			<data>0</data>
+			<data>20</data>
+			<data>40</data>
+			<data>60</data>
+			<data>80</data>
+			<data>100</data>
+	</table>
+	<description>mTIDUTY- QFBI initial value</description>
+	</table>
+
+	<table type="2D" name="At the Time of Start, CLOSE Control Prohibition Time Table" category="Unknown" storagetype="uint8" sizey="16" endian="big" userlevel="5" >
+		<scaling units="Sec" expression="x" to_byte="x" format="0"/>
+	<table type="Y Axis" name="Z" sizey="16">
+			<data>-40</data>
+			<data>-30</data>
+			<data>-20</data>
+			<data>-10</data>
+			<data>0</data>
+			<data>10</data>
+			<data>20</data>
+			<data>30</data>
+			<data>40</data>
+			<data>50</data>
+			<data>60</data>
+			<data>70</data>
+			<data>80</data>
+			<data>90</data>
+			<data>100</data>
+			<data>110</data>
+	</table>
+	<description>mTINLDTE- At the time of the start, CLOSE control prohibition time table</description>
+	</table>
+
+	<table type="2D" name="TWF Initial Value Table" category="Scaling" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x" to_byte="x" format="0"/>
+	<table type="Y Axis" name="Z" sizey="8">
+			<data>-40</data>
+			<data>-20</data>
+			<data>0</data>
+			<data>20</data>
+			<data>40</data>
+			<data>60</data>
+			<data>80</data>
+			<data>100</data>
+	</table>
+	<description>mTINWFT- TWF initial value table // 1.25x-200 is scaling</description>
+	</table>
+
+	<table type="2D" name="Atomospheric Pressure Compensation Table" category="Unknown" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="%" expression="x*.78125" to_byte="x/.78125" format="0"/>
+	<table type="Y Axis" name="mV" sizey="8">
+			<data>1920</data>
+			<data>2240</data>
+			<data>2560</data>
+			<data>2880</data>
+			<data>3200</data>
+			<data>3520</data>
+			<data>3840</data>
+			<data>4160</data>
+	</table>
+	<description>mTISCPAMB- Atomospheric pressure compensation table</description>
+	</table>
+
+	<table type="2D" name="IAT Compensation Table" category="Unknown" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="%" expression="x*.78125" to_byte="x/.78125" format="0"/>
+	<table type="Y Axis" name="Z" sizey="8">
+			<data>-40</data>
+			<data>-20</data>
+			<data>0</data>
+			<data>20</data>
+			<data>40</data>
+			<data>60</data>
+			<data>80</data>
+			<data>100</data>
+	</table>
+	<description>mTISCTA- Intake air temperature compensation table</description>
+	</table>
+
+	<table type="2D" name="High Coolant Temperature Increase Compensation Table" category="Unknown" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*.78125" to_byte="x/.78125" format="0"/>
+	<table type="Y Axis" name="Z" sizey="8">
+			<data>80</data>
+			<data>85</data>
+			<data>90</data>
+			<data>95</data>
+			<data>100</data>
+			<data>105</data>
+			<data>110</data>
+			<data>105</data>
+	</table>
+	<description>mTKHTTW1- A high coolant temperature increase compensation table</description>
+	</table>
+
+	<table type="2D" name="Quantity Rotation Compensation Rate" category="Unknown" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="l" expression="x*.78125" to_byte="x/.78125" format="0.000"/>
+	<table type="Y Axis" name="RPM" sizey="8">
+			<data>0</data>
+			<data>800</data>
+			<data>1600</data>
+			<data>2400</data>
+			<data>3200</data>
+			<data>4000</data>
+			<data>4800</data>
+			<data>5600</data>
+	</table>
+	<description>mTKMFN-Quantity rate rotation compensation rate</description>
+	</table>
+
+	<table type="2D" name="Torque Going Down Stage Retard Quantity Table High-Octane" category="Unknown" storagetype="uint8" sizey="16" endian="big" userlevel="5" >
+		<scaling units="Deg" expression="x" to_byte="x" format="0"/>
+	<table type="Y Axis" name="RPM" sizey="16">
+			<data>0</data>
+			<data>400</data>
+			<data>800</data>
+			<data>1200</data>
+			<data>1600</data>
+			<data>2000</data>
+			<data>2400</data>
+			<data>2800</data>
+			<data>3200</data>
+			<data>3600</data>
+			<data>4000</data>
+			<data>4400</data>
+			<data>4800</data>
+			<data>5200</data>
+			<data>5600</data>
+			<data>6000</data>
+	</table>
+	<description>mTKMRTRQH- Torque going down stage retard quantity table high-octane</description>
+	</table>
+
+	<table type="2D" name="Torque Going Down Stage Retard Quantity Table Regular" category="Unknown" storagetype="uint8" sizey="16" endian="big" userlevel="5" >
+		<scaling units="Deg" expression="x" to_byte="x" format="0"/>
+	<table type="Y Axis" name="RPM" sizey="16">
+			<data>0</data>
+			<data>400</data>
+			<data>800</data>
+			<data>1200</data>
+			<data>1600</data>
+			<data>2000</data>
+			<data>2400</data>
+			<data>2800</data>
+			<data>3200</data>
+			<data>3600</data>
+			<data>4000</data>
+			<data>4400</data>
+			<data>4800</data>
+			<data>5200</data>
+			<data>5600</data>
+			<data>6000</data>
+	</table>
+	<description>mTKMRTRQH- Torque going down stage retard quantity table regular</description>
+	</table>
+
+	<table type="2D" name="Continuous NO. Load KML Table" category="Unknown" storagetype="uint8" sizey="16" endian="big" userlevel="5" >
+		<scaling units="Count" expression="x" to_byte="x" format="0"/>
+	<table type="Y Axis" name="RPM" sizey="16">
+			<data>2000</data>
+			<data>2400</data>
+			<data>2800</data>
+			<data>3200</data>
+			<data>3600</data>
+			<data>4000</data>
+			<data>4400</data>
+			<data>4800</data>
+			<data>5200</data>
+			<data>5600</data>
+			<data>6000</data>
+			<data>6400</data>
+			<data>6800</data>
+			<data>7200</data>
+			<data>7600</data>
+			<data>8000</data>
+	</table>
+	<description>mTKNL- Continuous NO. Load KML table</description>
+	</table>
+
+	<table type="2D" name="Rotation Compensation Table" category="Unknown" storagetype="uint8" sizey="16" endian="big" userlevel="5" >
+		<scaling units="l" expression="x*.00390625" to_byte="x/.00390625" format="0"/>
+	<table type="Y Axis" name="RPM" sizey="16">
+			<data>0</data>
+			<data>100</data>
+			<data>200</data>
+			<data>300</data>
+			<data>400</data>
+			<data>500</data>
+			<data>600</data>
+			<data>700</data>
+			<data>800</data>
+			<data>900</data>
+			<data>1000</data>
+			<data>1100</data>
+			<data>1200</data>
+			<data>1300</data>
+			<data>1400</data>
+			<data>1500</data>
+	</table>
+	<description>mTKNST- Rotation compensation table</description>
+	</table>
+
+	<table type="2D" name="Difference Pressure Compensation Coefficient Table" category="Unknown" storagetype="uint8" sizey="16" endian="big" userlevel="5" >
+		<scaling units="%" expression="x*6.25" to_byte="x/6.25" format="0.00"/>
+	<table type="Y Axis" name="%" sizey="16">
+			<data>0.00</data>
+			<data>6.25</data>
+			<data>12.50</data>
+			<data>18.75</data>
+			<data>25.00</data>
+			<data>31.25</data>
+			<data>37.50</data>
+			<data>43.75</data>
+			<data>50.00</data>
+			<data>56.25</data>
+			<data>62.50</data>
+			<data>68.75</data>
+			<data>75.00</data>
+			<data>81.25</data>
+			<data>87.50</data>
+			<data>93.75</data>
+	</table>
+	<description>mTKPB- The difference pressure compensation coefficient table</description>
+	</table>
+
+	<table type="2D" name="Atomospheric Pressure Compensation Coefficient VIP Greater Than 0 Table" category="Unknown" storagetype="uint8" sizey="4" endian="big" userlevel="5" >
+		<scaling units="V" expression="x" to_byte="x" format="0"/>
+	<table type="Y Axis" name="%" sizey="4">
+			<data>2.08</data>
+			<data>2.72</data>
+			<data>3.36</data>
+			<data>4.00</data>
+	</table>
+	<description>mTKPIPL- Atomospheric pressure compensation coefficient VIP>=0 table</description>
+	</table>
+
+	<table type="2D" name="Atomospheric Pressure Compensation Coefficient VIP Less Than 0 Table" category="Unknown" storagetype="uint8" sizey="4" endian="big" userlevel="5" >
+		<scaling units="V" expression="x" to_byte="x" format="0"/>
+	<table type="Y Axis" name="%" sizey="4">
+			<data>2.08</data>
+			<data>2.72</data>
+			<data>3.36</data>
+			<data>4.00</data>
+	</table>
+	<description>mTKPIPR- Atomospheric pressure compensation coefficient VIP less than=0 table</description>
+	</table>
+
+	<table type="2D" name="MFTPA1 Reference Table" category="Unknown" storagetype="uint8" sizey="16" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*.125" to_byte="x/.125" format="0.00"/>
+	<table type="Y Axis" name="RPM" sizey="16">
+			<data>400</data>
+			<data>800</data>
+			<data>1200</data>
+			<data>1600</data>
+			<data>2000</data>
+			<data>2400</data>
+			<data>2800</data>
+			<data>3200</data>
+			<data>3600</data>
+			<data>4000</data>
+			<data>4400</data>
+			<data>4800</data>
+			<data>5200</data>
+			<data>5600</data>
+			<data>6000</data>
+			<data>6400</data>
+	</table>
+	<description>mTMFPA1- MFTPA1 reference table</description>
+	</table>
+
+	<table type="2D" name="MFTPA3 Reference Table" category="Unknown" storagetype="uint8" sizey="16" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*.125" to_byte="x/.125" format="0.00"/>
+	<table type="Y Axis" name="RPM" sizey="16">
+			<data>400</data>
+			<data>800</data>
+			<data>1200</data>
+			<data>1600</data>
+			<data>2000</data>
+			<data>2400</data>
+			<data>2800</data>
+			<data>3200</data>
+			<data>3600</data>
+			<data>4000</data>
+			<data>4400</data>
+			<data>4800</data>
+			<data>5200</data>
+			<data>5600</data>
+			<data>6000</data>
+			<data>6400</data>
+	</table>
+	<description>mTMFPA3- MFTPA3 reference table</description>
+	</table>
+
+	<table type="2D" name="Maximum Purge Rate Concentration Limitation Table" category="Unknown" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="%" expression="x*.25" to_byte="x/.25" format="0"/>
+	<table type="Y Axis" name="-" sizey="8">
+			<data>0</data>
+			<data>1</data>
+			<data>2</data>
+			<data>3</data>
+			<data>4</data>
+			<data>5</data>
+			<data>7</data>
+			<data>10</data>
+	</table>
+	<description>mTPDNSLIM- A maximum purge rate purge concentration limitation table</description>
+	</table>
+
+	<table type="2D" name="NMEMH Reference Table" category="Unknown" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="RPM" expression="x*12.5" to_byte="x/12.5" format="0"/>
+	<table type="Y Axis" name="Z" sizey="8">
+			<data>10</data>
+			<data>20</data>
+			<data>30</data>
+			<data>40</data>
+			<data>50</data>
+			<data>60</data>
+			<data>70</data>
+			<data>80</data>
+	</table>
+	<description>mTNMEMH- NMEMH reference table</description>
+	</table>
+
+	<table type="2D" name="D Range NSET0 Maintenance Air Quantity Table" category="Unknown" storagetype="uint8" sizey="16" endian="big" userlevel="5" >
+		<scaling units="l/min" expression="x*4" to_byte="x/4" format="0.00"/>
+	<table type="Y Axis" name="RPM" sizey="16">
+			<data>0</data>
+			<data>100</data>
+			<data>200</data>
+			<data>300</data>
+			<data>400</data>
+			<data>500</data>
+			<data>600</data>
+			<data>700</data>
+			<data>800</data>
+			<data>900</data>
+			<data>1000</data>
+			<data>1100</data>
+			<data>1200</data>
+			<data>1300</data>
+			<data>1400</data>
+			<data>1500</data>
+	</table>
+	<description>mTNQD1- D range NSET0 maintenance air quantity table (6, 8 cylinder)</description>
+	</table>
+
+	<table type="2D" name="N Range NSET0 Maintenance Air Quantity Table" category="Unknown" storagetype="uint8" sizey="16" endian="big" userlevel="5" >
+		<scaling units="l/min" expression="x*4" to_byte="x/4" format="0.00"/>
+	<table type="Y Axis" name="RPM" sizey="16">
+			<data>0</data>
+			<data>100</data>
+			<data>200</data>
+			<data>300</data>
+			<data>400</data>
+			<data>500</data>
+			<data>600</data>
+			<data>700</data>
+			<data>800</data>
+			<data>900</data>
+			<data>1000</data>
+			<data>1100</data>
+			<data>1200</data>
+			<data>1300</data>
+			<data>1400</data>
+			<data>1500</data>
+	</table>
+	<description>mTNQN1- N range NSET0 maintenance air quantity table (6, 8 cylinder)</description>
+	</table>
+
+	<table type="3D" name="First-Ordered Filter Weight" category="Unknown" storagetype="uint16" endian="big" sizex="3" sizey="3" userlevel="5" logparam="?">
+		<scaling units="-" expression="x*.000015259" to_byte="x/.000015259" format="0.0000" fineincrement="1" coarseincrement="10" />
+		<table type="Static X Axis" name="Long" format="0" sizex="3">
+			<data>0</data>
+			<data>1</data>
+			<data>2</data>      
+		</table>
+		<table type="Static Y Axis" name="Long" format="0" sizey="3" logparam="-">
+			<data>0</data>
+			<data>1</data>
+			<data>2</data>
+		</table>
+		<description>mMTFDFK- First-ordered filter weight</description>
+	</table>
+
+	<table type="2D" name="Rotation Compensation Value Upper Limit Table" category="Unknown" storagetype="uint16" sizey="8" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*.00390625" to_byte="x/.00390625" format="0.00"/>
+	<table type="Y Axis" name="Z" sizey="8">
+			<data>-40</data>
+			<data>-20</data>
+			<data>0</data>
+			<data>20</data>
+			<data>40</data>
+			<data>60</data>
+			<data>80</data>
+			<data>100</data>
+	</table>
+	<description>mTFNALMT- Rotation compensation value upper limit table</description>
+	</table>
+
+	<table type="2D" name="Time of Start, Ignition Timing Rotation Compensation Value Table" category="Unknown" storagetype="uint16" sizey="16" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*.00390625" to_byte="x/.00390625" format="0.000"/>
+	<table type="Y Axis" name="RPM" sizey="16">
+			<data>0</data>
+			<data>200</data>
+			<data>400</data>
+			<data>600</data>
+			<data>800</data>
+			<data>1000</data>
+			<data>1200</data>
+			<data>1400</data>
+			<data>1600</data>
+			<data>1800</data>
+			<data>2000</data>
+			<data>2200</data>
+			<data>2400</data>
+			<data>2600</data>
+			<data>2800</data>
+			<data>3000</data>
+	</table>
+	<description>mTFNCRADV- At the time of the start, ignition timing rotation compensation value table</description>
+	</table>
+
+	<table type="2D" name="O2 Adsorption Rate Table" category="Scaling" storagetype="uint16" sizey="8" endian="big" userlevel="5" >
+		<scaling units="-" expression="x" to_byte="x" format="0.0000"/>
+	<table type="Y Axis" name="Mg" sizey="8">
+			<data>0.00</data>
+			<data>199.68</data>
+			<data>399.36</data>
+			<data>599.04</data>
+			<data>801.28</data>
+			<data>1000.96</data>
+			<data>1200.64</data>
+			<data>1400.32</data>
+	</table>
+	<description>mTHAOSC- O2 adsorption rate table</description>
+	</table>
+
+	<table type="2D" name="O2 Release Rate Table" category="Scaling" storagetype="uint16" sizey="8" endian="big" userlevel="5" >
+		<scaling units="-" expression="x" to_byte="x" format="0.0000"/>
+	<table type="Y Axis" name="Mg" sizey="8">
+			<data>0.00</data>
+			<data>199.68</data>
+			<data>399.36</data>
+			<data>599.04</data>
+			<data>801.28</data>
+			<data>1000.96</data>
+			<data>1200.64</data>
+			<data>1400.32</data>
+	</table>
+	<description>mTHAOSC- O2 release rate table</description>
+	</table>
+
+	<table type="2D" name="Filter Time Constant Table" category="Unknown" storagetype="uint16" sizey="8" endian="big" userlevel="5" >
+		<scaling units="%" expression="x*.00152879" to_byte="x/.00152879" format="0.0000"/>
+	<table type="Y Axis" name="l" sizey="8">
+			<data>0</data>
+			<data>500</data>
+			<data>1100</data>
+			<data>2200</data>
+			<data>3200</data>
+			<data>5000</data>
+			<data>8400</data>
+			<data>10600</data>
+	</table>
+	<description>mTKWCT1- Filter time constant table</description>
+	</table>
+
+	<table type="2D" name="TPMAX Value Table" category="Unknown" storagetype="uint8" sizey="16" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*.125" to_byte="x/.125" format="0.000"/>
+	<table type="Y Axis" name="RPM" sizey="16">
+			<data>0</data>
+			<data>400</data>
+			<data>800</data>
+			<data>1200</data>
+			<data>1600</data>
+			<data>2000</data>
+			<data>2400</data>
+			<data>2800</data>
+			<data>3200</data>
+			<data>3600</data>
+			<data>4000</data>
+			<data>4400</data>
+			<data>4800</data>
+			<data>5200</data>
+			<data>5600</data>
+			<data>6000</data>
+	</table>
+	<description>mTTPMAX- TPMAX value table</description>
+	</table>
 
 
 
