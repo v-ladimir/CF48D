@@ -817,82 +817,88 @@ Maps
 	<table name="O2 Release Rate Table" storageaddress="0xCDB0"/> 
 	<table name="Filter Time Constant Table" storageaddress="0xCE08"/> 
 	<table name="TPMAX Value Table" storageaddress="0xC114"/> 
+	<table name="Retard Side Maximum Change Width 2" storageaddress="0x8221"/> 
+	<table name="Retard Side Maximum Change Width" storageaddress="0x7B36"/> 
+	<table name="AFR Sensor Breakage Diagnosis TP Upper Limit" storageaddress="0x7B73"/> 
+	<table name="AFR Sensor Breakage Diagnosis TP Lower Limit" storageaddress="0x7B75"/> 
+	<table name="Diagnosis Condition TP Upper Limit" storageaddress="0x7B74"/> 
+	<table name="Diagnosis Condition TP Lower Limit" storageaddress="0x7B76"/> 
+	<table name="AFR Sensor Breakage NG Judgement Time" storageaddress="0x7B79"/> 
+	<table name="AFR Sensor Breakage Diagnosis Vehicle Speed Upper Limit" storageaddress="0x7B7A"/> 
+	<table name="AFR Sensor Breakage Diagnosis Vehicle Speed Lower Limit" storageaddress="0x7B7C"/> 
+	<table name="Diagnosis Region Condition Vehicle Speed Upper Limit" storageaddress="0x7B7B"/> 
+	<table name="Diagnosis Region Condition Vehicle Speed Lower Limit" storageaddress="0x7B7D"/> 
+	<table name="Lean/Rich Response Diagnosis Region Condition N-TP Upper Limit" storageaddress="0x86F0"/> 
+	<table name="Lean/Rich Response Diagnosis Region Condition N-TP Lower Limit" storageaddress="0x86F2"/> 
+	<table name="AFR Sensor Breakage Slice Level Upper Limit" storageaddress="0x86F4"/> 
+	<table name="AFR Sensor Breakage Slice Level Upper Limit 2" storageaddress="0x86F6"/>
+	<table name="AFR Sensor Breakage Slice Level Lower Limit" storageaddress="0x86F8"/> 
+	<table name="AFR Sensor Breakage Slice Level Lower Limit 2" storageaddress="0x86FA"/> 
+	<table name="O2 Magnification During Fuel Cut" storageaddress="0x7ADD"/>
+	<table name="Initial Judgement Rotation Compensation Value" storageaddress="0x7ADE"/> 
+	<table name="Heater Diagnosis Permission DUTY Lower Limit" storageaddress="0x7B6A"/> 
+	<table name="AFSHOS Renewal Count Value" storageaddress="0x7B69"/> 
+	<table name="AFS Response Deterioration Diagnosis Judgement Start Delay" storageaddress="0x7B68"/> 
+	<table name="AFR Sensor Breakage Diagnosis Judgement Start Delay" storageaddress="0x7B67"/> 
+	<table name="Trouble Judgement Delay Time" storageaddress="0x7B64"/> 
+	<table name="AFM Time Constant Coefficient (For Low Frequency)" storageaddress="0x7B5E"/> 
+	<table name="AFM Low Frequency Delay Gain" storageaddress="0x7B5D"/> 
+	<table name="Low Frequency Acceleration Compensation Rate" storageaddress="0x7B5C"/> 
+	<table name="Heater Diagnosis Judgement Start Delay" storageaddress="0x7B54"/> 
+	<table name="Diagnosis Permission ALPHA Upper Limit" storageaddress="0x7B49"/> 
+	<table name="Diagnosis Permission ALPHA Lower Limit" storageaddress="0x7B4A"/> 
+	<table name="Diagnosis Permission Heater Delay" storageaddress="0x7B4D"/> 
+	<table name="Diagnosis Permission Vehicle Speed" storageaddress="0x7B51"/> 
+	<table name="AFM Start, Surge Judgement Throttle Open-Degree" storageaddress="0x7B47"/>
+	<table name="Condition A Delay (Right After IGNSWON Judgement)" storageaddress="0x7B46"/> 
+	<table name="Condition A Judgement Delay" storageaddress="0x7B45"/>
+	<table name="BETAA, BETAB Computed Delay" storageaddress="0x7B33"/> 
+	<table name="After Adjustment Control Start, Delay Condition" storageaddress="0x7B2F"/> 
+	<table name="Addition Drive Power AT Reflection Rate" storageaddress="0x7B2E"/> 
+	<table name="Dizzer Addition Start Delay" storageaddress="0x7B2D"/> 
+	<table name="Purge Cut Switchover ALPHA Limitation Value for Purge-Type Judgement" storageaddress="0x7B29"/> 
+	<table name="Purge-Type OK Judgement Purge Rate" storageaddress="0x7B2A"/>
+	<table name="AC After OFFON, Delay" storageaddress="0x7B21"/> 
+	<table name="Air-Conditioning Recover Delay" storageaddress="0x7B20"/> 
+	<table name="After Air-Conditioning On, Delay" storageaddress="0x7B1A"/> 
+	<table name="At Time of Air-Conditioning On, Delay" storageaddress="0x7B17"/> 
+	<table name="AC Load Stable Distinction Value" storageaddress="0x7B16"/> 
+	<table name="At Time of Air-Conditioning Off, Delay" storageaddress="0x7B14"/> 
+	<table name="AC Start Compensation Time" storageaddress="0x7B0E"/> 
+	<table name="At Start, Intermadiate Coolant Temp. Retard Addition Judgement Upper Limit" storageaddress="0x7B01"/> 
+	<table name="Intermadiate Coolant Temperature Retard Addition Judgement TP" storageaddress="0x7AFF"/> 
+	<table name="Taking in Advance Compensation Judgement Value is High" storageaddress="0x7BB6"/> 
+	<table name="Taking in Advance Compensation Judgement Value ¬" storageaddress="0x7BB7"/> 
+	<table name="AVETF Average Coefficient" storageaddress="0x7BB5"/> 
+	<table name="Absolute Pressure Sensor Voltage Weighted Average Coefficient" storageaddress="0x7BB4"/> 
+	<table name="FGAGE3 Weighted Average-ization Index Number 3" storageaddress="0x7BB3"/>
+	<table name="FGAGE2 Weighted Average-ization Index Number 2" storageaddress="0x7BB2"/> 
+	<table name="FGAGE1 Weighted Average-ization Index Number 1" storageaddress="0x7BB1"/> 
+	<table name="PEAVP Weighted Average Index Number" storageaddress="0x7BAE"/> 
+	<table name="PEAVP Weighted Average Index Number 2" storageaddress="0x7BAF"/> 
+	<table name="TP Weighted Average Coefficient" storageaddress="0x7BAD"/> 
+	<table name="Gasoline Mixing Quantity Decrease Rate" storageaddress="0x7BCC"/> 
+	<table name="Time of Start, Gasoline Mixing Quantity Index Number" storageaddress="0x7BCD"/> 
+	<table name="Time of KMR Increase, Gasoline Mixing Speed" storageaddress="0x7BCE"/> 
+	<table name="Time of Start, Gasoline Mixing Quantity Initial Value" storageaddress="0x7BCF"/> 
+	<table name="BNC SW Judgement Voltage" storageaddress="0x7BD2"/> 
+	<table name="(HTASW is removed) Related to Meter CAN A/C" storageaddress="0x7BE2"/> 
+	<table name="Crank Angle Until the Intake End" storageaddress="0x7BE9"/> 
+	<table name="Catalyst Criteria Judgement Number of Times Multiple Value" storageaddress="0x7BEB"/> 
+	<table name="Diagnosis Permission Delay" storageaddress="0x7BEC"/>
+	<table name="Stage 2 Diagnosis Canister Purge Cut Delay" storageaddress="0x7BED"/> 
+	<table name="Stage 2 Diagnosis Region Condition Disconnection Delay" storageaddress="0x7BF0"/> 
+	<table name="Region Judgement Condition Delay" storageaddress="0x7BF1"/> 
 	
 	
 	
 	
-	<table name="Retard Side Maximum Change Width 2" storageaddress="0x8221"/> (VERIFY)
-	<table name="Retard Side Maximum Change Width" storageaddress="0x7B36"/> (mADVLMT FIX A2L INFORMATION)
-	<table name="AFR Sensor Breakage Diagnosis TP Upper Limit" storageaddress="0x7B73"/> (mAFSTPH A2L) 
-	<table name="AFR Sensor Breakage Diagnosis TP Lower Limit" storageaddress="0x7B75"/> (mAFSTPL A2L) 
-	<table name="Diagnosis Condition TP Upper Limit" storageaddress="0x7B74"/> (mAFSTPH1 A2L)
-	<table name="Diagnosis Condition TP Lower Limit" storageaddress="0x7B76"/> (mAFSTPL1 A2L)
-	<table name="AFR Sensor Breakage NG Judgement Time" storageaddress="0x7B79"/> (mAFVNGT1 A2L)
-	<table name="AFR Sensor Breakage Diagnosis Vehicle Speed Upper Limit" storageaddress="0x7B7A"/> (mAFVSPH A2L)
-	<table name="AFR Sensor Breakage Diagnosis Vehicle Speed Lower Limit" storageaddress="0x7B7C"/> (mAFVSPL A2L)
-	<table name="Diagnosis Region Condition Vehicle Speed Upper Limit" storageaddress="0x7B7B"/> (mAFVSPH1 A2L)
-	<table name="Diagnosis Region Condition Vehicle Speed Lower Limit" storageaddress="0x7B7D"/> (mAFVSPL1 A2L)	
-	<table name="Lean/Rich Response Diagnosis Region Condition N-TP Upper Limit" storageaddress="0x86F0"/> (mAFSNTPH A2L uint16)
-	<table name="Lean/Rich Response Diagnosis Region Condition N-TP Lower Limit" storageaddress="0x86F2"/> (mAFSNTPL A2L uint16)	
-	<table name="AFR Sensor Breakage Slice Level Upper Limit" storageaddress="0x86F4"/> (mAFVNGH1 A2L uint16)
-	<table name="AFR Sensor Breakage Slice Level Upper Limit 2" storageaddress="0x86F6"/> (mAFVNGH2 A2L uint16)	
-	<table name="AFR Sensor Breakage Slice Level Lower Limit" storageaddress="0x86F8"/> (mAFVNGL1 A2L uint16)
-	<table name="AFR Sensor Breakage Slice Level Lower Limit 2" storageaddress="0x86FA"/> (mAFVNGL2 A2L uint16)	
-	<table name="O2 Magnification During Fuel Cut" storageaddress="0x7ADD"/> (mLEANG A2L)
-	<table name="Initial Judgement Rotation Compensation Value" storageaddress="0x7ADE"/> (mNSETST A2L)
-	<table name="Heater Diagnosis Permission DUTY Lower Limit" storageaddress="0x7B6A"/> (mAFSHDTYL A2L)
-	<table name="AFSHOS Renewal Count Value" storageaddress="0x7B69"/> (mAFSHCT A2L)
-	<table name="AFS REsponse Deterioration Diagnosis Judgement Start Delay" storageaddress="0x7B68"/> (mAFSDLY1 A2L)
-	<table name="AFR Sensor Breakage Diagnosis Judgement Start Delay" storageaddress="0x7B67"/> (mAFSDLY A2L)
-	<table name="Trouble Judgement Delay Time" storageaddress="0x7B64"/> (mAFNGT A2L)
-	<table name="AFM Time Constant Coefficient (For Low Frequency)" storageaddress="0x7B5E"/> (mAFLETC A2L)
-	<table name="AFM Low Frequency Delay Gain" storageaddress="0x7B5D"/> (mAFLEG A2L)
-	<table name="Low Frequency Acceleration Compensation Rate" storageaddress="0x7B5C"/> (mAFLEA A2L)
-	<table name="Heater Diagnosis Judgement Start Delay" storageaddress="0x7B54"/> (mAFHDLY A2L)
-	<table name="Diagnosis Permission ALPHA Upper Limit" storageaddress="0x7B49"/> (mAFDALPH A2L)
-	<table name="Diagnosis Permission ALPHA Lower Limit" storageaddress="0x7B4A"/> (mAFDALPL A2L)
-	<table name="Diagnosis Permission Heater Delay" storageaddress="0x7B4D"/> (mAFDHDLY A2L)
-	<table name="Diagnosis Permission Vehicle Speed" storageaddress="0x7B51"/> (mAFDVSP A2L)
-	<table name="AFM Start, Surge Judgement Throttle Open-Degree" storageaddress="0x7B47"/> (mAFCLTV A2L)
-	<table name="Condition A Delay (Right After IGNSWON Judgement)" storageaddress="0x7B46"/> (mAFCLT2 A2L)
-	<table name="Condition A Judgement Delay" storageaddress="0x7B45"/> (mAFCLT1 A2L)
-	<table name="BETAA, BETAB Computed Delay" storageaddress="0x7B33"/> (mADVDLY A2L)
-	<table name="After Adjustment Control Start, Delay Condition" storageaddress="0x7B2F"/> (mADJDLY A2L)
-	<table name="Addition Drive Power AT Reflection Rate" storageaddress="0x7B2E"/> (mADDFDATW A2L)
-	<table name="Dizzer Addition Start Delay" storageaddress="0x7B2D"/> (mADDBTIM A2L)
-	<table name="Purge Cut Switchover ALPHA Limitation Value for Purge-Type Judgement" storageaddress="0x7B29"/> (mADCGDALP A2L)
-	<table name="Purge-Type OK Judgement Purge Rate" storageaddress="0x7B2A"/> (mADCGOKPR A2L)
-	<table name="AC After OFFON, Delay" storageaddress="0x7B21"/> (mACSTDY A2L)
-	<table name="Air-Conditioning Recover Delay" storageaddress="0x7B20"/> (mACREDY A2L)
-	<table name="After Air-Conditioning On, Delay" storageaddress="0x7B1A"/> (mACONRD A2L)
-	<table name="At Time of Air-Conditioning On, Delay" storageaddress="0x7B17"/> (mACONDY A2L)
-	<table name="AC Load Stable Distinction Value" storageaddress="0x7B16"/> (mACOKPD A2L)
-	<table name="At Time of Air-Conditioning Off, Delay" storageaddress="0x7B14"/> (mACOFDY A2L)
-	<table name="AC Start Compensation Time" storageaddress="0x7B0E"/> (mACDYFF A2L)
-	<table name="At Start, Intermadiate Coolant Temp. Retard Addition Judgement Upper Limit" storageaddress="0x7B01"/> (mA5TWD A2L)
-	<table name="Intermadiate Coolant Temperature Retard Addition Judgement TP" storageaddress="0x7AFF"/> (mA5TP1 A2L)
-	<table name="Taking in Advance Compensation Judgement Value is High" storageaddress="0x7BB6"/> (mAVTQHH A2L)
-	<table name="Taking in Advance Compensation Judgement Value ¬" storageaddress="0x7BB7"/> (mAVTQHL A2L)
-	<table name="AVETF Average Coefficient" storageaddress="0x7BB5"/> (mAVTFA A2L)
-	<table name="Absolute Pressure Sensor Voltage Weighted Average Coefficient" storageaddress="0x7BB4"/> (mAVPRR A2L)
-	<table name="FGAGE3 Weighted Average-ization Index Number 3" storageaddress="0x7BB3"/> (mAVFLN3 A2L)
-	<table name="FGAGE2 Weighted Average-ization Index Number 2" storageaddress="0x7BB2"/> (mAVFLN2 A2L)
-	<table name="FGAGE1 Weighted Average-ization Index Number 1" storageaddress="0x7BB1"/> (mAVFLN1 A2L)	
-	<table name="PEAVP Weighted Average Index Number" storageaddress="0x7BAE"/> (mAVEVAP A2L)
-	<table name="PEAVP Weighted Average Index Number 2" storageaddress="0x7BAF"/> (mAVEVAP2 A2L)
-	<table name="TP Weighted Average Coefficient" storageaddress="0x7BAD"/> (mAVETP A2L)
-	<table name="Gasoline Mixing Quantity Decrease Rate" storageaddress="0x7BCC"/> (mBLBDEC A2L)
-	<table name="Time of Start, Gasoline Mixing Quantity Index Number" storageaddress="0x7BCD"/> (mBLBHOT A2L)
-	<table name="Time of KMR Increase, Gasoline Mixing Speed" storageadress="0x7BCE"/> (mBLBKMR A2L)
-	<table name="Time of Start, Gasoline Mixing Quantity Initial Value" storageaddress="0x7BCF"/> (mBLBSTC A2L)
-	<table name="BNC SW Judgement Voltage" storageaddress="0x7BD2"/> (mBNCSWON A2L)
-	<table name="(HTASW is removed) Related to Meter CAN A/C" storageaddress="0x7BE2"/> (mfMETCAN
-	<table name="Crank Angle Until the Intake End" storageaddress="0x7BE9"/> (mCAQEND A2L)
-	<table name="Catalyst Criteria Judgement Number of Times Multiple Value" storageaddress="0x7BEB"/> (mCATBAI A2L)
-	<table name="Diagnosis Permission Delay" storageaddress="0x7BEC"/> (mCATDY1 A2L)
-	<table name="Stage 2 Diagnosis Canister Purge Cut Delay" storageaddress="0x7BED"/> (mCATEVP A2L)
-	<table name="Stage 2 Diagnosis Region Condition Disconnection Delay" storageaddress="0x7BF0"/> (mCATJD2 A2L)
-	<table name="Region Judgement Condition Delay" storageaddress="0x7BF1"/> (mCATJDLY A2L)
+	
+	
+	
+	
+	
+	
 	<table name="Stage 1 MALPHA Upper Limit" storageaddress="0x7BF2"/> (mCATMAH A2L)
 	<table name="Stage 1 MALPHA Lower Limit" storageaddress="0x7BF3"/> (mCATMAL A2L)
 	<table name="Region A TP Upper Limit" storageaddress="0x7BFA"/> (mCATPAH A2L)
@@ -1141,9 +1147,6 @@ Maps
 B7E5 could be timing related?? 
 	
 D396 has a check map RIGHT below it!
-
-COULD FIND NATS CODING BY DUMPING ROM, THEN USE NDS2 TO PROGRAM YOUR KEY, THEN DUMP THE NEW ROM? :o
-ORRRRR could just compare your ROM to stock european ROM
 
 53E8 is a value! same as ZB060 dword_237D4 but A2L doesn't show anything^ Same function as 500C
 500C looks like a MASSIVE amount of maps!!! 16 bit!!! (Same as dword_233F8 in A2L)\
