@@ -38899,7 +38899,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
 					</conversions>
 				</ecuparam>
 
-				<ecuparam id="Z4" name="vITAC" desc="Cylinder intake filling up efficiency" target="1">
+				<ecuparam id="Z4" name="vITAC" desc="Z4- Cylinder intake filling up efficiency" target="1">
 					<ecu id="CF48D">
 						<address>0xFF847E</address>
 					</ecu>
@@ -39062,7 +39062,14 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
 					</conversions>
 				</ecuparam>
 				
-				
+				<ecuparam id="Z22" name="Target AFR Map Value" desc="vKMRM- Target AFR Map Value" target="1">
+					<ecu id="CF48D">
+						<address>0xFF14BF</address>
+					</ecu>
+					<conversions>
+						<conversion units="Lambda" storagetype="uint8" expr="128/x" format="0.00" />
+					</conversions>
+				</ecuparam>				
 				
 				
 				

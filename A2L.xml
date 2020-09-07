@@ -422,7 +422,7 @@
 	
 	\\AFR//
 	
-	<table type="3D" name="Target AFR" category="AFR" storagetype="uint8" endian="big" sizex="8" sizey="8" userlevel="1" logparam="P4404">
+	<table type="3D" name="Target AFR" category="AFR" storagetype="uint8" endian="big" sizex="8" sizey="8" userlevel="1" logparam="Z22">
 		<scaling units="AFR(Gasoline Scale)" expression="14.7/(x/128)" to_byte="128*(14.7/x)" format="0.00" fineincrement=".2" coarseincrement="1" />
 		<table type="X Axis" name="Cylinder intake filling up efficiency" storagetype="uint8" endian="big" logparam="Z4">
 			<scaling units="%" expression="x*0.78125" to_byte="x/0.78125" format="0.0" fineincrement=".5" coarseincrement="4" />
@@ -11912,7 +11912,7 @@
 	</table>
 
 	<table type="2D" name="DUTY Area Conversion Coefficient" category="Scaling" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
-		<scaling units="%" expression="x*0.000458934" to_byte="x/0.00458934" format="0.00"/>
+		<scaling units="%" expression="x*0.00458934" to_byte="x/0.00458934" format="0.00"/>
 	<table type="Y Axis" name="Above" sizey="1">
 			<data>-</data>
 	</table>
