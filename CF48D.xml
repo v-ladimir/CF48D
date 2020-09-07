@@ -36,7 +36,6 @@ vADCG 0xFFFF2330 (Additional charge condition)
 fACCFAIL 0xFFFF241E
 fA5TP1 0xFFFF23B6
 vCRUCON 0xFFFF2614 (CC state)
-fFLEAN 0xFFFF3A93 (Could be multiple RAM maps)
 vFCADV 0xFFFF1000 
 wfBRKSW 0xFFFF866B (Could be multiple RAM maps)
 vAACTV0 0xFFFF2630 (ISC, very, throttle open-degree)
@@ -65,6 +64,12 @@ bfFSKNK 0xFFFF3922 (Knock Fail Safe)
 vA 0xFFFF1F10 (VEVOUTT- (the last vEVOUT)
 wvAA 0xFFFF84C8 (A total duct area)
 wvACMNISR 0xFFFF97F4 
+fD2SUMCL 0xFFFF996A
+fACSW 0xFFFF8664 Air Conditioning Switch 
+vAA 0xFFFF8548 
+tACCMSGCA 0xFFFF3A93
+vALTR 0xFFFFB20C Atomospheric pressure detection value
+
 \\
 
 Axis'
@@ -256,7 +261,6 @@ Maps
 	<table name="Manualmatic DS Cut in Delay" storageaddress="0x7C15"/> 
 	<table name="Fuel Cut Condition TVO Upper Limit" storageaddress="0x875C"/>
 	<table name="Fuel Cut Condition TVO Lower Limit" storageaddress="0x875E"/> 
-	<table name="TVO Upper Limit Value" storageaddress="0x8459"/> 
 	<table name="Default Open Degree Equivalent Value" storageaddress="0x845B"/> 
 	<table name="Accelerator Foot is Put Judgement Value" storageaddress="0x845C"/> 
 	<table name="Previous Switchover Throttle Open Degree 1" storageaddress="0x880A"/>
@@ -536,9 +540,6 @@ Maps
 	<table name="All Cylinder Cut Prohibition Engine Speed" storageaddress="0x84CF"/>
 	<table name="Fuel Cut Prohibition Engine Speed" storageaddress="0x84D0"/>
 	<table name="Cleaning Mode Permission Engine Speed" storageaddress="0x84EC"/>
-	<table name="Variable Intake Valve Lower Limit Speed 1" storageaddress="0x8509"/>
-	<table name="Variable Intake Valve Lower Limit Speed" storageaddress="0x850A"/>
-	<table name="Variable Intake Valve Lower Limit Speed 2" storageaddress="0x850B"/>
 	<table name="Speed Sensor Diagnosis Lower Limit" storageaddress="0x8545"/>
 	<table name="VTC Drive Diagnosis Permission Upper Limit" storageaddress="0x855A"/>
 	<table name="VTC Drive Diagnosis Permission Lower Limit" storageaddress="0x855B"/>
@@ -976,109 +977,103 @@ Maps
 	<table name="P/S Oil Pressure Proportion Compensation Air Quantity (Inclination)" storageaddress="0x7D43"/> 
 	<table name="Power Steering Triangle Compensation Decrease Rate" storageaddress="0x7D44"/> 
 	<table name="D Range Stall Continuous Judgement Timer Increase Coefficient" storageaddress="0x7D5C"/>
+	<table name="Delta-QH0 Operation Period" storageaddress="0x7D5D"/> 
+	<table name="Torque Compensation Quantity Increase Switchover Delay (For Up Shift)" storageaddress="0x7D62"/> 
+	<table name="Torque Compensation Quantity Increase Switchover Delay" storageaddress="0x7D61"/> 
+	<table name="TFBYA Change Rate Limiter" storageaddress="0x7D64"/>
+	<table name="TFBYA Change Rate Limiter 2" storageaddress="0x7D65"/>
+	<table name="Torque Going Down Control Prohibition Coolant Temperature" storageaddress="0x7D68"/> 
+	<table name="Judgement Delay 1" storageaddress="0x7D69"/> 
+	<table name="Judgement Delay 2" storageaddress="0x7D6A"/> 
+	<table name="After Electrical Load SW OFF, Idle Rise Release Delay" storageaddress="0x7D6B"/> 
+	<table name="During Lockup, Control Start Judgement Vehicle Speed" storageaddress="0x7D6C"/> 
+	<table name="Variable Intake Valve Lower Limit Speed 1" storageaddress="0x8509"/>
+	<table name="Delta-TP Condition Upper Limit" storageaddress="0x7D6F"/> 
+	<table name="High Speed AIr Learning Dead-Zone" storageaddress="0x7D70"/> 
+	<table name="Desorption Heat" storageaddress="0x7D73"/> 
+	<table name="Diagnosis Permission ATVO Upper Limit" storageaddress="0x7D77"/> 
+	<table name="HOSCMAX Learning: Learning Region Delta-TVO Upper Limit" storageaddress="0x7D78"/> 
+	<table name="HOSCMAX Learning: Learning Region Delta-TVO Judgement Delay" storageaddress="0x7D79"/> 
+	<table name="Purge Control Valve Breakage Judgement Sample Number of Times" storageaddress="0x7D7A"/> 
+	<table name="DLTADV Amount of Change in Permission VAPO Which Isn't Acceptable" storageaddress="0x7D7B"/> 
+	<table name="TVO ETC: APOK Monitor Bad Road Judgement Delta Proper Side Reference" storageaddress="0x7D7C"/> 
+	<table name="TVO ETC: APOK Monitor Bad Road Judgement Delta Negative Side Reference" storageaddress="0x7D7D"/> 
+	<table name="TVO ETC: APOK Monitor Bad Road Judgement Delta Judgement Number Reference" storageaddress="0x7D7E"/> 
+	<table name="TVO ETC: APOK Monitor Bad Road Judgement Delta Judgement Time Reference" storageaddress="0x7D7F"/> 
+	<table name="Slowdown Judgement Delta-TVO" storageaddress="0x7D80"/> 
+	<table name="Acceleration Judgement Delta-TVO" storageaddress="0x7D81"/>
+	<table name="AFR Sensor Shift Compensation Learning; Learning Region Delta-TVO Upper Limit" storageaddress="0x7D82"/> 
+	<table name="AFR Sensor Shift Compensation Learning; Learning Region Delta-TVO Judgement Delay" storageaddress="0x7D83"/>
+	<table name="Amount of Low Speed Air Learning (Usually, mode) Step" storageaddress="0x7D85"/> 
+	<table name="Purge Control Valve Breakage Judgement Voltage Upper Limit" storageaddress="0x7D86"/> 
+	<table name="Purge Control Valve Breakage Judgement Voltage Limit Limit" storageaddress="0x7D87"/> 
+	<table name="L/U Prohibition Coolant Temperature" storageaddress="0x7D88"/> 
+	<table name="Duty Flow-Quantity Conversion Coefficient" storageaddress="0x7D89"/> 
+	<table name="L/U Judgement Delay" storageaddress="0x7DA3"/> 
+	<table name="High EGT Lambda Control Switchover Delay" storageaddress="0x7DA4"/> 
+	<table name="Interrupt Injection Switchover Reference Compensation Rate" storageaddress="0x7DD0"/>
+	<table name="Amount of Dizzer Addition Upper Limit Deviation" storageaddress="0x7DD1"/> 
+	<table name="Response Diagnosis Judgement Deviation" storageaddress="0x7DD2"/> 
+	<table name="Pull Down F/B P-Gain Gain 2" storageaddress="0x7E54"/> 
+	<table name="F/b Coefficient Upper Limit" storageaddress="0x7E55"/> 
+	<table name="F/b Coefficient Lower Limit" storageaddress="0x7E56"/> 
+	<table name="Time of Fuel Cut, Retard Value" storageaddress="0x7E57"/>
+	<table name="Time of Change in N~TP, Diagnosis Cancellation Condition Computed Time" storageaddress="0x7E58"/> 
+	<table name="Fuel Cut Formation Delay Time" storageaddress="0x7E59"/>
+	<table name="Fuel Cut Time" storageaddress="0x7E5A"/>
+	<table name="Lean/Rich Response Measuring Start Fuel Cut Time" storageaddress="0x7E5B"/> 
+	<table name="Lean/Rich Response Deterioration Diagnosis Parameter Monitor Time" storageaddress="0x7E5C"/> 
+	<table name="Fever Limitation Coefficient (When it Starts)" storageaddress="0x7D9B"/> 
+	<table name="At Time of Dwell Start, Rotation Rise Compensation Coefficient" storageaddress="0x7D9D"/> 
+	<table name="High Coolant Temperature Increase Judgement Speed" storageaddress="0x7FB3"/>
+	<table name="High Coolant Temperature Increase Judgement Value" storageaddress="0x7FB4"/>
+	<table name="Amount of AC Load Big Time Assistant Air" storageaddress="0x7FB5"/> 
+	<table name="IDLE Region TP Upper Limit" storageaddress="0x805E"/> 
+	<table name="Reference by Catalyst Criteria Cylinder" storageaddress="0x8060"/> 
+	<table name="Reference by Emission Criteria Cylinder" storageaddress="0x8061"/> 
+	<table name="Misfire Diagnosis FTP Region Upper limit TP" storageaddress="0x8062"/> 
+	<table name="TINT Measuring Section Limit Movement Number of Times" storageaddress="0x8063"/> 
+	<table name="Watch Mechanism Unusual Time Fuel Cut Start TRIP Condition" storageaddress="0x8064"/> 
+	<table name="Multiple Cylinder Cut Operation Thresholds" storageaddress="0x8065"/> 
+	<table name="Calibration Misfire Condition Continuation Time" storageaddress="0x8066"/> 
+	<table name="Heater Diagnosis NG Judgement Time" storageaddress="0x7B56"/> 
+	<table name="Fuel Temperature Compensation Coefficient Table 2" storageaddress="0xB9A0"/>
+	<table name="AFM Backup TP" storageaddress="0x8C7D"/> 
+	<table name="VTC Drive Abnormality Diagnosis Judgement Delay" storageaddress="0x8D01"/> 
+	<table name="P/S Oil Presure Proportion Compensation Air Quantity (For BIAS)" storageaddress="0x7AD8"/> 
+	<table name="TINT Measuring Start Offset" storageaddress="0x7AD9"/> 
+	<table name="Ignition Timing for the Digital Variable" storageaddress="0x7ADA"/> 
+	<table name="Amount of Ignition Timing Compensation by Cylinder for Digital Variable" storageaddress="0x7ADB"/> 
+	<table name="I-Gain Gain Lower Limit Limiter" storageaddress="0x7ADC"/> 
+	<table name="Model Matching Constant" storageaddress="0x7ADF"/> 
+	<table name="Compensation Vessel H/G Constant 4 (HI Gain)" storageaddress="0x7AE0"/> 
+	<table name="ALPCAT Lower Limit Value" storageaddress="0x7B87"/>
+	<table name="ALPCAT Upper Limit Value" storageaddress="0x7B88"/> 
+	<table name="Activated Charcoal Total Weight" storageaddress="0x7B89"/> 
+	<table name="FcALP Upper Limit" storageaddress="0x7B8C"/> 
+	<table name="Diagnosis Permission MALPHA Upper Limit Value" storageaddress="0x7B8D"/> 
+	<table name="Diagnosis Permission MALPHA Lower Limit Value" storageaddress="0x7B8E"/> 
+	<table name="Acceleration Judgement Acceleration Lower Limit" storageaddress="0x7B8F"/> 
+	<table name="ALPHA Lower Limit Value (When it Slows Down)" storageaddress="0x7B91"/>
+	<table name="ALPHA Upper Limit Value (When it Slows Down)" storageaddress="0x7B92"/> 
+	<table name="DUTY Area Conversion Coefficient" storageaddress="0x7B9C"/> 
+	<table name="Vapor Monitor Control Completion Delay" storageaddress="0x7CCD"/> 
+	<table name="Delay for Leak-Down Diagnosis" storageaddress="0x7CCE"/> 
+	<table name="At Time of 0.02in Leak-Down, Delay for Diagnosis" storageaddress="0x7CCF"/> 
+	<table name="Leak-Down Start Waiting Time" storageaddress="0x7CD0"/> 
+	<table name="Pull-Down Switchover Cancellation Time" storageaddress="0x7CD1"/> 
+	<table name="Atomospheric Pressure Re-measuring Delay" storageaddress="0x7CD2"/> 
+	<table name="Drain-Cut Valve Close Delay" storageaddress="0x7CD3"/> 
+	<table name="Reference Pressure Measuring Delay" storageaddress="0x7CD4"/> 
+	<table name="Delay for Leak-Down Diagnosis" storageaddress="0x7CD7"/> 
+	<table name="Adhesion Magnification Basic Value (1 Cylinder Hit)" storageaddress="0x9681"/> 
+	<table name="Inverse Filter Constant" storageaddress="0xA032"/> 
+	<table name="DDL Data Monitor Permission Flag" storageaddress="0xB22C"/> 
+	<table name="Consult2 CUID" storageaddress="0xB22E"/> 
 	
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	<table name="Delta-QH0 Operation Period" storageaddress="0x7D5D"/> (mDSUMPL A2L)
-	<table name="Torque Compensation Quantity Increase Switchover Delay (For Up Shift)" storageaddress="0x7D62"/> (mDTDTMRU A2L)
-	<table name="Torque Compensation Quantity Increase Switchover Delay" storageaddress="0x7D61"/> (mDTDTMR A2L verify against 84D6 in A2L)
-	<table name="TFBYA Change Rate Limiter" storageaddress="0x7D64"/> (mDTFAD1 A2L)
-	<table name="TFBYA Change Rate Limiter 2" storageaddress="0x7D65"/> (mDTFAD2 A2L)
-	<table name="Torque Going Down Control Prohibition Coolant Temperature" storageaddress="0x7D68"/> (mDTFCTW A2L)
-	<table name="Judgement Delay 1" storageaddress="0x7D69"/> (mDTFNG1 A2L)
-	<table name="Judgement Delay 2" storageaddress="0x7D6A"/> (mDTFNG2 A2L)
-	<table name="After Electrical Load SW OFF, Idle Rise Release Delay" storageaddress="0x7D6B"/> (mDTLOAD A2L)
-	<table name="During Lockup, Control Start Judgement Vehicle Speed" storageaddress="0x7D6C"/> (mDTLVSP A2L)
-	<table name="Delta-TP Condition Upper Limit" storageaddress="0x7D6F"/> (mDTPCAT A2L)
-	<table name="High Speed AIr Learning Dead-Zone" storageaddress="0x7D70"/> (mDTPQLR A2L)
-	<table name="Desorption Heat" storageaddress="0x7D73"/> (mDTRHEAT A2L)
-	<table name="Diagnosis Permission ATVO Upper Limit" storageaddress="0x7D77"/> (mDTVCTH A2L)
-	<table name="HOSCMAX Learning: Learning Region Delta-TVO Upper Limit" storageaddress="0x7D78"/> (mDTVHOS A2L)
-	<table name="HOSCMAX Learning: Learning Region Delta-TVO Judgement Delay" storageaddress="0x7D79"/> (mDTVHOST A2L)
-	<table name="Purge Control Valve Breakage Judgement Sample Number of Times" storageaddress="0x7D7A"/> (mDTVNGC A2L)
-	<table name="DLTADV Amount of Change in Permission VAPO Which Isn't Acceptable" storageaddress="0x7D7B"/> (mDTVODA A2L)
-	<table name="TVO ETC: APOK Monitor Bad Road Judgement Delta Proper Side Reference" storageaddress="0x7D7C"/> (mDTVOGH A2L)
-	<table name="TVO ETC: APOK Monitor Bad Road Judgement Delta Negative Side Reference" storageaddress="0x7D7D"/> (mDTVOGL A2L)	
-	<table name="TVO ETC: APOK Monitor Bad Road Judgement Delta Judgement Number Reference" storageaddress="0x7D7E"/> (mDTVOGN A2L)	
-	<table name="TVO ETC: APOK Monitor Bad Road Judgement Delta Judgement Time Reference" storageaddress="0x7D7F"/> (mDTVOGT A2L)
-	<table name="Slowdown Judgement Delta-TVO" storageaddress="0x7D80"/> (mDTVOMJ A2L)
-	<table name="Acceleration Judgement Delta-TVO" storageaddress="0x7D81"/> (mDTVOPJ A2L)
-	<table name="AFR Sensor Shift Compensation Learning; Learning Region Delta-TVO Upper Limit" storageaddress="0x7D82"/> (mDTVOSC A2L)
-	<table name="AFR Sensor Shift Compensation Learning; Learning Region Delta-TVO Judgement Delay" storageaddress="0x7D83"/> (mDTVOSCT A2L)	
-	<table name="Amount of Low Speed Air Learning (Usually, mode) Step" storageaddress="0x7D85"/> (mDTVQLS A2L)
-	<table name="Purge Control Valve Breakage Judgement Voltage Upper Limit" storageaddress="0x7D86"/> (mDTVRVH A2L)
-	<table name="Purge Control Valve Breakage Judgement Voltage Limit Limit" storageaddress="0x7D87"/> (mDTVRVL A2L)	
-	<table name="L/U Prohibition Coolant Temperature" storageaddress="0x7D88"/> (mDTWLUI A2L)
-	<table name="Heater Performance Requirement L/U Prohibition Coolant Temperature" storageaddress="0x7D89"/> (mDTWLUI2 A2L VERIFY AGAINST A2L)
-	<table name="L/U Judgement Delay" storageaddress="0x7DA3"/> (mDYCKLU A2L)
-	<table name="High EGT Lambda Control Switchover Delay" storageaddress="0x7DA4"/> (mDYHTMP A2L)
-	<table name="Interrupt Injection Switchover Reference Compensation Rate" storageaddress="0x7DD0"/> (mERACP A2L)
-	<table name="Amount of Dizzer Addition Upper Limit Deviation" storageaddress="0x7DD1"/> (mERRLIM A2L)
-	<table name="Response Diagnosis Judgement Deviation" storageaddress="0x7DD2"/> (mERRTIM A2L)
-	<table name="TPS At Time of Single Trouble, LH Executive Flag" storageaddress="0x7DD9"/> (mfTPSSLH A2L COULD BE MULTIPLE MAPS????)
-	<table name="Pull Down F/B P-Gain Gain 2" storageaddress="0x7E54"/> (mFBKP2 A2L)
-	<table name="F/b Coefficient Upper Limit" storageaddress="0x7E55"/> (mFBKSH A2L)
-	<table name="F/b Coefficient Lower Limit" storageaddress="0x7E56"/> (mFBKSL A2L)
-	<table name="Time of Fuel Cut, Retard Value" storageaddress="0x7E57"/> (mFCADV1 A2L VERIFY)
-	<table name="Time of Change in N~TP, Diagnosis Cancellation Condition Computed Time" storageaddress="0x7E58"/> (mFCAFCAN A2L)
-	<table name="Fuel Cut Formation Delay Time" storageaddress="0x7E59"/> (mFCAFHZ A2L)
-	<table name="Fuel Cut Time" storageaddress="0x7E5A"/> (mFCAFHZF A2L)
-	<table name="Lean/Rich Response Measuring Start Fuel Cut Time" storageaddress="0x7E5B"/> (mFCAFHZF2 A2L)
-	<table name="Lean/Rich Response Deterioration Diagnosis Parameter Monitor Time" storageaddress="0x7E5C"/> (mFCAFHZF3 A2L)
-	<table name="Fever Limitation Coefficient (When it Starts)" storageaddress="0x7D9B"/> (mDWLDEGus A2L)
-	<table name="At Time of Dwell Start, Rotation Rise Compensation Coefficient" storageaddress="0x7D9D"/> (mDWLHOS A2L)
-	<table name="High Coolant Temperature Increase Judgement Speed" storageaddress="0x7FB3"/> (mKHOTMNE A2L)
-	<table name="High Coolant Temperature Increase Judgement Value" storageaddress="0x7FB4"/> (mKHOTTW A2L)
-	<table name="Amount of AC Load Big Time Assistant Air" storageaddress="0x7FB5"/> (mKHQAC A2L)
-	<table name="IDLE Region TP Upper Limit" storageaddress="0x805E"/> (mMFPID A2L)
-	<table name="Reference by Catalyst Criteria Cylinder" storageaddress="0x8060"/> (mMFSPC A2L)
-	<table name="Reference by Emission Criteria Cylinder" storageaddress="0x8061"/> (mMFSPE A2L)
-	<table name="Misfire Diagnosis FTP Region Upper limit TP" storageaddress="0x8062"/> (mMFTFTP A2L)
-	<table name="TINT Measuring Section Limit Movement Number of Times" storageaddress="0x8063"/> (mMFZURE A2L)
-	<table name="Watch Mechanism Unusual Time Fuel Cut Start TRIP Condition" storageaddress="0x8064"/> (mMILNGCN A2L)
-	<table name="Multiple Cylinder Cut Operation Thresholds" storageaddress="0x8065"/> (mMINMODD A2L)
-	<table name="Calibration Misfire Condition Continuation Time" storageaddress="0x8066"/> (mMISFTMLM A2L)
-	<table name="Heater Diagnosis NG Judgement Time" storageaddress="0x7B56"/> (mAFHNGT A2L)
-	<table name="Fuel Temperature Compensation Coefficient Table 2" storageaddress="0xB9A0"/> (mTHSTF2 A2L)
-	<table name="AFM Backup TP" storageaddress="0x8C7D"/> (mAFBTP A2L)
-	<table name="VTC Drive Abnormality Diagnosis Judgement Delay" storageaddress="0x8D01"/> (mCNGDLY A2l)
-	<table name="P/S Oil Presure Proportion Compensation Air Quantity (For BIAS)" storageaddress="0x7AD8"/> (mBPSON A2L)
-	<table name="TINT Measuring Start Offset" storageaddress="0x7AD9"/> (mCRING1 A2L)
-	<table name="Ignition Timing for the Digital Variable" storageaddress="0x7ADA"/> (mDVADV A2L)
-	<table name="Amount of Ignition Timing Compensation by Cylinder for Digital Variable" storageaddress="0x7ADB"/> (mDVKADV A2L)
-	<table name="I-Gain Gain Lower Limit Limiter" storageaddress="0x7ADC"/> (mFBILMT A2L)
-	<table name="Model Matching Constant" storageaddress="0x7ADF"/> (mN_BMF A2L)
-	<table name="Compensation Vessel H/G Constant 4 (HI Gain)" storageaddress="0x7AE0"/> (mN_GD1_H A2L)
-	<table name="ALPCAT Lower Limit Value" storageaddress="0x7B87"/> (mALCTMN A2L)
-	<table name="ALPCAT Upper Limit Value" storageaddress="0x7B88"/> (mALCTMX A2L)
-	<table name="Activated Charcoal Total Weight" storageaddress="0x7B89"/> (mALCWAT A2L)
-	<table name="FcALP Upper Limit" storageaddress="0x7B8C"/> (mALP21 A2L)
-	<table name="Diagnosis Permission MALPHA Upper Limit Value" storageaddress="0x7B8D"/> (mALPCTH A2L)
-	<table name="Diagnosis Permission MALPHA Lower Limit Value" storageaddress="0x7B8E"/> (mALPCTL A2L)
-	<table name="Acceleration Judgement Acceleration Lower Limit" storageaddress="0x7B8F"/> (mALPLMT A2L)
-	<table name="ALPHA Lower Limit Value (When it Slows Down)" storageaddress="0x7B91"/> (mALPMND A2L)
-	<table name="ALPHA Upper Limit Value (When it Slows Down)" storageaddress="0x7B92"/> (mALPMXSM A2L)	
-	<table name="DUTY Area Conversion Coefficient" storageaddress="0x7B9C"/> (mAPBYDT A2L VERIFYYYY)
-	<table name="Vapor Monitor Control Completion Delay" storageaddress="0x7CCD"/> (mDIRE14 A2L)
-	<table name="Delay for Leak-Down Diagnosis" storageaddress="0x7CCE"/> (mDIRE15 A2L)
-	<table name="At Time of 0.02in Leak-Down, Delay for Diagnosis" storageaddress="0x7CCF"/> (mDIRE15B A2L)
-	<table name="Leak-Down Start Waiting Time" storageaddress="0x7CD0"/> (mDIRE16 A2L)
-	<table name="Pull-Down Switchover Cancellation Time" storageaddress="0x7CD1"/> (mDIRE17 A2L) 
-	<table name="Atomospheric Pressure Re-measuring Delay" storageaddress="0x7CD2"/> (mDIRE18 A2L)
-	<table name="Drain-Cut Valve Close Delay" storageaddress="0x7CD3"/> (mDIREDC A2L)
-	<table name="Reference Pressure Measuring Delay" storageaddress="0x7CD4"/> (mDIREI1 A2l)
-	<table name="Delay for Leak-Down Diagnosis" storageaddress="0x7CD7"/> (mDIREI5 A2L)
-	<table name="Adhesion Magnification Basic Value (1 Cylinder Hit)" storageaddress="0x9681"/> (mMMFHQT A2L)
-	<table name="Inverse Filter Constant" storageaddress="0xA032"/> (mINV_N_D A2L)
-	<table name="DDL Data Monitor Permission Flag" storageaddress="0xB22C"/> (mCANDLMID A2L)
-	<table name="Consult2 CUID" storageaddress="0xB22E"/> (mCCUID A2L)
 	<table name="DOMON Distinction Flag" storageaddress="0xB27F"/> (mDOID A2L VERIFY)
 	<table name="Control Related to OBD" storageaddress="0xB2A9"/> (mGSM8ID A2L)
 	<table name="PID that a Mode 1 Answer is Possible" storageaddress="0xB2AD"/> (mGSTPI1 A2L)
@@ -1108,9 +1103,235 @@ Maps
 	<table name="SRLTBL Distinction Flag 01H-20H" storageaddress="0xB5AF"/> (mSSRLID0 A2L)
 	<table name="WDLID Distinction Flag 01H-20H" storageaddress="0xB5B3"/> (mSWDLID0 A2L)
 	<table name="SWMONT Distinction Flag" storageaddress="0xB5B7"/> (mSWID A2L)
+	<table name="Lambda Point Compensation Practice VB Lower Limit" storageaddress="0x8B32"/> (mVADJOK A2L)
+	<table name="Amount of Diagnosis Prohibition Vapor Occurrence" storageaddress="0x8B34"/> (mVAPOUT A2L VERIFY IN IDA)
+	<table name="Dwell VB Coefficient" storageaddress="0x8B36"/> (mVBDWL A2L)
+	<table name="Vehicle Speed Filter, First Delay Coefficient" storageaddress="0x8B38"/> (mVDELAY A2L)
+	<table name="VERR Initial Value" storageaddress="0x8B3A"/> (mVERINI A2L)
+	<table name="US Offset (for Adjustment)" storageaddress="0x8B2C"/> (mUSOFS A2L)
+	<table name="AFM Trouble Judgement Voltage Low Side" storageaddress="0x8B2A"/> (mUSNGL A2L)
+	<table name="AFM Trouble Judgement Voltage High Side" storageaddress="0x8B28"/> (mUSNGH A2L)
+	<table name="Time of Amount of Reference Air, Output Voltage" storageaddress="0x8B26"/> (mUS14V A2L)
+	<table name="Switch Over, '10,e is Changed, Vehicle Speed" storageaddress="0x8B1A"/> (mTSTPVSP A2L)
+	<table name="Recover Speed" storageaddress="0x8B18"/> (mTRRECND A2L)
+	<table name="Pull-Down Time Maximum Value" storageaddress="0x8B02"/> (mTPULMX A2L)
+	<table name="T/M Excessive Torqaue Going Down Upper Limit Time" storageaddress="0x843A"/> (mTQDYNH A2L)
+	<table name="At Time of Fuel Cut, Amount of Retard" storageaddress="0x8438"/> (mTQDH A2L)
+	<table name="TTRADV2 Choice Vehicle Speed" storageaddress="0x843B"/> (mTRAD2VSP A2L)
+	<table name="An Idle Off Delay for TTRADV22" storageaddress="0x843C"/> (mTRADIDTM A2L)
+	<table name="Cylinder Distinction Clear Judgement TREF Periodic Ratio" storageaddress="0x843E"/> (mTREFCPSL A2L)
+	<table name="F/C Excuse Judgement Delay" storageaddress="0x843F"/> (mTRFCD A2L)
+	<table name="Urgent Mild Acceleration Judgement Delta-TP (Before 10mS)" storageaddress="0x8440"/> (mTRFSTP A2L)
+	<table name="Rich Side KBLRCA Whole Area Reflection Condition Judgement Time" storageaddress="0x8442"/> (mTRKBRA A2L)
+	<table name="After Transient State Judgement, Delay Time" storageaddress="0x8443"/> (mTRSDLY A2L)
+	<table name="Trip 1 Rush Condition Continuation Time" storageaddress="0x844E"/> (mTTRIP1 A2l)
+	<table name="Trip 2 Rush Condition Continuation Time" storageaddress="0x844F"/> (mTTRIP2 A2l)
+	<table name="Trip 3 Rush Condition Continuation Time" storageaddress="0x8450"/> (mTTRIP3 A2l)	
+	<table name="At Least, Coolant Temperature Judgement Time" storageaddress="0x8451"/> (mTTWINTF A2L)
+	<table name="Maximum Operation Time" storageaddress="0x8452"/> (mTTXMAX A2L)
+	<table name="Coolant Temperature Convergent Judgement Section Coefficient" storageaddress="0x844C"/> (mTTHIVL A2L)
+	<table name="TVO upper Limit Value" storageaddress="0x845A"/> (mTVOADV A2L)
+	<table name="After Idle Off, TVO Value Lower Limit" storageaddress="0x8459"/> (mTVHADS A2L)	
+	<table name="Evaporation Heat Constant Lower Limit" storageaddress="0x845E"/> (mTVPRZ A2L)
+	<table name="Vehicle Speed Sensor Un-Adjustment Diagnosis Time" storageaddress="0x845F"/> (mTVSPNG A2L)
+	<table name="At the Time of Power Steering On, AC Cut Judgement Coolant Temperature" storageaddress="0x8466"/> (mTWACPS A2L)
+	<table name="Air-Conditioning Cut Coolant Temperature" storageaddress="0x8467"/> (mTWACRH A2L)
+	<table name="Air-Conditioning Cut Release Coolant Temperature" storageaddress="0x8468"/> (mTWACRL A2L)
+	<table name="Adjustment Control Permission Coolant Temperature Upper Limit" storageaddress="0x8469"/> (mTWADJH A2L)
+	<table name="Adjustment Control Permission Coolant Temperature Lower Limit" storageaddress="0x846A"/> (mTWADJL A2L)
+	<table name="AFR Sensor Breakage Diagnosis Coolant Temperature Upper Limit Value" storageaddress="0x846B"/> (mTWAFH A2L)
+	<table name="AFS Response Deterioration Diagnosis Coolant Temperature Upper Limit Value" stroageaddress="0x846C"/> (mTWAFHZH A2L)
+	<table name="AFS Response Deterioration Diagnosis Coolant Temperature Lower Limit Value" storageaddress="0x846D"/> (mTWAFHZL A2L)
+	<table name="AFR Sensor Breakage Diagnosis Coolant Temperature Lower Limit Value" storageaddress="0x846E"/> (mTWAFL A2L)	
+	<table name="Difference in a Degree of An Intake Air Temperature Offset Quantity Switching Coolant Temperature IAT" storageaddress="0x846F"/> (mTWAOFS A2L)
+	<table name="Permission Condition Coolant Temperature Condition upper Limit Value" storageaddress="0x8472"/> (mTWCJ2 A2L)
+	<table name="Permission Condition Coolant Temperature Condition Lower Limit Value" storageaddress="0x8473"/> (mTWCJ4 A2L)
+	<table name="CLOSE Control Start Coolant Temperature" storageaddress="0x8474"/> (mTWCLMP A2L)
+	<table name="Canister Purge Control Region Coolant Temperature Condition" storageaddress="0x8476"/> (mTWCPC A2L)
+	<table name="At Time of Start, Ignition Timing Compensation Control Upper Limit Coolant Temperature" storageaddress="0x8477"/> (mTWCRADV A2L)
+	<table name="At Time of Fuel Cut, Diagnosis Timing Counter Subtraction Fee" storageaddress="0x8478"/> (mTWDOWN A2L)
+	<table name="KDUTY UP EVPTR Condition" storageaddress="0x847D"/> (mTWEVCD A2L)
+	<table name="Cut-In Delay Switching Coolant Temperature" storageaddress="0x847E"/> (mTWFCD A2L)
+	<table name="IAT Sensor Diagnosis Coolant Temperature Sensor Voltage Upper Limit" storageaddress="0x847F"/> (mTWFSH A2L)
+	<table name="IAT Sensor Diagnosis Coolant Temperature Sensor Voltage Upper Limit" storageaddress="0x8480"/> (mTWFSH A2L)	
+	<table name="At Time of Heat Resisting, Idle Rise Start Coolant Temperature" storageaddress="0x8482"/> (mTWHEAT A2L)
+	<table name="At Time of Acceleration, Judgement Coolant Temperature Upper Limit" storageaddress="0x8484"/> (mTWHLMT A2L)
+	<table name="When Learning Starts, Coolant Temperature Condition Lower Limit" storageaddress="0x8486"/> (mTWIKB A2L)
+	<table name="An ISC I-Gain is Saved, Control Permission Coolant Temperature Lower Limit" storageaddress="0x8487"/> (mTWIMN A2L)
+	<table name="An ISC I-Gain is Saved, Control Permission Coolant Temperature Upper Limit" storageaddress="0x8488"/> (mTWIMX A2L)	
+	<table name="Judgement Coolant Temperature That a Pole Low Coolant Temperature is Sequential" storageaddress="0x8489"/> (mTWINJT A2L)
+	<table name="At Time of Diagnosis Permission Start, Coolant Temperature Condition Upper Limit Value" storageaddress="0x848A"/> (mTWINTH A2L)
+	<table name="At Time of Diagnosis Permission Start, Coolant Temperature Condition Lower Limit Value" storageaddress="0x848B"/> (mTWINTL A2L)
+	<table name="IAT Offset Value Cold Start" storageaddress="0x848C"/> (mTWIOFS A2L)
+	<table name="At Time of Diagnosis Permission Judgement Start, Coolant Temperature Condition Lower Limit" storageaddress="0x848D"/> (mTWIROX A2L)
+	<table name="ISC Switching Coolant Temperature (After Warmth, Coolant Temperature)" storageaddress="0x848E"/> (mTWISCH A2L)
+	<table name="ISC Switching Coolant Temperature (A Space Time Coolant Temperature)" storageaddress="0x848F"/> (mTWISCL A2L)
+	<table name="Learning Operation Start Coolant Temperature Upper Limit" storageaddress="0x8490"/> (mTWISLH A2L)
+	<table name="Learning Operation Start Coolant Temperature Lower Limit" storageaddress="0x8491"/> (mTWISLL A2L)
+	<table name="Learning Coolant Temperature Upper Limit" storageaddress="0x8492"/> (mTWKBH A2L)
+	<table name="Learning Coolant Temperature Lower Limit" storageaddress="0x8493"/> (mTWKBL A2L)
+	<table name="N At Time of D Select, Target Idle Rotation Decline Control Start Coolant Temperature Upper Limit" storageaddress="0x849E"/> (mTWNDH A2L)
+	<table name="IGN SW ON-Off Coolant Temperature Difference Upper Limit" storageaddress="0x849F"/> (mTWNDKO A2L)
+	<table name="At Time of IGN SW ON-OFF, Coolant Temperature Difference Upper Limit" storageaddress="0x84A0"/> (mTWNDKOH A2L)
+	<table name="N At Time of D Select, Target Idle Rotation Decline Control Start Coolant Temperature Lower Limit" storageaddress="0x84A1"/> (mTWNDL A2L)
+	<table name="Cleaning Mode Permission Coolant Temperature Lower Limit" storageaddress="0x84EE"/> (mVCLTWL A2L)
+	<table name="Cleaning Mode Permission Coolant Temperature Upper Limit" storageaddress="0x84ED"/> (mVCLTWH A2L)
+	<table name="During Cleaning, DUTY" storageaddress="0x84EB"/> (mVCLDUTY A2L)
+	<table name="FLASH Programming Voltage Lower Limit Value" storageaddress="0x84E0"/> (mVBFLASH A2L)
+	<table name="Effect Voltage Lower Limit Value With Crank Corner Sensor" storageaddress="0x84DD"/> (mVBCSTH A2L)
+	<table name="Start SW At Time of ON, Battery Voltage Lower Limit" storageaddress="0x84DC"/> (mVBCSMN A2L)
+	<table name="Start SW Just Before ON, Battery Voltage Lower Limit" storageaddress="0x84DB"/> (mVBCS A2L)
+	<table name="US AD Conversion Central Value" storageaddress="0x84D9"/> (mUSCNTR A2L)
+	<table name="US AD Conversion Upper Limit Value" storageaddress="0x84D8"/> (mUSADMX A2L)
+	<table name="US AD Conversion Lower Limit Value" storageaddress="0x84D7"/> (mUSADMN A2L)
+	<table name="Fuel Cut Prohibition Accelerator Open Degree" storageaddress="0x84D3"/> (mTXVAPL A2L)
+	<table name="Recover Start Coolant Temperature Delay" storageaddress="0x84C5"/> (mTWVTCMG A2L)
+	<table name="A TWTMR Table is Cut Up, At Least, Degree of an IAT" storageaddress="0x84C4"/> (mTWTTYU A2L)
+	<table name="At Time of Lack of Inhalation Air, Diagnosis Timing Counter Addition Value" storageaddress="0x84C3"/> (mTWTIME A2L)
+	<table name="OK Judgement Value" storageaddress="0x84C2"/> (mTWTHOK A2L)
+	<table name="NG Judgement Value" storageaddress="0x84C1"/> (mTWTHNG A2L)
+	<table name="Coolant Temperature Condition Lower Limit" storageaddress="0x84C0"/> (mTWTAL A2L)
+	<table name="Coolant Temperature Condition Upper Limit" storageaddress="0x84BF"/> (mTWTAH A2L)
+	<table name="Coolant Temperature Soak Judgement Criteria" storageaddress="0x84BD"/> (mTWSKCR A2L)
+	<table name="Diagnosis Permission Judgement Coolant Temperature Lower Limit" storageaddress="0x84B6"/> (mTWRO2L A2L)
+	<table name="Diagnosis Permission Judgement Coolant Temperature Upper Limit" storageaddress="0x84B5"/> (mTWRO2H A2L)
+	<table name="Coolant Temperature Sensor Trouble Judgement Temperature" storageaddress="0x84A9"/> (mTWNOK A2L)
+	<table name="Coolant Temperature Condition Lower Limit 2" storageaddress="0x84AA"/> (mTWNSL A2L)
+	<table name="CLOSE Control Switchover Coolant Temperature (After Fixed Time Progress)" storageaddress="0x84AD"/> (mTWOPEN A2L)
+	<table name="Overheat Judgement Coolant Temperature" storageaddress="0x84AE"/> (mTWOVH A2L)
+	<table name="Pre-Ignition Avoidance Control lower Limit Coolant Temperature" storageaddress="0x84B0"/> (mTWPIG A2L)
+	<table name="Pre-Retard Permission Coolant Temperature" storageaddress="0x84B1"/> (mTWPRD A2L)
+	<table name="High Speed Air Learning Permission Coolant Temperature Upper Limit" storageaddress="0x84B2"/> (mTWQLH A2L)
+	<table name="High Speed Air Learning Permission Coolant Temperature Lower Limit" storageaddress="0x84B3"/> (mTWQLL A2L)	
+	<table name="REF Reference Position Synchronous Injection Timing Compensation (Time of Pole Low Coolant Temperature)" storageaddress="0x84F6"/> (mVDINJ2 A2L)
+	<table name="REF Reference Position Synchronous Injection Timing Compensation" storageaddress="0x84F5"/> (mVDINJ1 A2L)
+	<table name="Dead-Zone Width for the Dizzer" storageaddress="0x84F9"/> (mVEERHB A2L)
+	<table name="D Dead-Zone Width" storageaddress="0x84FA"/> (mVEERHD A2L)
+	<table name="I-Gain Dead-Zone Width" storageaddress="0x84FD"/> (mVEERHI A2L)
+	<table name="P-Gain Dead-Zone Width" storageaddress="0x8500"/> (mVEERHP A2L)
+	<table name="‘Ò‚¿, ‚¯ logic completion judgement time" storageaddress="0x8503"/> (mVEREND A2L)
+	<table name="VO2 Compensation Start Voltage (Rich Side)" storageaddress="0x8506"/> (mVHOSH A2L)
+	<table name="VO2 Compensation Start Voltage (Lean Side)" storageaddress="0x8507"/> (mVHOSL A2L)
+	<table name="Heating Energy Integration offset" storageaddress="0x8508"/> (mVHW A2L)
+	<table name="At Time of Idle Autonomous Running Clamp, Judgement Vehicle Speed Lower Limit Value" storageaddress="0x850F"/> (mVJISOH A2L)
+	<table name="At Time of Idle Autonomous Running Clamp, Judgement Vehicle Speed Lower Limit Value" storageaddress="0x8510"/> (mVJISOL A2L)
+	<table name="Control Control MAX Vehicle Speed (Low)" storageaddress="0x8513"/> (mVMAX1 A2L)
+	<table name="Control Control MAX Vehicle Speed (Height)" storageaddress="0x8516"/> (mVMAX2 A2L)
+	<table name="Low Pressure Cut Pressure" storageaddress="0x8525"/> (mVPDACL A2L)
+	<table name="High Pressure Reversion Pressure" storageaddress="0x8526"/> (mVPDARH A2L)
+	<table name="High Pressure Reversion Pressure (Idle)" storageaddress="0x8527"/> (mVPDARHI A2L)
+	<table name="Low Pressure Reversion Pressure" storageaddress="0x8528"/> (mVPDARL A2L)
+	<table name="VRO2 Compensation Start Voltage (Rich Side)" storageaddress="0x852D"/> (mVRHOSH A2L)
+	<table name="VRO2 Compensation Start Voltage (Lean Side)" storageaddress="0x852E"/> (mVRHOSL A2L)
+	<table name="Slowdown Lean Clamp Rate Judgement Vehicle Speed" storageaddress="0x8532"/> (mVSCLPH A2L)
+	<table name="Diagnosis Permission Vehicle Speed Condition Lower Limit Value" storageaddress="0x8535"/> (mVSCTL A2L)
+	<table name="Learning Vehicle Speed Condition Lower Limit" storageaddress="0x8537"/> (mVSKBLB A2L)
+	<table name="Learning Vehicle Speed Condition Upper Limit" storageaddress="0x8538"/> (mVSKBLH A2L)	
+	<table name="NG Judgement Timer Count Rise Delay" storageaddress="0x8539"/> (mVSNGD1 A2L)
+	<table name="NG Judgement Timer Count Rise Delay 2" storageaddress="0x853A"/> (mVSNGD2 A2L)
+	<table name="Vehicle Speed Condition Lower Limit" storageaddress="0x853D"/> (mVSNSL A2L)
+	<table name="Idle Judgement Vehicle Speed" storageaddress="0x8544"/> (mVSPIDL A2L)
+	<table name="Coolant Temperature Lower Limit for Vehicle Speed Sensor Diagnosis Judgement" storageaddress="0x8547"/> (mVSPJTW A2L)
+	<table name="The Exhaust the Second Air Increase Judgement Vehicle Speed" storageaddress="0x8548"/> (mVSPKAP A2L)
+	<table name="Slowdown Lean Clamp Release Vehicle Speed" storageaddress="0x8549"/> (mVSPLCC A2L)
+	<table name="Slowdown Lean Clamp Judgement Vehicle Speed" storageaddress="0x854A"/> (mVSPLCP A2L)
+	<table name="At the Time of Acceleration, Judgement Vehicle Speed Lower Limit" storageaddress="0x854B"/> (mVSPLLM A2L)
+	<table name="At the Time of Acceleration, Judgement Vehicle Speed Upper Limit" storageaddress="0x854C"/> (mVSPLMT A2L)	
+	<table name="mVSPRC2R Recovery Speed (Reverse)" storageaddress="0x854F"/> (mVSPRC2R a2L PUT NEXT TO MVSPRC2!!)
+	<table name="Vehicle Speed Condition Lower Limit" storageaddress="0x8553"/> (mVSPTAN A2L)
+	<table name="At Time of Failsafe, Retard Quantity (Time of High Coolant Temperature)" storageaddress="0x8557"/> (mVTCADH A2L)
+	<table name="At Time of Failsafe, Retard Quantity (Time of Low Coolant Temperature)" storageaddress="0x8558"/> (mVTCADL A2L)
+	<table name="VTC Drive Abnormality Diagnosis Permission Coolant Temperature Upper Limit" storageaddress="0x855C"/> (mVTCCTWH A2L)
+	<table name="VTC Drive Abnormality Diagnosis Permission Coolant Temperature Lower Limit" storageaddress="0x855D"/> (mVTCCTWL A2L)
+	<table name="At Time of VTC Idle, Offset Diagnosis Permission Engine Rotation Lower Limit" storageaddress="0x8565"/> (mVTCINEL A2L)
+	<table name="At Time of VTC Idle, Offset Diagnosis Permission Coolant Temperature Lower Limit" storageaddress="0x8566"/> (mVTCITWL A2L)
+	<table name="Cleaning Time" storageaddress="0x8567"/> (mVTCLHT A2L)
+	<table name="Cleaning Period" storageaddress="0x8568"/> (mVTCLLT A2L)
+	<table name="NG Judgement Delay for MIL Lighting" storageaddress="0x856B"/> (mVTCMLDLY A2L)
+	<table name="NG Judgement Delay" storageaddress="0x8575"/> (mVTCNGDLY A2L)
+	<table name="VTC Offset Diagnosis Permission Coolant Temperature Upper Limit" storageaddress="0x857A"/> (mVTCOTWH A2L)
+	<table name="VTC Offset Diagnosis Permission Coolant Temperature Lower Limit" storageaddress="0x857B"/> (mVTCOTWL A2L)	
+	<table name="After Start, Diagnosis Start Delay" storageaddress="0x857E"/> (mVTCSDLY A2L)
+	<table name="VTC Solenoid Drive DUTY Period" storageaddress="0x8582"/> (mVTCTIM A2L)
+	<table name="CVTC Delay Time for MIL Lighting" storageaddress="0x85A4"/> (mVTNEDML A2L)
+	<table name="Target Angle Change Rate Limitation Value for Drive Abnormality Diagnosis" storageaddress="0x85C1"/> (mVTTRLIM A2L)
+	<table name="Subtraction Side Learning Weighted Average Value" storageaddress="0x85C8"/> (mWISCLD A2L)
+	<table name="Learning Weighted Average Value" storageaddress="0x85C9"/> (mWISCLR A2L)
+	<table name="EEPROM Writing Trial Number of Times" storageaddress="0x85CB"/> (mWTMX A2L) //Ask fenugrec about importance  
+	<table name="NAVI- Communication Fail Judgement Time" storageaddress="0x85D1"/> (mZKFLTIM A2L)
+	<table name="IDLHOS Loss in Weight Side Limiter" storageaddress="0x85D2"/> (mZLMT A2L) 
+	<table name="Minus KTW Learning Value Reflection Width Upper Limit" storageaddress="0x85D3"/> (mMKLMAX A2L)
+	<table name="Minus KTW Learning Value Reflection Width Upper Limit" storageaddress="0x85D4"/> (mMKLMIN A2L)
+	<table name="Coefficient A0 (QA Region #1)" storageaddress="0x85D6"/> (mA0QA1 A2L)
+	<table name="Coefficient A0 (QA Region #1 Bank 2)" storageaddress="0x85D8"/> (mA0QA12 A2L)
+	<table name="Coefficient A0 (QA Region #2)" storageaddress="0x85DA"/> (mA0QA2 A2L)
+	<table name="Coefficient A0 (QA Region #2 Bank 2)" storageaddress="0x85DC"/> (mA0QA22 A2L)
+	<table name="Coefficient A0 (QA Region #3)" storageaddress="0x85DE"/> (mA0QA3 A2L)
+	<table name="Coefficient A0 (QA Region #3 Bank 2)" storageaddress="0x85E0"/> (mA0QA32 A2L)	
+	<table name="Coefficient A1 (QA Region #1)" storageaddress="0x85E2"/> (mA1QA1 A2L)
+	<table name="Coefficient A1 (QA Region #1 Bank 2)" storageaddress="0x85E4"/> (mA1QA12 A2L)
+	<table name="Coefficient A1 (QA Region #2)" storageaddress="0x85E6"/> (mA1QA2 A2L)
+	<table name="Coefficient A1 (QA Region #2 Bank 2)" storageaddress="0x85E8"/> (mA1QA22 A2L)
+	<table name="Coefficient A1 (QA Region #3)" storageaddress="0x85EA"/> (mA1QA3 A2L)
+	<table name="Coefficient A1 (QA Region #3 Bank 2)" storageaddress="0x85EC"/> (mA1QA32 A2L)	
+	<table name="AFR Sensor Shift Compensation Lower Limit Value" storageaddress="0x8630"/> (mKBLHMN A2L)
+	<table name="AFR Sensor Shift Compensation Upper Limit Value" storageaddress="0x8632"/> (mKBLHMX A2L)
+	<table name="HOSCMAX Learning: Learning Region AFSHOS Upper Limit" storageaddress="0x862A"/> (mHOSAFSH A2L)
+	<table name="HOSCMAX Learning: Learning Region AFSHOS Lower Limit" storageaddress="0x862C"/> (mHOSAFSL A2L)
+	<table name="Amount of Knock Retard" storageaddress="0x8628"/> (mDRET A2L)
+	<table name="At Time of Off-line Idle Learning, QFBI Lower Limit" storageaddress="0x8654"/> (mQLIMN1 A2l)
+	<table name="At Time of Off-Line Idle Learning, QFBI Upper Limit" storageaddress="0x8656"/> (mQLIMX1 A2L)
+	<table name="QTASEEP1 Lower Limit Value" storageaddress="0x865A"/> (mQTASMN1 A2L)
+	<table name="QTASEEP1 Upper Limit Value" storageaddress="0x865C"/> (mQTASMX1 A2L)
+	<table name="Amount of Alley Drive Power Compensation" storageaddress="0x8662"/> (mSADFD A2L)
+	<table name="Pull-Down Region Cancellation Delay" storageaddress="0x83BD"/> (mTMEVC3 A2L)
+	<table name="Pull-Down Region Disconnection Delay" storageaddress="0x83BE"/> (mTMEVC4 A2L)
+	<table name="Diagnosis Prohibition Delay Time" storageaddress="0x83BF"/> (mTMEVCD A2L)
+	<table name="Vehicle Speed Sensor Trouble Judgement Delay" storageaddress="0x83B6"/> (mTMDVDG A2L)
+	<table name="Diagnosis Permission DOS Formation Time Condition" storageaddress="0x83B3"/> (mTMDOS A2L)
+	<table name="Purge Stop Condition Time" storageaddress="0x83C5"/> (mTMEVPC A2L)
+	<table name="Misfire Judgement Cancellation Delay" storageaddress="0x83C6"/> (mTMFD2 A2L0
+	<table name="The First Fuel Pump on Time" storageaddress="0x83C8"/> (mTMFPON A2L)
+	<table name="TMFR Permission Speed" storageaddress="0x83CD"/> (mTMFRNEH A2L)
+	<table name="KTINT Compensation Operation Condition" storageaddress="0x83CF"/> (mTMGNSK A2L)
 	
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
+	
+	
+\\\\\ FLAGS /////
+0x8441 2TRIP Diagnosis Flag mTRIPSWS
+TPS At Time of Single Trouble, LH Executive Flag 0x7DD9 mfTPSSLH COULD BE MULTIPLE MAPS
+
 	
 	<table name="DVP4 Re-measuring Delay" storageaddress="0"/> (mDIRE19 uint16 A2L)
 
@@ -1143,7 +1364,7 @@ Maps
 	<table name="U22" storageaddress="0xC716"/> (A2L Uint16 8x1)
 	
 	
-	
+
 	
 B7E5 could be timing related?? 
 	
@@ -1325,6 +1546,8 @@ DE10 is an axis or something
 	<table name="Crank Fueling TP value" storageaddress="0xd1f6"/>
 
 	<table name="Unburnt Gas Density Table" storageaddress="0"/>
+	
+	<table name="MAF idle voltage limits (USRV)" storageaddress="0x8B2E"/> 
 
 	<table name="Coolant Temperature Compensation Table" storageaddress="0xB834"/>
 
