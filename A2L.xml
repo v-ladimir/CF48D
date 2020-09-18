@@ -2089,7 +2089,7 @@
 	
 	<table type="3D" name="QH0/ torque conversion map" category="Torque Management" storagetype="uint16" endian="big" sizex="16" sizey="16" userlevel="1" logparam="?">
 		<scaling units="Nm" expression="x/10-3276.8" to_byte="x*10+32768" format="0" fineincrement="1" coarseincrement="10" />
-		<table type="X Axis" name="QH0 flow quantity ratio" storagetype="uint16" endian="big" logparam="?">
+		<table type="X Axis" name="QH0 flow quantity ratio" storagetype="uint16" endian="big" logparam="Z24">
 			<scaling units="%" expression="x*0.00152588" to_byte="x/0.00152588" format="0.00" fineincrement="1" coarseincrement="10" />
 		</table>
 		<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="big" logparam="P8">
@@ -2100,7 +2100,7 @@
 
 	<table type="3D" name="QH0/ torque conversion map 2" category="Torque Management" storagetype="uint16" endian="big" sizex="16" sizey="16" userlevel="1" logparam="?">
 		<scaling units="Nm" expression="x/10-3276.8" to_byte="x*10+32768" format="0" fineincrement="1" coarseincrement="10" />
-		<table type="X Axis" name="QH0 flow quantity ratio" storagetype="uint16" endian="big" logparam="?">
+		<table type="X Axis" name="QH0 flow quantity ratio" storagetype="uint16" endian="big" logparam="Z24">
 			<scaling units="%" expression="x*0.00152588" to_byte="x/0.00152588" format="0.00" fineincrement="1" coarseincrement="10" />
 		</table>
 		<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="big" logparam="P8">
@@ -12039,18 +12039,9 @@
 		<description>mINV_N_D- Inverse filter constant</description>
 	</table>
 
-	<table type="2D" name="DDL Data Monitor Permission Flag" category="Unknown" storagetype="uint8" sizey="2" endian="big" userlevel="5" >
-		<scaling units="-" expression="x" to_byte="x" format="0.00"/>
-	<table type="Y Axis" name="Long" sizey="2">
-			<data>0</data>
-			<data>1</data>
-	</table>
-	<description>mCANDLMID- DDL data monitor permission flag</description>
-	</table>
-
-	<table type="2D" name="Consult2 CUID" category="Unknown" storagetype="uint8" sizey="2" endian="big" userlevel="5" >
+	<table type="2D" name="Consult2 CUID" category="Unknown" storagetype="uint8" sizey="20" endian="big" userlevel="5" >
 		<scaling units="l" expression="x" to_byte="x" format="0.00"/>
-	<table type="Y Axis" name="Long" sizey="2">
+	<table type="Y Axis" name="Long" sizey="20">
 			<data>0</data>
 			<data>1</data>
 			<data>2</data>
@@ -12074,6 +12065,2715 @@
 	</table>
 	<description>mCCUID- CONSULT2 CUID</description>
 	</table>
+
+
+	<table type="2D" name="Control Related to OBD" category="OBD" storagetype="uint8" sizey="4" endian="big" userlevel="5" >
+		<scaling units="-" expression="x" to_byte="x" format="0"/>
+	<table type="Y Axis" name="Long" sizey="4">
+			<data>0</data>
+			<data>1</data>
+			<data>2</data>
+			<data>3</data>
+	</table>
+	<description>mGSM8ID- Control related to OBD</description>
+	</table>
+
+	<table type="2D" name="PID that a Mode 1 Answer is Possible" category="OBD" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="-" expression="x" to_byte="x" format="0"/>
+	<table type="Y Axis" name="Long" sizey="8">
+			<data>0</data>
+			<data>1</data>
+			<data>2</data>
+			<data>3</data>
+			<data>4</data>
+			<data>5</data>
+			<data>6</data>
+			<data>7</data>
+	</table>
+	<description>mGSTPI1- PID that a mode 1 answer is possible</description>
+	</table>
+
+	<table type="2D" name="PID that a Mode 2 Answer is Possible" category="OBD" storagetype="uint8" sizey="4" endian="big" userlevel="5" >
+		<scaling units="-" expression="x" to_byte="x" format="0"/>
+	<table type="Y Axis" name="Long" sizey="4">
+			<data>0</data>
+			<data>1</data>
+			<data>2</data>
+			<data>3</data>
+	</table>
+	<description>mGSTPI2- PID that a mode 2 answer is possible</description>
+	</table>
+
+	<table type="2D" name="Vehicles Information Type That it can Respond" category="OBD" storagetype="uint8" sizey="4" endian="big" userlevel="5" >
+		<scaling units="-" expression="x" to_byte="x" format="0"/>
+	<table type="Y Axis" name="Long" sizey="4">
+			<data>0</data>
+			<data>1</data>
+			<data>2</data>
+			<data>3</data>
+	</table>
+	<description>mGSTPI9- The vehicles information type that it can respond</description>
+	</table>
+
+
+	<table type="2D" name="Test Item (01`1FH) That it Can Respond" category="OBD" storagetype="uint8" sizey="4" endian="big" userlevel="5" >
+		<scaling units="-" expression="x" to_byte="x" format="0"/>
+	<table type="Y Axis" name="Long" sizey="4">
+			<data>0</data>
+			<data>1</data>
+			<data>2</data>
+			<data>3</data>
+	</table>
+	<description>mM6TID0- The test item (01`1FH) that it can respond</description>
+	</table>
+
+	<table type="2D" name="Test Item (21-3FH) That it Can Respond" category="OBD" storagetype="uint8" sizey="4" endian="big" userlevel="5" >
+		<scaling units="-" expression="x" to_byte="x" format="0"/>
+	<table type="Y Axis" name="Long" sizey="4">
+			<data>0</data>
+			<data>1</data>
+			<data>2</data>
+			<data>3</data>
+	</table>
+	<description>mM6TID0- The test item (21-3FH) that it can respond</description>
+	</table>
+
+	<table type="2D" name="Test Item (41-5FH) That it Can Respond" category="OBD" storagetype="uint8" sizey="4" endian="big" userlevel="5" >
+		<scaling units="-" expression="x" to_byte="x" format="0"/>
+	<table type="Y Axis" name="Long" sizey="4">
+			<data>0</data>
+			<data>1</data>
+			<data>2</data>
+			<data>3</data>
+	</table>
+	<description>mM6TID0- The test item (41-5FH) that it can respond</description>
+	</table>
+
+	<table type="2D" name="Test Item (61-7FH) That it Can Respond" category="OBD" storagetype="uint8" sizey="4" endian="big" userlevel="5" >
+		<scaling units="-" expression="x" to_byte="x" format="0"/>
+	<table type="Y Axis" name="Long" sizey="4">
+			<data>0</data>
+			<data>1</data>
+			<data>2</data>
+			<data>3</data>
+	</table>
+	<description>mM6TID0- The test item (61-7FH) that it can respond</description>
+	</table>
+
+	<table type="2D" name="Lambda Point Compensation Practice VB Lower Limit" category="Unknown" storagetype="uint16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*80" to_byte="x/80" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVADJOK- Lambda point compensation practice VB lower limit</description>
+	</table>
+
+	<table type="2D" name="Amount of Diagnosis Prohibition Vapor Occurrence" category="Unknown" storagetype="uint16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*0.078125" to_byte="x/0.078125" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVAPOUT- Lambda point compensation practice VB lower limit</description>
+	</table>
+
+	<table type="2D" name="Dwell VB Coefficient" category="Unknown" storagetype="uint16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="(mV^2)se" expression="x*128" to_byte="x/128" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVBDWL- Dwell VB coefficient</description>
+	</table>
+
+	<table type="2D" name="Vehicle Speed Filter, First Delay Coefficient" category="Unknown" storagetype="uint16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="%" expression="x*0.001525879" to_byte="x/0.001525879" format="0.0000"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVBDWL- The vehicle speed filter the first delay coefficient</description>
+	</table>
+
+	<table type="2D" name="VERR Initial Value" category="Unknown" storagetype="uint16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*5" to_byte="x/5" format="0"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVERINI- VERR initial value</description>
+	</table>
+
+	<table type="2D" name="US Offset (for Adjustment)" category="Unknown" storagetype="uint16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*5" to_byte="x/5" format="0"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mUSOFS- US offset (for the adjustment)</description>
+	</table>
+
+	<table type="2D" name="AFM Trouble Judgement Voltage Low Side" category="Unknown" storagetype="uint16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*5" to_byte="x/5" format="0"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mUSNGL- The AFM trouble judgement voltage low side</description>
+	</table>
+
+	<table type="2D" name="AFM Trouble Judgement Voltage High Side" category="Unknown" storagetype="uint16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*5" to_byte="x/5" format="0"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mUSNGH- The AFM trouble judgement voltage high side</description>
+	</table>
+
+	<table type="2D" name="Time of Amount of Reference Air, Output Voltage" category="Unknown" storagetype="uint16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*5" to_byte="x/5" format="0"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mUS14V- At the time of the amount of reference air, output voltage</description>
+	</table>
+
+	<table type="2D" name="Switch Over, '10,e is Changed, Vehicle Speed" category="Unknown" storagetype="uint16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Km/h" expression="x*0.1" to_byte="x/0.1" format="0"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTSTPVSP- Switchover step ’lØ‚è is changed, vehicle speed</description>
+	</table>
+
+	<table type="2D" name="Recover Speed" category="Unknown" storagetype="uint16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Nm/10ms" expression="x*0.1" to_byte="x/0.1" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTRRECND- Recover speed</description>
+	</table>
+
+	<table type="2D" name="Pull-Down Time Maximum Value" category="Unknown" storagetype="uint16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTPULMX- Pull-down time maximum value</description>
+	</table>
+
+	<table type="2D" name="T/M Excessive Torqaue Going Down Upper Limit Time" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*10" to_byte="x/10" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTQDYNH- T/M excessive torque going down upper limit time</description>
+	</table>
+
+	<table type="2D" name="At Time of Fuel Cut, Amount of Retard" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Deg" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTQDH- At the time of the fuel cut, the amount of retard</description>
+	</table>
+
+	<table type="2D" name="TTRADV2 Choice Vehicle Speed" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Km/h" expression="x*2" to_byte="x/2" format="0.0"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTRAD2VSP- TTRADV2 Choice vehicle speed</description>
+	</table>
+
+	<table type="2D" name="An Idle Off Delay for TTRADV22" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*10" to_byte="x/10" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTRADIDTM- An idle off delay for TTRADV22</description>
+	</table>
+
+	<table type="2D" name="Cylinder Distinction Clear Judgement TREF Periodic Ratio" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*0.0078125" to_byte="x/0.0078125" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTREFCPSL- Cylinder distinction clear judgement TREF periodic ratio</description>
+	</table>
+
+	<table type="2D" name="F/C Excuse Judgement Delay" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*10" to_byte="x/10" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTRFCD- F/C excuse judgement delay</description>
+	</table>
+
+	<table type="2D" name="Urgent Mild Acceleration Judgement Delta-TP (Before 10mS)" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*0.125" to_byte="x/0.125" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTRFSTP- Urgent mild acceleration judgement delta-TP (before 10mS)</description>
+	</table>
+
+	<table type="2D" name="Rich Side KBLRCA Whole Area Reflection Condition Judgement Time" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Sec" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTRKBRA- Rich side KBLRCA whole area reflection condition judgement time</description>
+	</table>
+
+	<table type="2D" name="After Transient State Judgement, Delay Time" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="msec" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTRSDLY- After the transient state judgement, delay time</description>
+	</table>
+
+	<table type="2D" name="Trip 1 Rush Condition Continuation Time" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Sec" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTTRIP1- Trip 1 rush condition continuation time</description>
+	</table>
+
+	<table type="2D" name="Trip 2 Rush Condition Continuation Time" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Sec" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTTRIP2- Trip 2 rush condition continuation time</description>
+	</table>
+
+	<table type="2D" name="Trip 3 Rush Condition Continuation Time" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Sec" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTTRIP3- Trip 3 rush condition continuation time</description>
+	</table>
+
+	<table type="2D" name="At Least, Coolant Temperature Judgement Time" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="s" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTTWINTF- At least, coolant temperature judgement time</description>
+	</table>
+
+	<table type="2D" name="Maximum Operation Time" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*10" to_byte="x/10" format="0.0"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTTXMAX- Maximum operation time</description>
+	</table>
+
+	<table type="2D" name="Coolant Temperature Convergent Judgement Section Coefficient" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="|" expression="x" to_byte="x" format="0.0"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTTHIVL- Coolant temperature convergent judgement section coefficient</description>
+	</table>
+
+	<table type="2D" name="TVO upper Limit Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Deg" expression="x*0.35" to_byte="x/0.35" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTVOADV- TVO upper limit value</description>
+	</table>
+
+	<table type="2D" name="After Idle Off, TVO Value Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Deg" expression="x*0.35" to_byte="x/0.35" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTVHADS- After idle off, TVO value lower limit</description>
+	</table>
+
+	<table type="2D" name="Evaporation Heat Constant Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x*4" to_byte="x/4" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTVPRZ- Evaporation heat constant lower limit</description>
+	</table>
+
+	<table type="2D" name="Vehicle Speed Sensor Un-Adjustment Diagnosis Time" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTVSPNG- Vehicle speed sensor un-adjustment diagnosis time</description>
+	</table>
+
+	<table type="2D" name="At the Time of Power Steering On, AC Cut Judgement Coolant Temperature" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWACPS- At the time of power steering on, AC cut judgement coolant temperature</description>
+	</table>
+
+	<table type="2D" name="Air-Conditioning Cut Coolant Temperature" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWACRH- Air-conditioning cut coolant temperature</description>
+	</table>
+
+	<table type="2D" name="Air-Conditioning Cut Release Coolant Temperature" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWACRL- Air-conditioning cut release coolant temperature</description>
+	</table>
+
+	<table type="2D" name="Adjustment Control Permission Coolant Temperature Upper Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWADJH- Adjustment control permission coolant temperature upper limit</description>
+	</table>
+
+	<table type="2D" name="Adjustment Control Permission Coolant Temperature Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWADJL- Adjustment control permission coolant temperature lower limit</description>
+	</table>
+
+	<table type="2D" name="AFR Sensor Breakage Diagnosis Coolant Temperature Upper Limit Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWAFH- A/F sensor breakage diagnosis coolant temperature upper limit value</description>
+	</table>
+
+	<table type="2D" name="AFS Response Deterioration Diagnosis Coolant Temperature Upper Limit Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWAFHZH- AFS response deterioration diagnosis coolant temperature upper limit value</description>
+	</table>
+
+	<table type="2D" name="AFS Response Deterioration Diagnosis Coolant Temperature Lower Limit Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWAFHZL- AFS response deterioration diagnosis coolant temperature lower limit value</description>
+	</table>
+
+	<table type="2D" name="AFR Sensor Breakage Diagnosis Coolant Temperature Lower Limit Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWAFL- A/F sensor breakage diagnosis coolant temperature lower limit value</description>
+	</table>
+
+	<table type="2D" name="Difference in a Degree of An Intake Air Temperature Offset Quantity Switching Coolant Temperature IAT" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWAOFS- A difference in a degree of an intake air temperature offset quantity switching coolant temperature intake air temperature</description>
+	</table>
+
+	<table type="2D" name="Permission Condition Coolant Temperature Condition Upper Limit Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWCJ2- Permission condition coolant temperature condition upper limit value</description>
+	</table>
+
+	<table type="2D" name="Permission Condition Coolant Temperature Condition Lower Limit Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWCJ4- Permission condition coolant temperature condition lower limit value</description>
+	</table>
+
+	<table type="2D" name="CLOSE Control Start Coolant Temperature" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWCLMP- CLOSE control start coolant temperature</description>
+	</table>
+
+	<table type="2D" name="Canister Purge Control Region Coolant Temperature Condition" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWCPC- Canister purge control region coolant temperature condition</description>
+	</table>
+
+	<table type="2D" name="At Time of Start, Ignition Timing Compensation Control Upper Limit Coolant Temperature" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWCRADV- At the time of the start, ignition timing compensation control upper limit coolant temperature</description>
+	</table>
+
+	<table type="2D" name="At Time of Fuel Cut, Diagnosis Timing Counter Subtraction Fee" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="s" expression="x*0.00390625" to_byte="x/0.00390625" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWDOWN- At the time of the fuel cut, diagnosis timing counter subtraction fee</description>
+	</table>
+
+	<table type="2D" name="KDUTY UP EVPTR Condition" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWEVCD- KDUTY UP EVPTR condition</description>
+	</table>
+
+	<table type="2D" name="Cut-In Delay Switching Coolant Temperature" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWFCD- Cut-in delay switching coolant temperature</description>
+	</table>
+
+	<table type="2D" name="IAT Sensor Diagnosis Coolant Temperature Sensor Voltage Upper Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*20" to_byte="x/20" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWFSH- Intake air temperature sensor diagnosis coolant temperature sensor voltage upper limit</description>
+	</table>
+
+	<table type="2D" name="IAT Sensor Diagnosis Coolant Temperature Sensor Voltage Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*20" to_byte="x/20" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWFSH- Intake air temperature sensor diagnosis coolant temperature sensor voltage upper limit</description>
+	</table>
+
+	<table type="2D" name="At Time of Heat Resisting, Idle Rise Start Coolant Temperature" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWHEAT- At the time of the heat resisting, idle rise start coolant temperature</description>
+	</table>
+
+	<table type="2D" name="At Time of Acceleration, Judgement Coolant Temperature Upper Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWHLMT- At the time of the acceleration, judgement coolant temperature upper limit</description>
+	</table>
+
+	<table type="2D" name="When Learning Starts, Coolant Temperature Condition Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWIKB- When learning starts, coolant temperature condition lower limit</description>
+	</table>
+
+	<table type="2D" name="An ISC I-Gain is Saved, Control Permission Coolant Temperature Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWIMN- An ISC I-gain is saved, control permission coolant temperature lower limit</description>
+	</table>
+
+	<table type="2D" name="An ISC I-Gain is Saved, Control Permission Coolant Temperature Upper Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWIMN- An ISC I-gain is saved, control permission coolant temperature upper limit</description>
+	</table>
+
+	<table type="2D" name="Judgement Coolant Temperature That a Pole Low Coolant Temperature is Sequential" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWINJT- The judgement coolant temperature that a pole low coolant temperature is sequential</description>
+	</table>
+
+	<table type="2D" name="At Time of Diagnosis Permission Start, Coolant Temperature Condition Upper Limit Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWINTH- At the time of the diagnosis permission start, coolant temperature condition upper limit value</description>
+	</table>
+
+	<table type="2D" name="At Time of Diagnosis Permission Start, Coolant Temperature Condition Lower Limit Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWINTL- At the time of the diagnosis permission start, coolant temperature condition lower limit value</description>
+	</table>
+
+	<table type="2D" name="IAT Offset Value Cold Start" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWIOFS- Intake air temperature offset value cold start</description>
+	</table>
+
+	<table type="2D" name="At Time of Diagnosis Permission Judgement Start, Coolant Temperature Condition Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWIROX- At the time of the diagnosis permission judgement start, coolant temperature condition lower limit</description>
+	</table>
+
+	<table type="2D" name="ISC Switching Coolant Temperature (After Warmth, Coolant Temperature)" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWISCH- ISC switching coolant temperature (after the warmth, coolant temperature)</description>
+	</table>
+
+	<table type="2D" name="ISC Switching Coolant Temperature (A Space Time Coolant Temperature)" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWISCL- ISC switching coolant temperature (—â space time coolant temperature)</description>
+	</table>
+
+	<table type="2D" name="Learning Operation Start Coolant Temperature Upper Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWISLH- Learning operation start coolant temperature upper limit</description>
+	</table>
+
+	<table type="2D" name="Learning Operation Start Coolant Temperature Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWISLL- Learning operation start coolant temperature lower limit</description>
+	</table>
+
+	<table type="2D" name="Learning Coolant Temperature Upper Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWKBH- Learning coolant temperature condition upper limit</description>
+	</table>
+
+	<table type="2D" name="Learning Coolant Temperature Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWKBL- Learning coolant temperature condition lower limit</description>
+	</table>
+
+	<table type="2D" name="N At Time of D Select, Target Idle Rotation Decline Control Start Coolant Temperature Upper Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWNDH- N- At the time of the >D select, target idle rotation decline control start coolant temperature upper limit</description>
+	</table>
+	
+	<table type="2D" name="IGN SW ON-Off Coolant Temperature Difference Upper Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWNDKO- IGN SW ON-off coolant temperature difference upper limit</description>
+	</table>
+
+	<table type="2D" name="At Time of IGN SW ON-OFF, Coolant Temperature Difference Upper Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWNDKOH- At the time of IGN SW ON, off, coolant temperature difference upper limit</description>
+	</table>
+
+	<table type="2D" name="N At Time of D Select, Target Idle Rotation Decline Control Start Coolant Temperature Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWNDL- N- At the time of the >D select, target idle rotation decline control start coolant temperature lower limit</description>
+	</table>
+
+	<table type="2D" name="Cleaning Mode Permission Coolant Temperature Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVCLTWL- Cleaning mode permission coolant temperature lower limit</description>
+	</table>
+
+	<table type="2D" name="Cleaning Mode Permission Coolant Temperature Upper Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVCLTWH- Cleaning mode permission coolant temperature upper limit</description>
+	</table>
+
+	<table type="2D" name="During Cleaning, DUTY" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="%" expression="x*0.390625" to_byte="x/0.390625" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVCLDUTY- During cleaning, DUTY</description>
+	</table>
+
+	<table type="2D" name="FLASH Programming Voltage Lower Limit Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*80" to_byte="x/80" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVBFLASH- FLASH programming voltage lower limit value</description>
+	</table>
+
+	<table type="2D" name="Effect Voltage Lower Limit Value With Crank Corner Sensor" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*80" to_byte="x/80" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVBCSTH- Effect voltage lower limit value with the crank corner sensor</description>
+	</table>
+
+	<table type="2D" name="Start SW At Time of ON, Battery Voltage Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*80" to_byte="x/80" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVBCSMN- START SW At the time of on, battery voltage lower limit</description>
+	</table>
+
+	<table type="2D" name="Start SW Just Before ON, Battery Voltage Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*80" to_byte="x/80" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVBCS- START SW Just before on, battery voltage lower limit</description>
+	</table>
+
+	<table type="2D" name="US AD Conversion Central Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*20" to_byte="x/20" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mUSCNTR- US AD conversion central value</description>
+	</table>
+	
+	<table type="2D" name="US AD Conversion Upper Limit Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*20" to_byte="x/20" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mUSADMX- US AD conversion upper limit value</description>
+	</table>
+
+	<table type="2D" name="US AD Conversion Lower Limit Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*20" to_byte="x/20" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mUSADMX- US AD conversion lower limit value</description>
+	</table>
+
+	<table type="2D" name="Fuel Cut Prohibition Accelerator Open Degree" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Deg" expression="x*0.11" to_byte="x/0.11" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTXVAPL- Fuel cut prohibition accelerator open-degree</description>
+	</table>
+
+	<table type="2D" name="Recover Start Coolant Temperature Delay" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Deg" expression="x*0.11" to_byte="x/0.11" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWVTCMG- Recover start coolant temperature delay</description>
+	</table>
+
+	<table type="2D" name="A TWTMR Table is Cut Up, At Least, Degree of an IAT" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWTTYU- A TWTMR table is cut up, at least, a degree of an intake air temperature</description>
+	</table>
+
+	<table type="2D" name="At Time of Lack of Inhalation Air, Diagnosis Timing Counter Addition Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x*0.00390625" to_byte="x/0.00390625" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWTIME- At the time of lack of the inhalation air, diagnosis timing counter addition value</description>
+	</table>
+
+	<table type="2D" name="OK Judgement Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWTHOK- OK judgement value</description>
+	</table>
+
+	<table type="2D" name="NG Judgement Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWTHNG- NG judgement value</description>
+	</table>
+
+	<table type="2D" name="Coolant Temperature Condition Lower Limit 3" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWTAL- Coolant temperature condition lower limit</description>
+	</table>
+
+	<table type="2D" name="Coolant Temperature Condition Upper Limit 2" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWTAH- Coolant temperature condition upper limit</description>
+	</table>
+
+	<table type="2D" name="Coolant Temperature Soak Judgement Criteria" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWSKCR- Coolant temperature soak judgement criteria</description>
+	</table>
+
+	<table type="2D" name="Diagnosis Permission Judgement Coolant Temperature Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWRO2L- Diagnosis permission judgement coolant temperature lower limit</description>
+	</table>
+
+	<table type="2D" name="Diagnosis Permission Judgement Coolant Temperature Upper Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWRO2H- Diagnosis permission judgement coolant temperature upper limit</description>
+	</table>
+
+	<table type="2D" name="Coolant Temperature Sensor Trouble Judgement Temperature" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWNOK- Coolant temperature sensor trouble judgement temperature</description>
+	</table>
+
+	<table type="2D" name="Coolant Temperature Condition Lower Limit 2" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWNSL- Coolant temperature condition lower limit</description>
+	</table>
+
+	<table type="2D" name="CLOSE Control Switchover Coolant Temperature (After Fixed Time Progress)" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWOPEN- CLOSE control switchover coolant temperature (after the fixed time progress)</description>
+	</table>
+
+	<table type="2D" name="Overheat Judgement Coolant Temperature" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWOVH- Overheat judgement coolant temperature</description>
+	</table>
+
+	<table type="2D" name="Pre-Ignition Avoidance Control lower Limit Coolant Temperature" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWPIG- Pre-ignition avoidance control lower limit coolant temperature</description>
+	</table>
+
+	<table type="2D" name="Pre-Retard Permission Coolant Temperature" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWPRD- Pre-retard permission coolant temperature</description>
+	</table>
+
+	<table type="2D" name="High Speed Air Learning Permission Coolant Temperature Upper Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWQLH- A high-speed air learning permission coolant temperature upper limit</description>
+	</table>
+
+	<table type="2D" name="High Speed Air Learning Permission Coolant Temperature Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTWQLH- A high-speed air learning permission coolant temperature lower limit</description>
+	</table>
+
+	<table type="2D" name="REF Reference Position Synchronous Injection Timing Compensation (Time of Pole Low Coolant Temperature)" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Deg" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVDINJ2- REF reference position synchronous injection timing compensation (at the time of the pole low coolant temperature)</description>
+	</table>
+
+	<table type="2D" name="REF Reference Position Synchronous Injection Timing Compensation" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Deg" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVDINJ1- REF reference position synchronous injection timing compensation</description>
+	</table>
+
+	<table type="2D" name="Dead-Zone Width for the Dizzer" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="DegCA" expression="x*0.5" to_byte="x/0.5" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVEERHB- Dead-zone width for the dizzer</description>
+	</table>
+
+	<table type="2D" name="D Dead-Zone Width" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="DegCA" expression="x*0.5" to_byte="x/0.5" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVEERHD- D dead-zone width</description>
+	</table>
+
+	<table type="2D" name="I-Gain Dead-Zone Width" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="DegCA" expression="x*0.5" to_byte="x/0.5" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVEERHI- I-gain dead-zone width</description>
+	</table>
+
+	<table type="2D" name="P-Gain Dead-Zone Width" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="DegCA" expression="x*0.5" to_byte="x/0.5" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVEERHP- p-gain dead-zone width</description>
+	</table>
+
+	<table type="2D" name="mVEREND logic completion judgement time" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVEREND- ‘Ò‚¿, ‚¯ logic completion judgement time</description>
+	</table>
+
+	<table type="2D" name="VO2 Compensation Start Voltage (Rich Side)" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*10" to_byte="x/10" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVHOSH- VO2 compensation start voltage (Rich side)</description>
+	</table>
+
+	<table type="2D" name="VO2 Compensation Start Voltage (Lean Side)" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*10" to_byte="x/10" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVHOSL- VO2 compensation start voltage (Lean side)</description>
+	</table>
+
+	<table type="2D" name="Heating Energy Integration offset" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*80" to_byte="x/80" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVHW- Heating energy integration offset</description>
+	</table>
+
+	<table type="2D" name="At Time of Idle Autonomous Running Clamp, Judgement Vehicle Speed Upper Limit Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Km/h" expression="x*2" to_byte="x/2" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVJISOH- At the time of the idle autonomous running clamp, judgement vehicle speed upper limit value</description>
+	</table>
+
+	<table type="2D" name="At Time of Idle Autonomous Running Clamp, Judgement Vehicle Speed Lower Limit Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Km/h" expression="x*2" to_byte="x/2" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVJISOL- At the time of the idle autonomous running clamp, judgement vehicle speed lower limit value</description>
+	</table>
+
+	<table type="2D" name="Control Control MAX Vehicle Speed (Low)" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Km/h" expression="x*2" to_byte="x/2" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVMAX1- Control control MAX vehicle speed (low)</description>
+	</table>
+
+	<table type="2D" name="Control Control MAX Vehicle Speed (Height)" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Km/h" expression="x*2" to_byte="x/2" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVMAX2- Control control MAX vehicle speed (height)</description>
+	</table>
+
+	<table type="2D" name="Low Pressure Cut Pressure" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="MPa" expression="x*0.02" to_byte="x/0.02" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVPDACL- Low pressure cut pressure</description>
+	</table>
+
+	<table type="2D" name="High Pressure Reversion Pressure" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="MPa" expression="x*0.02" to_byte="x/0.02" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVPDARH- High pressure reversion pressure</description>
+	</table>
+
+	<table type="2D" name="High Pressure Reversion Pressure (Idle)" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="MPa" expression="x*0.02" to_byte="x/0.02" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVPDARHI- High pressure reversion pressure (idle)</description>
+	</table>
+
+	<table type="2D" name="Low Pressure Reversion Pressure" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="MPa" expression="x*0.02" to_byte="x/0.02" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVPDARL- Low pressure reversion pressure</description>
+	</table>
+
+	<table type="2D" name="VRO2 Compensation Start Voltage (Rich Side)" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*10" to_byte="x/10" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVRHOSH- VRO2 compensation start voltage (Rich side)</description>
+	</table>
+
+	<table type="2D" name="VRO2 Compensation Start Voltage (Lean Side)" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*10" to_byte="x/10" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVRHOSL- VRO2 compensation start voltage (Lean side)</description>
+	</table>
+
+	<table type="2D" name="Slowdown Lean Clamp Rate Judgement Vehicle Speed" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Km/h" expression="x*2" to_byte="x/2" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVSCLPH- Slowdown lean clamp rate judgement vehicle speed</description>
+	</table>
+
+	<table type="2D" name="Diagnosis Permission Vehicle Speed Condition Lower Limit Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Km/h" expression="x*2" to_byte="x/2" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVSCTL- Diagnosis permission vehicle speed condition lower limit value</description>
+	</table>
+
+	<table type="2D" name="Learning Vehicle Speed Condition Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Km/h" expression="x*2" to_byte="x/2" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVSKBLB- Learning vehicle speed condition lower limit</description>
+	</table>
+
+	<table type="2D" name="Learning Vehicle Speed Condition Upper Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Km/h" expression="x*2" to_byte="x/2" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVSKBLH- Learning vehicle speed condition upper limit</description>
+	</table>
+
+	<table type="2D" name="NG Judgement Timer Count Rise Delay" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="s" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVSNGD1- NG judgement timer count rise delay</description>
+	</table>
+
+	<table type="2D" name="NG Judgement Timer Count Rise Delay 2" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="s" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVSNGD2- NG judgement timer count rise delay</description>
+	</table>
+
+	<table type="2D" name="Vehicle Speed Condition Lower Limit 3" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Km/h" expression="x*2" to_byte="x/2" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVSNSL- Vehicle speed condition lower limit</description>
+	</table>
+
+	<table type="2D" name="Idle Judgement Vehicle Speed" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Km/h" expression="x*2" to_byte="x/2" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVSPIDL- Idle judgement vehicle speed</description>
+	</table>
+
+	<table type="2D" name="Coolant Temperature Lower Limit for Vehicle Speed Sensor Diagnosis Judgement" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVSPJTW- A coolant temperature lower limit for the vehicle speed sensor diagnosis judgement</description>
+	</table>
+
+	<table type="2D" name="The Exhaust the Second Air Increase Judgement Vehicle Speed" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Km" expression="x*2" to_byte="x/2" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVSPKAP- The exhaust the second air increase judgement vehicle speed</description>
+	</table>
+
+	<table type="2D" name="Slowdown Lean Clamp Release Vehicle Speed" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Km/h" expression="x*2" to_byte="x/2" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVSPLCC- Slowdown lean clamp release vehicle speed</description>
+	</table>
+
+	<table type="2D" name="Slowdown Lean Clamp Judgement Vehicle Speed" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Km/h" expression="x*2" to_byte="x/2" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVSPLCP- Slowdown lean clamp judgement vehicle speed</description>
+	</table>
+
+	<table type="2D" name="At the Time of Acceleration, Judgement Vehicle Speed Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Km/h" expression="x*2" to_byte="x/2" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVSPLLM- At the time of the acceleration, judgement vehicle speed lower limit</description>
+	</table>
+
+	<table type="2D" name="At the Time of Acceleration, Judgement Vehicle Speed Upper Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Km/h" expression="x*2" to_byte="x/2" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVSPLMT- At the time of the acceleration, judgement vehicle speed upper limit</description>
+	</table>
+
+	<table type="2D" name="mVSPRC2R Recovery Speed (Reverse)" category="Speed Limiters" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Km/h" expression="x*2" to_byte="x/2" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVSPRC2R- All cylinder recovery vehicle speed (reverse)</description>
+	</table>
+
+	<table type="2D" name="Vehicle Speed Condition Lower Limit 4" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Km/h" expression="x*2" to_byte="x/2" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVSPTAN- Vehicle speed condition lower limit</description>
+	</table>
+
+	<table type="2D" name="At Time of Failsafe, Retard Quantity (Time of High Coolant Temperature)" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Deg" expression="x-64" to_byte="x+64" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVTCADH- time of the failsafe, retard quantity (at the time of the high coolant temperature)</description>
+	</table>
+
+	<table type="2D" name="At Time of Failsafe, Retard Quantity (Time of Low Coolant Temperature)" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Deg" expression="x-64" to_byte="x+64" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVTCADL- time of the failsafe, retard quantity (at the time of the low coolant temperature)</description>
+	</table>
+
+	<table type="2D" name="VTC Drive Abnormality Diagnosis Permission Coolant Temperature Upper Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVTCCTWH- VTC drive abnormality diagnosis permission coolant temperature upper limit</description>
+	</table>
+
+	<table type="2D" name="VTC Drive Abnormality Diagnosis Permission Coolant Temperature Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVTCCTWL- VTC drive abnormality diagnosis permission coolant temperature lower limit</description>
+	</table>
+
+	<table type="2D" name="At Time of VTC Idle, Offset Diagnosis Permission Engine Rotation Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="RPM" expression="x*12.5" to_byte="x/12.5" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVTCINEL- At the time of the VTC idle, offset diagnosis permission engine rotation lower limit</description>
+	</table>
+
+	<table type="2D" name="At Time of VTC Idle, Offset Diagnosis Permission Coolant Temperature Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="RPM" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVTCITWL- At the time of the VTC idle, offset diagnosis permission coolant temperature lower limit</description>
+	</table>
+
+	<table type="2D" name="Cleaning Time" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVTCLHT- Cleaning time</description>
+	</table>
+
+	<table type="2D" name="Cleaning Period" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*10" to_byte="x/10" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVTCLLT- Cleaning period</description>
+	</table>
+
+	<table type="2D" name="NG Judgement Delay for MIL Lighting" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="msec" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVTCMLDLY- A NG judgement delay for MIL lighting</description>
+	</table>
+
+	<table type="2D" name="NG Judgement Delay" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVTCNGDLY- NG judgement delay</description>
+	</table>
+
+	<table type="2D" name="VTC Offset Diagnosis Permission Coolant Temperature Upper Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVTCOTWH- VTC offset diagnosis permission coolant temperature upper limit</description>
+	</table>
+
+	<table type="2D" name="VTC Offset Diagnosis Permission Coolant Temperature Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVTCOTWL- VTC offset diagnosis permission coolant temperature lower limit</description>
+	</table>
+
+	<table type="2D" name="After Start, Diagnosis Start Delay" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVTCSDLY- After the start, diagnosis start delay</description>
+	</table>
+
+	<table type="2D" name="VTC Solenoid Drive DUTY Period" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="fes" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVTCTIM- VTC solenoid drive DUTY period</description>
+	</table>
+
+	<table type="2D" name="CVTC Delay Time for MIL Lighting" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="msec" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVTNEDML- CVTC Delay time for MIL lighting</description>
+	</table>
+
+	<table type="2D" name="Target Angle Change Rate Limitation Value for Drive Abnormality Diagnosis" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="DegCA" expression="x*0.5" to_byte="x/0.5" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mVTTRLIM- Target angle change rate limitation value for the drive abnormality diagnosis</description>
+	</table>
+
+	<table type="2D" name="Subtraction Side Learning Weighted Average Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="|" expression="x*0.00390625" to_byte="x/0.00390625" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mWISCLD- Subtraction side learning weighted average value</description>
+	</table>
+
+	<table type="2D" name="Learning Weighted Average Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="|" expression="x*0.00390625" to_byte="x/0.00390625" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mWISCLR- Learning weighted average value</description>
+	</table>
+
+	<table type="2D" name="EEPROM Writing Trial Number of Times" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="%n" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mWTMX- EEPROM writing trial number of times //Ask fenugrec about importance</description>
+	</table>
+
+	<table type="2D" name="NAVI- Communication Fail Judgement Time" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Sec" expression="x*0.1" to_byte="x/0.1" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mZKFLTIM- NAVI- Communication fail judgement time</description>
+	</table>
+
+	<table type="2D" name="IDLHOS Loss in Weight Side Limiter" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*0.015625" to_byte="x/0.015625" format="0.000"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mZLMT- IDLHOS loss in weight side limiter</description>
+	</table>
+
+	<table type="2D" name="Minus KTW Learning Value Reflection Width Upper Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="%" expression="x" to_byte="x" format="0.000"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mMKLMAX- Minus KTW learning value reflection width upper limit</description>
+	</table>
+
+	<table type="2D" name="Minus KTW Learning Value Reflection Width Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="%" expression="x" to_byte="x" format="0.000"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mMKLMIN- Minus KTW learning value reflection width lower limit</description>
+	</table>
+
+	<table type="2D" name="Coefficient A0 (QA Region #1)" category="Unknown" storagetype="int16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*0.0001" to_byte="x/0.0001" format="0.0000"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mA0QA1- Coefficient a0 (Qa region #1)</description>
+	</table>
+
+	<table type="2D" name="Coefficient A0 (QA Region #1 Bank 2)" category="Unknown" storagetype="int16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*0.0001" to_byte="x/0.0001" format="0.0000"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mA0QA12- Coefficient a0 (Qa region #1 Bank 2)</description>
+	</table>
+
+	<table type="2D" name="Coefficient A0 (QA Region #2)" category="Unknown" storagetype="int16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*0.0001" to_byte="x/0.0001" format="0.0000"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mA0QA2- Coefficient a0 (Qa region #2)</description>
+	</table>
+
+	<table type="2D" name="Coefficient A0 (QA Region #2 Bank 2)" category="Unknown" storagetype="int16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*0.0001" to_byte="x/0.0001" format="0.0000"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mA0QA22- Coefficient a0 (Qa region #2 Bank 2)</description>
+	</table>
+
+	<table type="2D" name="Coefficient A0 (QA Region #3)" category="Unknown" storagetype="int16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*0.0001" to_byte="x/0.0001" format="0.0000"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mA0QA3- Coefficient a0 (Qa region #3)</description>
+	</table>
+
+	<table type="2D" name="Coefficient A0 (QA Region #3 Bank 2)" category="Unknown" storagetype="int16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*0.0001" to_byte="x/0.0001" format="0.0000"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mA0QA32- Coefficient a0 (Qa region #3 Bank 2)</description>
+	</table>
+
+	<table type="2D" name="Coefficient A1 (QA Region #1)" category="Unknown" storagetype="int16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*0.0001" to_byte="x/0.0001" format="0.0000"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mA1QA1- Coefficient a1 (Qa region #1)</description>
+	</table>
+
+	<table type="2D" name="Coefficient A1 (QA Region #1 Bank 2)" category="Unknown" storagetype="int16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*0.0001" to_byte="x/0.0001" format="0.0000"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mA1QA12- Coefficient a1 (Qa region #1 Bank 2)</description>
+	</table>
+
+	<table type="2D" name="Coefficient A1 (QA Region #2)" category="Unknown" storagetype="int16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*0.0001" to_byte="x/0.0001" format="0.0000"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mA1QA2- Coefficient a1 (Qa region #2)</description>
+	</table>
+
+	<table type="2D" name="Coefficient A1 (QA Region #2 Bank 2)" category="Unknown" storagetype="int16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*0.0001" to_byte="x/0.0001" format="0.0000"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mA1QA22- Coefficient a1 (Qa region #2 Bank 2)</description>
+	</table>
+
+	<table type="2D" name="Coefficient A1 (QA Region #3)" category="Unknown" storagetype="int16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*0.0001" to_byte="x/0.0001" format="0.0000"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mA1QA3- Coefficient a1 (Qa region #3)</description>
+	</table>
+
+	<table type="2D" name="Coefficient A1 (QA Region #3 Bank 2)" category="Unknown" storagetype="int16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*0.0001" to_byte="x/0.0001" format="0.0000"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mA1QA32- Coefficient a1 (Qa region #3 Bank 2)</description>
+	</table>
+
+	<table type="2D" name="AFR Sensor Shift Compensation Lower Limit" category="Unknown" storagetype="int16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*0.002" to_byte="x/0.002" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mKBLHMN- A/F sensor shift compensation lower limit value</description>
+	</table>
+
+	<table type="2D" name="AFR Sensor Shift Compensation Upper Limit" category="Unknown" storagetype="int16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*0.002" to_byte="x/0.002" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mKBLHMX- A/F sensor shift compensation upper limit value</description>
+	</table>
+
+	<table type="2D" name="HOSCMAX Learning: Learning Region AFSHOS Upper Limit" category="Unknown" storagetype="int16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*0.002" to_byte="x/0.002" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mHOSAFSH- HOSCMAX learning : learning region AFSHOS upper limit</description>
+	</table>
+
+	<table type="2D" name="HOSCMAX Learning: Learning Region AFSHOS Lower Limit" category="Unknown" storagetype="int16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*0.002" to_byte="x/0.002" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mHOSAFSL- HOSCMAX learning : learning region AFSHOS lower limit</description>
+	</table>
+
+	<table type="2D" name="Amount of Knock Retard" category="Unknown" storagetype="int16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Deg" expression="x*0.00390625" to_byte="x/0.00390625" format="0.0000"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mDRET- The amount of knock retard</description>
+	</table>
+
+	<table type="2D" name="At Time of Off-line Idle Learning, QFBI Lower Limit" category="Unknown" storagetype="int16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="L/min" expression="x*2" to_byte="x/2" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mQLIMN1- At the time of off-line idle learning, QFBI lower limit</description>
+	</table>
+
+	<table type="2D" name="At Time of Off-line Idle Learning, QFBI Upper Limit" category="Unknown" storagetype="int16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="L/min" expression="x*2" to_byte="x/2" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mQLIMX1- At the time of off-line idle learning, QFBI upper limit</description>
+	</table>
+
+	<table type="2D" name="QTASEEP1 Lower Limit" category="Unknown" storagetype="int16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="L/min" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mQTASMN1- QTASEEP1 lower limit value</description>
+	</table>
+
+	<table type="2D" name="QTASEEP1 Upper Limit" category="Unknown" storagetype="int16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="L/min" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mQTASMX1- QTASEEP1 upper limit value</description>
+	</table>
+
+	<table type="2D" name="Amount of Alley Drive Power Compensation" category="Unknown" storagetype="int16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="N" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mSADFD- The amount of alley drive power compensation</description>
+	</table>
+
+	<table type="2D" name="Pull-Down Region Cancellation Delay" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="s" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTMEVC3- Pull-down region cancellation delay</description>
+	</table>
+
+	<table type="2D" name="Pull-Down Region Disconnection Delay" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTMEVC4- Pull-down region disconnection delay</description>
+	</table>
+
+	<table type="2D" name="Diagnosis Prohibition Delay Time" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTMEVCD- Diagnosis prohibition delay time</description>
+	</table>
+
+	<table type="2D" name="Vehicle Speed Sensor Trouble Judgement Delay" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTMDVDG- Vehicle speed sensor trouble judgement delay</description>
+	</table>
+
+	<table type="2D" name="Diagnosis Permission DOS Formation Time Condition" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="s" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTMDOS- Diagnosis permission DOS formation time condition</description>
+	</table>
+
+	<table type="2D" name="Purge Stop Condition Time" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="s" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTMEVPC- Purge stop condition time</description>
+	</table>
+
+	<table type="2D" name="Misfire Judgement Cancellation Delay" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*10" to_byte="x/10" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTMFD2- Misfire judgement cancellation delay</description>
+	</table>
+
+	<table type="2D" name="The First Fuel Pump on Time" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTMFPON- The first fuel pump on time</description>
+	</table>
+
+	<table type="2D" name="TMFR Permission Speed" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="rpm" expression="x*25" to_byte="x/25" format="0"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTMFRNEH- TMFR permission speed</description>
+	</table>
+
+	<table type="2D" name="KTINT Compensation Operation Condition" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*10" to_byte="x/10" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTMGNSK- KTINT compensation operation condition</description>
+	</table>
+
+	<table type="2D" name="FIR, Intermediate Coolant Temperature Retard Section Compensation Rate Change Quantity 1 (Time of Idle, Mild Acceleration)" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="/10ms" expression="x*0.0078125" to_byte="x/0.0078125" format="0.0000"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFACNG1- FIR, intermadiate coolant temperature retard section compensation rate change quantity 1 (at the time of the idle, the mild acceleration)</description>
+	</table>
+
+	<table type="2D" name="FIR, Intermediate Coolant Temperature Retard Section Compensation Rate Change Quantity 2 (Time of Urgent Acceleration)" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="/10ms" expression="x*0.0078125" to_byte="x/0.0078125" format="0.0000"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFACNG2- FIR, intermadiate coolant temperature retard section compensation rate change quantity 2 (at the time of the urgent acceleration)</description>
+	</table>
+
+	<table type="2D" name="FIR, Intermediate Coolant Temperature Retard Section Compensation Rate Acceleration Judgement Delta-TVO" category="Scaling" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="deg/150m" expression="x*0.35" to_byte="x/0.35" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFATVO- FIR, intermadiate coolant temperature retard section compensation rate acceleration judgement delta-TVO// deg/150m/deg/150m or something</description>
+	</table>
+
+	<table type="2D" name="At Time of Idle, AFR Feedback Time" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="sec" expression="x*0.02" to_byte="x/0.02" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFBDLY- At the time of the idle, air-fuel ratio feedback time</description>
+	</table>
+
+	<table type="2D" name="Pull-Down F/B I-Gain Gain 2" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*0.000976563" to_byte="x/0.000976563" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFBKI2- Pull-down F/B I-gain gain 2</description>
+	</table>
+
+	<table type="2D" name="Reference Pressure Measuring Delay 2" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mEVSTRY- Reference pressure measuring delay</description>
+	</table>
+
+	<table type="2D" name="Pull-Down Start Vehicle Speed Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Km/h" expression="x*2" to_byte="x/2" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mEVSPL5- Pull-down start vehicle speed lower limit</description>
+	</table>
+
+	<table type="2D" name="At Time of Positive Pressure, Leak-Down Control Vehicle Speed Condition Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Km/h" expression="x*2" to_byte="x/2" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mEVSPL3- At the time of the positive pressure, leak-down control vehicle speed condition lower limit</description>
+	</table>
+
+	<table type="2D" name="Pull-Down Start Vehicle Speed Upper Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Km/h" expression="x*2" to_byte="x/2" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mEVSPH5- Pull-down start vehicle speed upper limit</description>
+	</table>
+
+	<table type="2D" name="Vehicle Speed Condition Lower Limit X" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Km/h" expression="x*2" to_byte="x/2" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mEVPVSL- Vehicle speed condition lower limit</description>
+	</table>
+
+	<table type="2D" name="Vehicle Speed Condition Upper Limit X" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Km/h" expression="x*2" to_byte="x/2" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mEVPVSH- Vehicle speed condition upper limit</description>
+	</table>
+
+	<table type="2D" name="Coolant Temperature Condition Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mEVPTWL- Coolant temperature condition lower limit</description>
+	</table>
+
+	<table type="2D" name="Coolant Temperature Condition Upper Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mEVPTWH- Coolant temperature condition upper limit</description>
+	</table>
+
+	<table type="2D" name="TP Condition Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*0.125" to_byte="x/0.125" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mEVPTPL- TP condition lower limit</description>
+	</table>
+
+	<table type="2D" name="TP Condition Upper Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*0.125" to_byte="x/0.125" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mEVPTPH- TP condition upper limit</description>
+	</table>
+
+	<table type="2D" name="At Least, IAT Lower Limit Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mEVPTAL- At least, intake air temperature lower limit value</description>
+	</table>
+
+	<table type="2D" name="Fuel Temperature Condition Lower Limit Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mEVPTFL- Fuel temperature condition lower limit value</description>
+	</table>
+
+	<table type="2D" name="vEVPR Average Coefficient" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="|" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mEVPKJU- vEVPR average coefficient</description>
+	</table>
+
+	<table type="2D" name="Purge Cut Fmin Time" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mEVPCTT- Purge cut ƒ¿min time</description>
+	</table>
+
+	<table type="2D" name="Diagnosis Permission Atomospheric Pressure Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*20" to_byte="x/20" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mEVPAL3- Diagnosis permission atomospheric pressure lower limit</description>
+	</table>
+
+	<table type="2D" name="Diagnosis Permission Atomospheric Pressure Upper Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*20" to_byte="x/20" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mEVPAH3- Diagnosis permission atomospheric pressure Upper limit</description>
+	</table>
+
+	<table type="2D" name="TP Condition Upper Limit 3" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*0.125" to_byte="x/0.125" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mPSTPH1- TP condition upper limit</description>
+	</table>
+
+	<table type="2D" name="TP Condition Upper Limit 2" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*0.125" to_byte="x/0.125" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mPSTPH2- TP condition upper limit</description>
+	</table>
+
+	<table type="2D" name="TP Condition Lower Limit 1" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*0.125" to_byte="x/0.125" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mPSTPL1- TP condition lower limit</description>
+	</table>
+
+	<table type="2D" name="TP Condition Lower Limit 2" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*0.125" to_byte="x/0.125" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mPSTPL2- TP condition lower limit</description>
+	</table>
+
+	<table type="2D" name="Diagnosis Permission Condition Judgement Time" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mPSYDG1- Diagnosis permission condition judgement time</description>
+	</table>
+
+	<table type="2D" name="EPRS11 Monitor Condition Judgement Time" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mPSYDG2- EPRS11 monitor condition judgement time</description>
+	</table>
+
+	<table type="2D" name="EPRS12 Monitor Condition Judgement Time" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mPSYDG3- EPRS12 monitor condition judgement time</description>
+	</table>
+
+	<table type="2D" name="Purge System Judgement Pressure 2" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*20" to_byte="x/20" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mPSYEV2- Purge system judgement pressure 2</description>
+	</table>
+
+	<table type="2D" name="Value Which a Purge System Unusually Judges" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Count" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mPSYSNG- The value which a purge system unusually judges</description>
+	</table>
+
+	<table type="2D" name="T/M Requirement Fuel Cut Recover Hysteresis" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="rpm" expression="x*50" to_byte="x/50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mPTNHYS- T/M requirement fuel cut recover hysteresis</description>
+	</table>
+
+	<table type="2D" name="Lower Limit Speed that a T/M Requirement Fuel Cut is Possible" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="rpm" expression="x*50" to_byte="x/50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mPTNMIN- Lower limit speed that a T/M requirement fuel cut is possible</description>
+	</table>
+
+	<table type="2D" name="Calibration QH0 Condition Continuation Time" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Sec" expression="x*0.01" to_byte="x/0.01" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mQH0TMLM- Calibration QH0 condition continuation time</description>
+	</table>
+
+	<table type="2D" name="Delta-QH0 Measuring Interval" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="msec" expression="x*10" to_byte="x/10" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mQH0TWDT- Delta-QH0 measuring interval</description>
+	</table>
+
+	<table type="2D" name="High EGT Lambda Control Judgement QM" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="|" expression="x*256" to_byte="x/256" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mQHTMP- A high exhaust temperature lambda control judgement QM</description>
+	</table>
+
+	<table type="2D" name="SUMQI Computed Coefficient" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="|" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mQIU- SUMQI computed coefficient</description>
+	</table>
+
+	<table type="2D" name="High Speed Air Learning Permission NE Change Width" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="rpm" expression="x*3.125" to_byte="x/3.125" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mQLDNE- High-speed air learning permission NE change width</description>
+	</table>
+
+	<table type="2D" name="High Speed Air Learning Permission TPS1 Change Width" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*5" to_byte="x/5" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mQLDTV- High-speed air learning permission TPS1 change width</description>
+	</table>
+
+	<table type="2D" name="Omission Air Flow Quantity" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="L/min" expression="x*4" to_byte="x/4" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mQLEAK- Omission air flow-quantity</description>
+	</table>
+
+	<table type="2D" name="High Speed Air Learning Permission Air Quantity Upper Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="L/min" expression="x*4" to_byte="x/4" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mQLQMAX- A high-speed air learning permission air quantity upper limit</description>
+	</table>
+
+	<table type="2D" name="Amount of AFR Deviation Compensation Air" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="L/min" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mQMREST- The amount of air-fuel ratio deviation compensation air</description>
+	</table>
+
+	<table type="2D" name="QPSD Operation Upper Limit Speed" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="rpm" expression="x*25" to_byte="x/25" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mQPSDRPML- QPSD operation upper limit speed</description>
+	</table>
+
+	<table type="2D" name="Lean-Shift Judgement Level Upper Limit Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*10" to_byte="x/10" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mEVNGSL- Lean-shift judgement level upper limit value</description>
+	</table>
+
+	<table type="2D" name="Heat Resisting Purge Learning Value (Lower Limit)" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="%" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mEVKBLL- Heat resisting purge learning value</description>
+	</table>
+
+	<table type="2D" name="Heat Resisting Purge Learning Value (Upper Limit)" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="%" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mEVKBLH- Heat resisting purge learning value</description>
+	</table>
+
+	<table type="2D" name="Space Capacity Condition Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="L" expression="x*0.5" to_byte="x/0.5" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mEVFGAL- Space capacity condition lower limit</description>
+	</table>
+
+	<table type="2D" name="Diagnosis Permission Space Capacity Upper Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="L" expression="x*0.5" to_byte="x/0.5" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mEVFGAH2- Diagnosis permission space capacity upper limit</description>
+	</table>
+
+	<table type="2D" name="Space Capacity Condition Upper Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="L" expression="x*0.5" to_byte="x/0.5" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mEVFGAH- Space capacity condition upper limit</description>
+	</table>
+
+	<table type="2D" name="KDUTY UP EVPTR Condition 2" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="s" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mEVCLD2- KDUTY UP EVPTR condition 2</description>
+	</table>
+
+	<table type="2D" name="KDUTY UP EVPTR Condition 1" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="s" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mEVCLD1- KDUTY UP EVPTR condition 1</description>
+	</table>
+
+	<table type="2D" name="Pull-Down Permission Alpha Change Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="%" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mEVALP2- Pull-down permission alpha change value</description>
+	</table>
+
+	<table type="2D" name="Coolant Temperature Condition Judgement Delay" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="s" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mETWJD- Coolant temperature condition judgement delay</description>
+	</table>
+
+	<table type="2D" name="At Time of Start, Coolant Temperature Condition Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mETWIL3- At the time of the start, coolant temperature condition lower limit</description>
+	</table>
+
+	<table type="2D" name="At Time of Start, Coolant Temperature Condition Upper Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mETWIH3- At the time of the start, coolant temperature condition upper limit</description>
+	</table>
+
+	<table type="2D" name="At Time of Start, Coolant Temperature Condition Lower Limit 2" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mETWIL4- At the time of the start, coolant temperature condition lower limit</description>
+	</table>
+
+	<table type="2D" name="At Time of Start, Coolant Temperature Condition Upper Limit 2" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mETWIH4- At the time of the start, coolant temperature condition upper limit</description>
+	</table>
+
+	<table type="2D" name="At Time of Hot Restart Closed-Diagnosis TEGR Decline, Diagnosis Permission Delay" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="s" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mETHSJDE- At the time of the hot restart closed-diagnosis TEGR decline, diagnosis permission delay</description>
+	</table>
+
+	<table type="2D" name="During the Cranking, Control Prohibition Time" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mETCSTT- During the cranking, control prohibition time</description>
+	</table>
+
+	<table type="2D" name="At Time of Engine Stall, TWF Time Constant" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="|" expression="x*0.000488281" to_byte="x/0.000488281" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mENSTSP- At the time of the engine stall, TWF time constant</description>
+	</table>
+
+	<table type="2D" name="Start SW At Time of On, for Battery Voltage Descent" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*80" to_byte="x/80" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mDVBCS- START SW At the time of on, for the battery voltage descent</description>
+	</table>
+
+	<table type="2D" name="At Time of Digital Variable, KTRM Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="|" expression="x*0.0078125" to_byte="x/0.0078125" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mDVKTRM- At the time of the digital variable, KTRM value</description>
+	</table>
+
+	<table type="2D" name="Response Time NG Judgement Reference" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*10" to_byte="x/10" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mDVRONG- Response time NG judgement reference</description>
+	</table>
+
+	<table type="2D" name="VTC Target Operation Angle for the Digital Variable" category="Scaling" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*0.5" to_byte="x/0.5" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mDVVTC- A VTC target operation angle for the digital variable // A2l shows actual value as 0???</description>
+	</table>
+
+	<table type="2D" name="Dwell TIM Coefficient" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Sec" expression="x*0.02" to_byte="x/0.02" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mDWLTIM- Dwell TIM coefficient</description>
+	</table>
+
+	<table type="2D" name="Battery Voltage Lower Limit for Dwell Calculation" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*80" to_byte="x/80" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mDWLVBMIN- A battery voltage lower limit for the dwell calculation</description>
+	</table>
+
+	<table type="2D" name="Open Diagnosis Diagnosis Timing" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="s" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mEGROPD- An open diagnosis diagnosis timing</description>
+	</table>
+
+	<table type="2D" name="EGR Modification Coefficient" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="%" expression="x*1.5625" to_byte="x/1.5625" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mEGRS- EGR modification coefficient</description>
+	</table>
+
+	<table type="2D" name="High Air Quantity Fuel Cut Delay" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFCTIM1- A high air quantity fuel cut delay</description>
+	</table>
+
+	<table type="2D" name="At Time of Fuel Cut, TPFBAO Decrease Rate" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*0.00390625" to_byte="x/0.00390625" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFCTPO- At the time of the fuel cut, TPFBAO decrease rate</description>
+	</table>
+
+	<table type="2D" name="At Time of F/C, TWF Time Constant" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="|" expression="x*0.000488281" to_byte="x/0.000488281" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFCTSP- At the time of F/C, TWF time constant</description>
+	</table>
+
+	<table type="2D" name="Calibration Fuel Cut Condition Continuation Time" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="sec" expression="x*0.1" to_byte="x/0.1" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFCTTMLM- Calibration fuel cut condition continuation time</description>
+	</table>
+
+
+	<table type="2D" name="Fuel Cut Judgement Vehicle Speed" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Km/h" expression="x*2" to_byte="x/2" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFCVSP- Fuel cut judgement vehicle speed</description>
+	</table>
+
+	<table type="2D" name="A Trigger Level for Engine Stall" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="-" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFFDENST- A trigger level for the engine stall</description>
+	</table>
+
+	<table type="2D" name="FFD Sampling Rate" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*10" to_byte="x/10" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFFDSRM- FFD sampling rate</description>
+	</table>
+
+	<table type="2D" name="Slosh Diagnosis Delay" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFGTP1- Slosh diagnosis delay</description>
+	</table>
+
+	<table type="2D" name="At Time of Learning, FHOS Value Fixed Magnification" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="-" expression="x*0.00390625" to_byte="x/0.00390625" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFHOSCON- At the time of learning, FHOS value fixed magnification</description>
+	</table>
+
+	<table type="2D" name="Injection Completion Angle" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Deg" expression="x*2" to_byte="x/2" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFINANG2- Injection completion angle</description>
+	</table>
+
+	<table type="2D" name="Closed-Loop Diagnosis O2/H on Delay" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="sec" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFO2HDD- Closed-loop diagnosis O2/H on delay</description>
+	</table>
+
+	<table type="2D" name="Front Unusual Voltage 2 Judgement Voltage" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*10" to_byte="x/10" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFO2V5S- Front unusual voltage 2 judgement voltage</description>
+	</table>
+
+	<table type="2D" name="At the Time of FIR, Intermediate Coolant Temperature Retard Addition Judgement Start, Coolant Temperature" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFRA5TW- At the time of FIR, the intermadiate coolant temperature retard addition judgement start, coolant temperature</description>
+	</table>
+
+	<table type="2D" name="First Idle Retard Basic Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Deg" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFRBASE- First idle retard basic value</description>
+	</table>
+
+	<table type="2D" name="After Pull-Down, Pressure Minimum Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*20" to_byte="x/20" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFRCAP2- After the pull-down, pressure minimum value</description>
+	</table>
+
+	<table type="2D" name="FIR, Minus KTW Addition Judgement Speed" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="rpm" expression="x*25" to_byte="x/25" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFRMKN- FIR, minus KTW addition judgement speed</description>
+	</table>
+
+	<table type="2D" name="After First Idle Retard Addition Judgement ST/SW OFF, Progress Time" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFRTM- After first idle retard addition judgement ST/SW off, progress time</description>
+	</table>
+
+	<table type="2D" name="First Idle Retard Addition Judgement Upper Limit Coolant Temperature (At Time of Start, for the Rise)" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFRTWD- First idle retard addition judgement upper limit coolant temperature (at the time of the start, for the rise)</description>
+	</table>
+
+	<table type="2D" name="First Idle Retard Addition Judgement Upper Limit Coolant Temperature" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFRTWH- First idle retard addition judgement upper limit coolant temperature</description>
+	</table>
+
+	<table type="2D" name="Fuel Recover Judgement Vehicle Speed (At Time of AC OFF)" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Km/h" expression="x*2" to_byte="x/2" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFRVSP1- Fuel recover judgement vehicle speed (at the time of A/C off)</description>
+	</table>
+
+	<table type="2D" name="At Time of POS10 Sensor Trouble, Control in Progress Non-Energizing Angle Compensation Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Deg" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFSDWLL- At the time of the POS10 sensor trouble, control-in-progress non-energizing angle compensation value</description>
+	</table>
+
+	<table type="2D" name="At Time of POS10 Sensor Trouble, Control in Progress Final Ignition Timing Limiter" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Deg" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFSFADV- At the time of the POS10 sensor trouble, control-in-progress final ignition timing limiter</description>
+	</table>
+
+	<table type="2D" name="Slosh Judgement Judgement Delay" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFTIME1- Slosh judgement judgement delay</description>
+	</table>
+
+	<table type="2D" name="Slope Judgement Judgement Delay" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFTIME2- Slope judgement judgement delay</description>
+	</table>
+
+	<table type="2D" name="Slope Judgement Release Judgement Delay" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFTIME3- Slope judgement release judgement delay</description>
+	</table>
+
+	<table type="2D" name="Amount of PS Oil Pressure Proportion Compensation Dead-Zone Air" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="l/min" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mQPSNF- The amount of P/S oil pressure proportion compensation dead-zone air</description>
+	</table>
+
+	<table type="2D" name="Change in the Second Learning Requirement Purge Rate Limitation Release AFR" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="%" expression="x*0.1" to_byte="x/0.1" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mRCDALLM2- A change in the second learning requirement purge rate limitation release air-fuel ratio</description>
+	</table>
+
+	<table type="2D" name="Change in a Purge Rate Limitation Release AFR" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="%" expression="x*0.1" to_byte="x/0.1" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mRCDLALLM- A change in a purge rate limitation release air-fuel ratio</description>
+	</table>
+
+	<table type="2D" name="At Time of ALP Limiter Purge Limitation, Re-Calibration Requirement Delay" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Sec" expression="x*0.1" to_byte="x/0.1" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mRCLDLY- At the time of the ALP limiter purge limitation, re-calibration requirement delay</description>
+	</table>
+
+	<table type="2D" name="At Time of Resetting, Voltage Representative Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*80" to_byte="x/80" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mRESVB- At the time of resetting, voltage representative value</description>
+	</table>
+
+	<table type="2D" name="High Rotation Judgement Speed" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="rpm" expression="x*12.5" to_byte="x/12.5" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mREVH- High rotation judgement speed</description>
+	</table>
+
+	<table type="2D" name="Idle Autonomous Running Clamp Judgement Delay" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Rev" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mREVJIS- Idle autonomous running clamp judgement delay</description>
+	</table>
+
+	<table type="2D" name="Low Rotation Judgement Speed" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="rpm" expression="x*12.5" to_byte="x/12.5" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mREVL- Low rotation judgement speed</description>
+	</table>
+
+	<table type="2D" name="Rich Side KBLRCA Whole Area Reflection Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="%" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mRKBRA- Rich side KBLRCA whole area reflection lower limit</description>
+	</table>
+
+	<table type="2D" name="Rich Side KBLRCA Whole Area Reflection KBLRCB Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="%" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mRKBRBA- Rich side KBLRCA whole area reflection KBLRCB lower limit</description>
+	</table>
+
+	<table type="2D" name="High Coolant Temperature Judgement Coolant Temperature" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mRLHTW- A high coolant temperature judgement coolant temperature</description>
+	</table>
+
+	<table type="2D" name="High Coolant Temperature Judgement Coolant Temperature Hysteresis" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mRLHTWHYS- A high coolant temperature judgement coolant temperature hysteresis</description>
+	</table>
+
+	<table type="2D" name="I-Gain Initial Gain Time" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*10" to_byte="x/10" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mRLIGDLY- I-gain initial gain time</description>
+	</table>
+
+	<table type="2D" name="At Time of First Learning Gain" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="%" expression="x*0.390625" to_byte="x/0.390625" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mRLRC0- At the time of the first learning, gain</description>
+	</table>
+
+	<table type="2D" name="Learning Value Lower Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="%" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mRLRMN- Learning value lower limit value</description>
+	</table>
+
+	<table type="2D" name="Learning Value Upper Limit" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="%" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mRLRMX- Learning value upper limit value</description>
+	</table>
+
+	<table type="2D" name="Actual Gear Ratio Computed Lower Limit Speed" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="rpm" expression="x*4" to_byte="x/4" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mRMINHR- Actual gear ratio computed lower limit speed</description>
+	</table>
+
+	<table type="2D" name="Actual Gear Ratio Computed Lower Limit Speed 2" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="rpm" expression="x*4" to_byte="x/4" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mRMINHR_S- Actual gear ratio computed lower limit speed</description>
+	</table>
+
+	<table type="2D" name="Actual Gear Ratio Computed Lower Limit Vehicle Speed" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Km/h" expression="x*0.1" to_byte="x/0.1" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mRMINHV- Actual gear ratio computed lower limit vehicle speed</description>
+	</table>
+
+	<table type="2D" name="Actual Gear Ratio Computed Lower Limit Vehicle Speed 2" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Km/h" expression="x*0.1" to_byte="x/0.1" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mRMINHV- Actual gear ratio computed lower limit vehicle speed</description>
+	</table>
+
+	<table type="2D" name="Minimum Engine Speed for Power-> Torque Conversion (Sub)" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="rpm" expression="x*10" to_byte="x/10" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mRDTSNM_S- Minimum engine speed for power => torque conversion (Sub)</description>
+	</table>
+
+	<table type="2D" name="Rear O2 Heater OFF Delay" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mRO2HCTD- Rear O2 heater off delay</description>
+	</table>
+
+	<table type="2D" name="At Time of Low Temperature Start, After, O2 Heater On Permission Coolant Temperature" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mRO2HTWN- At the time of the low temperature start, after, O2 heater on permission coolant temperature</description>
+	</table>
+
+	<table type="2D" name="Imaginary Stage 2RrO2 Reversal Equivalent WKSTRGV" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms/2^(ST)" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mRO2REV1- Imaginary stage 2RrO2 reversal equivalent WKSTRGV</description>
+	</table>
+
+	<table type="2D" name="Imaginary Stage 2RrO2 Reversal Equivalent WKSTRGV 2" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms/2^(ST)" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mRO2REV2- Imaginary stage 2RrO2 reversal equivalent WKSTRGV</description>
+	</table>
+
+	<table type="2D" name="Rear Unusual Voltage 2 Judgement Voltage" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*10" to_byte="x/10" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mRO2V5S- Rear unusual voltage 2 judgement voltage</description>
+	</table>
+
+	<table type="2D" name="A High IAT Retard High Rotation Side Gain" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Deg/10Z" expression="x*0.015625" to_byte="x/0.015625" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mKTRTD2- A high intake air temperature retard high rotation side gain</description>
+	</table>
+
+	<table type="2D" name="A High IAT Retard Low Rotation Side Gain" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Deg/10Z" expression="x*0.015625" to_byte="x/0.015625" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mKTRTD1- A high intake air temperature retard low rotation side gain</description>
+	</table>
+
+	<table type="2D" name="High IAT Retard Rotation Threshold" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="rpm" expression="x*50" to_byte="x/50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mNTARTD- A high intake air temperature retard rotation threshold</description>
+	</table>
+
+	<table type="2D" name="The Amount of Initial Retard" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Deg" expression="x*4" to_byte="x/4" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTINJINT- The amount of initial retard</description>
+	</table>
+
+	<table type="2D" name="Compensation Air Quantity Compensation Rate for Retard" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="L/min/de" expression="x*0.5" to_byte="x/0.5" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mISCRT0- Compensation air quantity compensation rate for retard</description>
+	</table>
+
+	<table type="2D" name="High IAT Retard Reference IAT" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x-50" to_byte="x+50" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTAOFST- A high intake air temperature retard reference intake air temperature</description>
+	</table>
+
+	<table type="2D" name="Fuel Cut Retard Delay Time Table" category="Unknown" storagetype="uint8" sizey="16" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*100" to_byte="x/100" format="0"/>
+	<table type="Y Axis" name="Z" sizey="16">
+			<data>-40</data>
+			<data>-30</data>
+			<data>-20</data>
+			<data>-10</data>
+			<data>0</data>
+			<data>10</data>
+			<data>20</data>
+			<data>30</data>
+			<data>40</data>
+			<data>50</data>
+			<data>60</data>
+			<data>70</data>
+			<data>80</data>
+			<data>90</data>
+			<data>100</data>
+			<data>110</data>
+	</table>
+	<description>mTFCRD- Fuel cut retard delay time table</description>
+	</table>
+	
+	<table type="2D" name="Retard Maintenance Coolant Temperature Rise Quantity Computed Table" category="Unknown" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x" to_byte="x" format="0"/>
+	<table type="Y Axis" name="Z" sizey="8">
+			<data>-30</data>
+			<data>-20</data>
+			<data>-10</data>
+			<data>0</data>
+			<data>10</data>
+			<data>20</data>
+			<data>30</data>
+			<data>40</data>
+	</table>
+	<description>mTTINJDTW- Retard maintenance coolant temperature rise quantity computed table</description>
+	</table>
+
+	<table type="2D" name="For High IAT Retard Change Width Limiter Ref" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Deg/ref" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mDKTARTDR- For the high intake air temperature retard change width limiter ref</description>
+	</table>
+
+	<table type="2D" name="Fuel Temperature Sensor Judgement Time" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="s" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFTSNGDLY- Fuel temperature sensor judgement time</description>
+	</table>
+
+	<table type="2D" name="At Time of Start, Present, Coolant Temperature Occasion Difference Distinction Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Z" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFTWI20- At the time of the start, at present, coolant temperature occasion difference distinction value</description>
+	</table>
+
+	<table type="2D" name="Catalyst Damage Criteria Judgement Number of Times Multiple Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Count" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFUKBAI- Catalyst damage criteria judgement number of times multiple value</description>
+	</table>
+
+	<table type="2D" name="A Cylinder for the Variable Control by Cylinder" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="|" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mFVCYLS- A cylinder for the variable control by cylinder</description>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

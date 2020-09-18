@@ -38899,14 +38899,14 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
 					</conversions>
 				</ecuparam>
 
-				<ecuparam id="Z4" name="vITAC" desc="Z4- Cylinder intake filling up efficiency" target="1">
+				<ecuparam id="Z4" name="vITAC" desc="Z4- Cylinder Filling Up Effiency" target="1">
 					<ecu id="CF48D">
-						<address>0xFF847E</address>
+						<address>0xFF846E</address>
 					</ecu>
 					<conversions>
-						<conversion units="%" expr="x*.78125" format="0.0" />
+						<conversion units="AFR" expr="x*.002" format="0.00" />
 					</conversions>
-				</ecuparam>
+				</ecuparam>			
 
 				//bitmask 0x20 byteorder MSB_FIRST Format %8.2 Errormask 0x0 Addrtype DIRECT FLAG Lower 0 upper 1 
 				<ecuparam id="Z5" name="afADVCYO" desc="Ignition timing adjustment flag" target="1">
@@ -38974,7 +38974,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
 
 				<ecuparam id="Z12" name="wvTP" desc="Cylinder intake quantity equivalent pulse width" target="1">
 					<ecu id="CF48D">
-						<address>0xFF847E</address>
+						<address>0</address>
 					</ecu>
 					<conversions>
 						<conversion units="ms" expr="x*.000488281" format="0" />
@@ -39035,7 +39035,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
 					</conversions>
 				</ecuparam>
 				
-				<ecuparam id="Z19" name="Air-Fuel Ratio B2" desc="vAFSAF_R#1 An actual air-fuel ratio" target="1">
+				<ecuparam id="Z19" name="Air-Fuel Ratio B2" desc="vAFSAF_R#2 An actual air-fuel ratio" target="1">
 					<ecu id="CF48D">
 						<address length="2">0xFF26F2</address>
 					</ecu>
@@ -39046,7 +39046,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
 				
 				<ecuparam id="Z20" name="wvITAC" desc="Cylinder Filling Up Effiency" target="1">
 					<ecu id="CF48D">
-						<address>0xFF846E</address>
+						<address>0xFF846C</address>
 					</ecu>
 					<conversions>
 						<conversion units="AFR" expr="x*.002" format="0.00" />
@@ -39069,9 +39069,23 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
 					<conversions>
 						<conversion units="Lambda" storagetype="uint8" expr="128/x" format="0.00" />
 					</conversions>
-				</ecuparam>				
-				
-				
+				</ecuparam>					
+
+				<ecuparam id="Z24" name="vQH0" desc="Z24- TVO-N Flow Quantity" target="1">
+					<ecu id="CF48D">
+						<address>0xFF85A2</address>
+					</ecu>
+					<conversions>
+						<conversion units="%" expr="x/2.56" format="0.00" />
+					</conversions>
+				</ecuparam>		
+
+
+
+
+
+
+
 				
 				
 				
