@@ -910,7 +910,7 @@ Maps
 	<table name="Time of Lambda Control Switchover, Damper" storageaddress="0x7D1B"/> 
 	<table name="When Increase Moves, Damper" storageaddress="0x7D1C"/> 
 	<table name="Weighted Average for DLTNE" storageaddress="0x7D22"/> 
-	<table name="NSET0 Change Rate (Time of N - D Switching" storageaddress="0x7D26"/> 
+	<table name="NSET0 Change Rate (Time of N - D Switching)" storageaddress="0x7D26"/> 
 	<table name="NSET0 Change Rate (After Start, Time of Lean Limit Expansion)" storageaddress="0x7D27"/> 
 	<table name="NSET0 Change Rate (Time of PSSW On I Off)" storageaddress="0x7D28"/> 
 	<table name="NSET0 Change Rate (Time of N I D Switching)" storageaddress="0x7D29"/> 
@@ -939,7 +939,7 @@ Maps
 	<table name="During Lockup, Control Start Judgement Vehicle Speed" storageaddress="0x7D6C"/> 
 	<table name="Variable Intake Valve Lower Limit Speed 1" storageaddress="0x8509"/>
 	<table name="Delta-TP Condition Upper Limit" storageaddress="0x7D6F"/> 
-	<table name="High Speed AIr Learning Dead-Zone" storageaddress="0x7D70"/> 
+	<table name="High Speed Air Learning Dead-Zone" storageaddress="0x7D70"/> 
 	<table name="Desorption Heat" storageaddress="0x7D73"/> 
 	<table name="Diagnosis Permission ATVO Upper Limit" storageaddress="0x7D77"/> 
 	<table name="HOSCMAX Learning: Learning Region Delta-TVO Upper Limit" storageaddress="0x7D78"/> 
@@ -1418,7 +1418,7 @@ Maps
 	<table name="Idle Learning Permission Vehicle Speed Upper Limit" storageaddress="0x7F3A"/> 
 	<table name="Energizing Time Angle Room Fee" storageaddress="0x816C"/> 
 	<table name="Air Condition Cut TP" storageaddress="0x8AE0"/> 
-	<table name="TPS The Second-Fold Trouble Judgement TP Deviation" storageaddress="0x8AF6"/> 
+	<table name="Idle BFS limits, ms (TPRV)" storageaddress="0x8AF4"/> 
 	<table name="TPS Output Normality Range Upper Limit" storageaddress="0x8AF8"/> 
 	<table name="TPS Output Normality Range Lower Limit" storageaddress="0x8AFA"/> 
 	<table name="Imaginary Stage 3 Region Formation Time" storageaddress="0x8AFE"/> 
@@ -2120,23 +2120,21 @@ Maps
 	D6CA D6CC D6CE D6D0 are values^
 
 
-	<table name="Catalyst DTCs" storageaddress="0xDDD0"/> // Confirmed through Europe tuned Cf48D 
-	<table name="Evap DTCs" storageaddress="0xDDD9"/> //Probable (P0455 Exists for 350z)
-	<table name="Evap 2 DTCs"  storageaddress="0xDDDD"/> //Probably don't exist
-	<table name="Power Steering DTC"  storageaddress="0xDDE4"/> //Probable 
+	<table name="Catalyst DTCs" storageaddress="0xDDD0"/> // Confirmed
+	<table name="Evap DTCs" storageaddress="0xDDD9"/> //confirmed 
+	<table name="Power Steering DTC"  storageaddress="0xDDE4"/> //confirmed 
 	
 	<table name="Primary O2 DTCs" storageaddress="0xDDF8"/> //Adjust
 	<table name="Primary O2 Idle DTCs" storageaddress="0xDDF9"/> //Needs adjusted. Top two codes do exist for 350z
 	<table name="Secondary O2 DTCs" storageaddress="0xDDFC"/> //Needs adjusted entirely
 	
-	<table name="Secondary O2 Knock DTCs" storageaddress="0xDDFD"/> //100%
+	<table name="Secondary O2 Knock DTCs" storageaddress="0xDDFD"/> // maybe DDFD>>
 	<table name="Fuel Evap Purge Solenoid DTCs" storageaddress="0xDE00"/> //Probable
-	<table name="Evap Pressure Flow DTCs" storageaddress="0xDE02"/> //Probable
+	<table name="Evap Pressure Flow DTCs" storageaddress="0xDE02"/> //ProbableDE00
 	<table name="Evap Leaks DTCs"  storageaddress="0xDE03"/> //Probable
 
 	
-\\\\\ FLAGS /////
-	<table name="(HTASW is removed) Related to Meter CAN A/C" storageaddress="0x7BE2"/> 
+\\\\\ FLAGS ///// 
 7BE2 HTASW IS removed, Related to Meter Can A/C mfMETCAN
 0x8441 2TRIP Diagnosis Flag mTRIPSWS
 TPS At Time of Single Trouble, LH Executive Flag 0x7DD9 mfTPSSLH COULD BE MULTIPLE MAPS

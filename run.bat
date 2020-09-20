@@ -1,1 +1,1 @@
-start javaw -Djava.library.path=lib/windows -Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true -Dsun.java2d.d3d=false -Xms32M -Xmx1024M -jar RomRaider.jar 1>>romraider_sout.log 2>&1
+start javaw -Djava.library.path=lib/windows -Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true -Dsun.java2d.d3d=false -Xms128M -Xmx4g -jar RomRaider.jar 1>>romraider_sout.log 2>&1
