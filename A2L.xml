@@ -9,7 +9,7 @@
 
 \\Ignition Timing//
 
-	<table type="3D" name="Cold Ignition Trim" category="Ignition Timing" storagetype="uint8" endian="big" sizex="16" sizey="16" userlevel="1" logparam="E3002">
+	<table type="3D" name="Cold Ignition Trim" category="Ignition Timing" storagetype="uint8" endian="big" sizex="16" sizey="16" userlevel="1" logparam="Z33">
 		<scaling units="Degrees Advance (positive increases advance)" expression="x-64" to_byte="x+64" format="0" fineincrement="1" coarseincrement="4" />
 		<table type="X Axis" name="Cylinder intake filling up efficiency" storagetype="uint8" endian="big" logparam="Z4">
 			<scaling units="%" expression="x*0.78125" to_byte="x/0.78125" format="0.0" fineincrement=".5" coarseincrement="4" />
@@ -20,7 +20,7 @@
 		<description>mMADVTRMC Ignition Advance Trimming Map. This is tied to coolant temp and only used when the coolant temp is under a certain set point. This needs to be kept close to the "High Octane Ignition Trim" map.</description>
 	</table>
 
-	<table type="3D" name="High Octane Ignition Trim" category="Ignition Timing" storagetype="uint8" endian="big" sizex="16" sizey="16" userlevel="1" logparam="E3002">
+	<table type="3D" name="High Octane Ignition Trim" category="Ignition Timing" storagetype="uint8" endian="big" sizex="16" sizey="16" userlevel="1" logparam="Z32">
 		<scaling units="Degrees Advance (positive increases advance)" expression="x-64" to_byte="x+64" format="0" fineincrement="1" coarseincrement="4" />
 		<table type="X Axis" name="Cylinder intake filling up efficiency" storagetype="uint8" endian="big" logparam="Z4">
 			<scaling units="%" expression="x*0.78125" to_byte="x/0.78125" format="0.0" fineincrement=".5" coarseincrement="4" />
@@ -714,9 +714,9 @@
 		<description>Air fuel ratio that is targeted by the ECU. If this value doesn't match when logging other paramaters need to be adjusted, like fuel compensation, and/or maf scaling.</description>
 	</table>
 	
-	<table type="3D" name="Fuel Compensation" category="AFR" storagetype="uint8" endian="big" sizex="16" sizey="16" userlevel="1" logparam="E3019">
+	<table type="3D" name="Fuel Compensation" category="AFR" storagetype="uint8" endian="big" sizex="16" sizey="16" userlevel="1" logparam="Z25">
 		<scaling units="NA" expression="(x/128)*100" to_byte="(x/100)*128" format="0.00" fineincrement=".2" coarseincrement="1" />
-		<table type="X Axis" name="TVO-N flow-quantity" storagetype="uint8" endian="big" logparam="E3018">
+		<table type="X Axis" name="TVO-N flow-quantity" storagetype="uint8" endian="big" logparam="Z24">
 			<scaling units="%" expression="x/2.56" to_byte="x*2.56" format="0" fineincrement=".2" coarseincrement="1" />
 		</table>
 		<table type="Y Axis" name="Engine Speed" storagetype="uint8" endian="big" logparam="P8">
@@ -1078,6 +1078,30 @@
 			<data>-</data>
 	</table>
 	<description>mRTGABF- TARGET A/F RICH SET</description>
+	</table>
+
+	<table type="2D" name="Lambda Control Clamp Time Upper Limit Value" category="AFR" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Rev" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mLMCLSMX- Lambda control clamp time upper limit value</description>
+	</table>
+	
+	<table type="2D" name="Second Learning Requirement Maximum AFR Change Target Value" category="AFR" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="%" expression="x*0.1" to_byte="x/0.1" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mMXDLALP2- The second learning requirement maximum air-fuel ratio change target value</description>
+	</table>
+
+	<table type="2D" name="Maximum AFR Change Target Value" category="AFR" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="%" expression="x*0.1" to_byte="x/0.1" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mMXDLTALP- Maximum air-fuel ratio change target value</description>
 	</table>
 	
 	\\AFR (Diagnosis)//
@@ -1725,6 +1749,26 @@
 			<data>-</data>
 	</table>
 	<description>mFCAFHZF- F/cut time</description>
+	</table>
+
+	<table type="2D" name="Number of TMFR Cut Cylinders" category="Fuel Cut" storagetype="uint8" sizey="3" endian="big" userlevel="5" >
+		<scaling units="%n" expression="x" to_byte="x" format="0.00"/>
+	<table type="Y Axis" name="-" sizey="3">
+			<data>0</data>
+			<data>1</data>
+			<data>2</data>
+	</table>
+	<description>mTMFRCNT- The number of TMFR cut cylinders</description>
+	</table>
+
+	<table type="2D" name="TMFR Cut Start Time" category="Fuel Cut" storagetype="uint8" sizey="3" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*10" to_byte="x/10" format="0.00"/>
+	<table type="Y Axis" name="-" sizey="3">
+			<data>0</data>
+			<data>1</data>
+			<data>2</data>
+	</table>
+	<description>mTMFRTM- TMFR cut start time</description>
 	</table>
 	
 	\\Catalyst// MOVE ALL OF THE O2 AND AFR MAPS BACK TO AFR. THEY DO NOT BELONG IN CATALYST UNLESS THEY DIRECTLY ALTER CATALYTIC CONVERTERS. O2 SENSORS STILL DICTATE FUELING.
@@ -2795,7 +2839,7 @@
 	<description>Torque going down control prohibition rotation</description>
 	</table>
 	
-	<table type="3D" name="QH0/ torque conversion map" category="Torque Management" storagetype="uint16" endian="big" sizex="16" sizey="16" userlevel="1" logparam="?">
+	<table type="3D" name="QH0/ torque conversion map" category="Torque Management" storagetype="uint16" endian="big" sizex="16" sizey="16" userlevel="1" logparam="Z26">
 		<scaling units="Nm" expression="x/10-3276.8" to_byte="x*10+32768" format="0" fineincrement="1" coarseincrement="10" />
 		<table type="X Axis" name="QH0 flow quantity ratio" storagetype="uint16" endian="big" logparam="Z24">
 			<scaling units="%" expression="x*0.00152588" to_byte="x/0.00152588" format="0.00" fineincrement="1" coarseincrement="10" />
@@ -2806,7 +2850,7 @@
 		<description>mMTTE QH0/ torque 1 and 2 must match exactly if you makes changes.</description>
 	</table>
 
-	<table type="3D" name="QH0/ torque conversion map 2" category="Torque Management" storagetype="uint16" endian="big" sizex="16" sizey="16" userlevel="1" logparam="?">
+	<table type="3D" name="QH0/ torque conversion map 2" category="Torque Management" storagetype="uint16" endian="big" sizex="16" sizey="16" userlevel="1" logparam="Z26">
 		<scaling units="Nm" expression="x/10-3276.8" to_byte="x*10+32768" format="0" fineincrement="1" coarseincrement="10" />
 		<table type="X Axis" name="QH0 flow quantity ratio" storagetype="uint16" endian="big" logparam="Z24">
 			<scaling units="%" expression="x*0.00152588" to_byte="x/0.00152588" format="0.00" fineincrement="1" coarseincrement="10" />
@@ -2858,45 +2902,45 @@
 		<description>mTENGMAP Engine torque value map</description>
 	</table>
 	
-	<table type="3D" name="mMTFDD" category="Torque Management" storagetype="uint16" endian="big" sizex="16" sizey="16" userlevel="1" logparam="?">
+	<table type="3D" name="mMTFDD" category="Torque Management" storagetype="uint16" endian="big" sizex="16" sizey="16" userlevel="1" logparam="Z27">
 		<scaling units="Newtons" expression="x-32768" to_byte="x+32768" format="0" fineincrement="1" coarseincrement="10" />
 		<table type="X Axis" name="Vehicle Speed" storagetype="uint16" endian="big" logparam="P4354">
 			<scaling units="km/h" expression="x*.1" to_byte="x/.1" format="0" fineincrement="1" coarseincrement="10" />
 		</table>
-		<table type="Y Axis" name="Accelerator Open" storagetype="uint16" endian="big" logparam="?">
+		<table type="Y Axis" name="Accelerator Open" storagetype="uint16" endian="big" logparam="Z31">
 			<scaling units="deg" expression="x*0.11" to_byte="x/0.11" format="0.00" fineincrement="10" coarseincrement="100" />
 		</table>
 		<description>mMTFDD D range target drive power map</description>
 	</table>
 
-	<table type="3D" name="mMTFDD_S" category="Torque Management" storagetype="uint16" endian="big" sizex="16" sizey="16" userlevel="1" logparam="?">
+	<table type="3D" name="mMTFDD_S" category="Torque Management" storagetype="uint16" endian="big" sizex="16" sizey="16" userlevel="1" logparam="Z30">
 		<scaling units="Newtons" expression="x-32768" to_byte="x+32768" format="0" fineincrement="1" coarseincrement="10" />
 		<table type="X Axis" name="Vehicle Speed" storagetype="uint16" endian="big" logparam="P4354">
 			<scaling units="km/h" expression="x*.1" to_byte="x/.1" format="0" fineincrement="1" coarseincrement="10" />
 		</table>
-		<table type="Y Axis" name="Accelerator Open" storagetype="uint16" endian="big" logparam="?">
+		<table type="Y Axis" name="Accelerator Open" storagetype="uint16" endian="big" logparam="Z31">
 			<scaling units="deg" expression="x*0.11" to_byte="x/0.11" format="0.00" fineincrement="10" coarseincrement="100" />
 		</table>
 		<description>mMTFDD_S D range target drive power map (redundant operation vice-operation part)</description>
 	</table>
 	
-	<table type="3D" name="mMTFDDS" category="Torque Management" storagetype="uint16" endian="big" sizex="16" sizey="16" userlevel="1" logparam="?">
+	<table type="3D" name="mMTFDDS" category="Torque Management" storagetype="uint16" endian="big" sizex="16" sizey="16" userlevel="1" logparam="Z28">
 		<scaling units="Newtons" expression="x-32768" to_byte="x+32768" format="0" fineincrement="1" coarseincrement="10" />
 		<table type="X Axis" name="Vehicle Speed" storagetype="uint16" endian="big" logparam="P4354">
 			<scaling units="km/h" expression="x*.1" to_byte="x/.1" format="0" fineincrement="1" coarseincrement="10" />
 		</table>
-		<table type="Y Axis" name="Accelerator Open" storagetype="uint16" endian="big" logparam="?">
+		<table type="Y Axis" name="Accelerator Open" storagetype="uint16" endian="big" logparam="Z31">
 			<scaling units="deg" expression="x*0.11" to_byte="x/0.11" format="0.00" fineincrement="10" coarseincrement="100" />
 		</table>
 		<description>mMTFDDS Ds range target drive power map</description>
 	</table>
 
-	<table type="3D" name="mMTFDDS_S" category="Torque Management" storagetype="uint16" endian="big" sizex="16" sizey="16" userlevel="1" logparam="?">
+	<table type="3D" name="mMTFDDS_S" category="Torque Management" storagetype="uint16" endian="big" sizex="16" sizey="16" userlevel="1" logparam="Z29">
 		<scaling units="Newtons" expression="x-32768" to_byte="x+32768" format="0" fineincrement="1" coarseincrement="10" />
 		<table type="X Axis" name="Vehicle Speed" storagetype="uint16" endian="big" logparam="P4354">
 			<scaling units="km/h" expression="x*.1" to_byte="x/.1" format="0" fineincrement="1" coarseincrement="10" />
 		</table>
-		<table type="Y Axis" name="Accelerator Open" storagetype="uint16" endian="big" logparam="?">
+		<table type="Y Axis" name="Accelerator Open" storagetype="uint16" endian="big" logparam="Z31">
 			<scaling units="deg" expression="x*0.11" to_byte="x/0.11" format="0.00" fineincrement="10" coarseincrement="100" />
 		</table>
 		<description>mMTFDDS_S Ds range target drive power map (redundant operation vice-operation part)</description>
@@ -3124,7 +3168,7 @@
 			<data>30.94</data> 
 			<data>33.75</data>
 			<data>36.56</data>
-		`	<data>39.38</data>
+			<data>39.38</data>
 			<data>42.19</data>
 			<data>45.00</data> 
 			<data>47.81</data>
@@ -3140,7 +3184,7 @@
 			<data>75.94</data> 
 			<data>78.75</data>
 			<data>81.56</data>
-		`	<data>84.38</data>
+			<data>84.38</data>
 			<data>87.19</data>
 	</table>
 	<description>Throttle ceremony road surface product table (GKTVO 2.8125deg)</description>
@@ -4567,7 +4611,7 @@
 			<data>4800</data> 
 			<data>5200</data>
 			<data>5600</data>
-		`	<data>6000</data>
+			<data>6000</data>
 			<data>6400</data>
 	</table>
 	<description>mTITAC0WO At the time of WOT, a standard condition filling up efficiency speed table</description>
@@ -4605,7 +4649,7 @@
 			<data>40.91</data> 
 			<data>44.63</data>
 			<data>48.35</data>
-		`	<data>52.07</data>
+			<data>52.07</data>
 			<data>55.79</data>
 	</table>
 	<description>mTQH0H TVO_N flow quantity table high flow quantity</description>
@@ -4627,7 +4671,7 @@
 			<data>92.97</data>
 			<data>102.27</data>
 			<data>111.56</data>
-		`	<data>120.86</data>
+			<data>120.86</data>
 			<data>130.16</data>
 			<data>139.46</data> 
 	</table>
@@ -4651,7 +4695,7 @@
 			<data>0.00</data> 
 			<data>0.00</data>
 			<data>0.00</data>
-		`	<data>0.00</data>
+			<data>0.00</data>
 			<data>0.00</data>
 			<data>0.00</data> 
 			<data>0.00</data>
@@ -4667,7 +4711,7 @@
 			<data>0.01</data> 
 			<data>0.01</data>
 			<data>0.01</data>
-		`	<data>0.01</data>
+			<data>0.01</data>
 			<data>0.02</data>
 	</table>
 	<description> Target Basis QH0</description>
@@ -4690,7 +4734,7 @@
 			<data>0.00</data> 
 			<data>0.00</data>
 			<data>0.00</data>
-		`	<data>0.00</data>
+			<data>0.00</data>
 			<data>0.00</data>
 			<data>0.00</data> 
 			<data>0.00</data>
@@ -4706,7 +4750,7 @@
 			<data>0.01</data> 
 			<data>0.01</data>
 			<data>0.01</data>
-		`	<data>0.01</data>
+			<data>0.01</data>
 			<data>0.02</data>
 	</table>
 	<description>Target Basis QH0 Table 2</description>
@@ -4729,7 +4773,7 @@
 			<data>0.02</data> 
 			<data>0.03</data>
 			<data>0.04</data>
-		`	<data>0.06</data>
+			<data>0.06</data>
 			<data>0.07</data>
 			<data>0.09</data> 
 			<data>0.10</data>
@@ -4745,7 +4789,7 @@
 			<data>0.26</data> 
 			<data>0.27</data>
 			<data>0.29</data>
-		`	<data>0.30</data>
+			<data>0.30</data>
 			<data>0.33</data>
 	</table>
 	<description>Volume flow-quantity ratio table 1</description>
@@ -4768,7 +4812,7 @@
 			<data>0.02</data> 
 			<data>0.03</data>
 			<data>0.04</data>
-		`	<data>0.06</data>
+			<data>0.06</data>
 			<data>0.07</data>
 			<data>0.09</data> 
 			<data>0.10</data>
@@ -4784,7 +4828,7 @@
 			<data>0.26</data> 
 			<data>0.27</data>
 			<data>0.29</data>
-		`	<data>0.30</data>
+			<data>0.30</data>
 			<data>0.33</data>
 	</table>
 	<description>Volume flow-quantity ratio table 2 (high flow-quantity proportion)</description>
@@ -4851,7 +4895,7 @@
 			<data>4000</data>
 			<data>4400</data>
 			<data>4800</data>
-		`	<data>5200</data>
+			<data>5200</data>
 			<data>5600</data>
 			<data>6000</data> 
 	</table>
@@ -5089,65 +5133,6 @@
 			<data>Above</data>
 	</table>
 	<description>PS stratified lean fixed permission vehicle speed</description>
-	</table>
-
-	
-	\\KLMRT//
-	
-	<table type="2D" name="KLMRT Rotation Lattice Low" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
-		<scaling units="RPM" expression="x*50" to_byte="x/50" format="0.00"/>
-	<table type="Y Axis" name="RPM" sizey="1">
-			<data>Above</data>
-	</table>
-	<description>KLMRT Rotation Lattice Low</description>
-	</table>
-
-	<table type="2D" name="KLMRT Rotation Lattice High" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
-		<scaling units="RPM" expression="x*50" to_byte="x/50" format="0.00"/>
-	<table type="Y Axis" name="RPM" sizey="1">
-			<data>Above</data>
-	</table>
-	<description>KLMRT Rotation Lattice High</description>
-	</table>
-
-	<table type="2D" name="ADV F/B Start Bias Speed (Upper Limit)" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
-		<scaling units="RPM" expression="x*12.5" to_byte="x/12.5" format="0.00"/>
-	<table type="Y Axis" name="RPM" sizey="1">
-			<data>Above</data>
-	</table>
-	<description>ADV F/B Start bias speed (upper limit value)</description>
-	</table>
-
-	<table type="2D" name="ADV F/B Start Bias Speed" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
-		<scaling units="RPM" expression="x*12.5" to_byte="x/12.5" format="0.00"/>
-	<table type="Y Axis" name="RPM" sizey="1">
-			<data>Above</data>
-	</table>
-	<description>ADV F/B Start bias speed</description>
-	</table>
-
-	<table type="2D" name="ADV F/B Start Delay" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
-		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
-	<table type="Y Axis" name="ms" sizey="1">
-			<data>Above</data>
-	</table>
-	<description>ADV F/B Start delay (After it starts.)</description>
-	</table>
-
-	<table type="2D" name="Basic Pulse Width Lattice Low" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
-		<scaling units="ms" expression="x*.125" to_byte="x/.125" format="0.00"/>
-	<table type="Y Axis" name="ms" sizey="1">
-			<data>Above</data>
-	</table>
-	<description>KLMRT Basic Pulse Width Lattice Low</description>
-	</table>
-
-	<table type="2D" name="Basic Pulse Width Lattice High" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
-		<scaling units="ms" expression="x*.125" to_byte="x/.125" format="0.00"/>
-	<table type="Y Axis" name="ms" sizey="1">
-			<data>Above</data>
-	</table>
-	<description>KLMRT Basic Pulse Width Lattice High</description>
 	</table>
 	
 	\\EVAP//
@@ -5538,6 +5523,86 @@
 	</table>
 	<description>mRFOEVP- Canister purge cut delay</description>
 	</table>
+
+  	<table type="2D" name="For 0.02in Leak Diagnosis" category="EVAP" storagetype="uint16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mLEKMX2- For the 0.02inch leak diagnosis</description>
+	</table>
+	
+  	<table type="2D" name="0.04in Leak Diagnosis DVP5 Measuring Permission Leak Down Time Lower Limit" category="EVAP" storagetype="uint16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mLEKMX4- 0.04inch leak diagnosis DVP5 measuring permission leak-down time lower limit</description>
+	</table>
+	
+	<table type="2D" name="Activated Charcoal Specific Heat" category="EVAP" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="kmole/j" expression="x*0.03" to_byte="x/0.03" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mSPFCHEAT- Activated charcoal specific heat</description>
+	</table>
+	
+	<table type="2D" name="Mode 8 Evapo Test Permission Executive Time-Out Time" category="EVAP" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="s" expression="x*10" to_byte="x/10" format="0.00"/>
+	<table type="Y Axis" name="Above" sizey="1">
+			<data>-</data>
+	</table>
+	<description>mTGM8ET- Mode 8 evapo test permission executive time-out time</description>
+	</table>
+	
+	<table type="2D" name="Slosh Compensation Offset (First Time)" category="EVAP" storagetype="uint16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*.078125" to_byte="x/.078125" format="0.00"/>
+	<table type="Y Axis" name="mV" sizey="1">
+			<data>Above</data>
+	</table>
+	<description>At the time of the first time leak-down, an offset for the slosh compensation final value computation</description>
+	</table>
+
+	<table type="2D" name="Slosh Compensation Offset (Second Time)" category="EVAP" storagetype="uint16" sizey="1" endian="big" userlevel="5" >
+		<scaling units="mV" expression="x*.078125" to_byte="x/.078125" format="0.00"/>
+	<table type="Y Axis" name="mV" sizey="1">
+			<data>Above</data>
+	</table>
+	<description>At the time of the second time leak-down, an offset for the slosh compensation final value computation</description>
+	</table>
+	
+	<table type="2D" name="Pull Down Start TP Upper Limit" category="EVAP" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*.125" to_byte="x/.125" format="0.00"/>
+	<table type="Y Axis" name="ms" sizey="1">
+			<data>Above</data>
+	</table>
+	<description>Pull-down start TP upper limit</description>
+	</table>
+
+	<table type="2D" name="Pull Down Start TP Lower Limit" category="EVAP" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*.125" to_byte="x/.125" format="0.00"/>
+	<table type="Y Axis" name="ms" sizey="1">
+			<data>Above</data>
+	</table>
+	<description>Pull-down start TP lower limit</description>
+	</table>
+	
+	<table type="2D" name="Pull Down Start TVO Upper Limit" category="EVAP" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Deg" expression="x*.35" to_byte="x/.35" format="0.00"/>
+	<table type="Y Axis" name="Deg" sizey="1">
+			<data>Deg</data>
+	</table>
+	<description>Pull-down start throttle open-degree upper limit</description>
+	</table>
+
+	<table type="2D" name="Pull Down Start TVO Lower Limit" category="EVAP" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="Deg" expression="x*.35" to_byte="x/.35" format="0.00"/>
+	<table type="Y Axis" name="Deg" sizey="1">
+			<data>Deg</data>
+	</table>
+	<description>Pull-down start throttle open-degree lower limit</description>
+	</table>
 	
 	\\Vehicle Speed//
 	
@@ -5687,23 +5752,6 @@
 	<description>Steady state deviation allowable value (for usual, advance side)</description>
 	</table>
 	
-	\\Leak Down//
-	
-	<table type="2D" name="Slosh Compensation Offset (First Time)" category="Leak Down" storagetype="uint16" sizey="1" endian="big" userlevel="5" >
-		<scaling units="mV" expression="x*.078125" to_byte="x/.078125" format="0.00"/>
-	<table type="Y Axis" name="mV" sizey="1">
-			<data>Above</data>
-	</table>
-	<description>At the time of the first time leak-down, an offset for the slosh compensation final value computation</description>
-	</table>
-
-	<table type="2D" name="Slosh Compensation Offset (Second Time)" category="Leak Down" storagetype="uint16" sizey="1" endian="big" userlevel="5" >
-		<scaling units="mV" expression="x*.078125" to_byte="x/.078125" format="0.00"/>
-	<table type="Y Axis" name="mV" sizey="1">
-			<data>Above</data>
-	</table>
-	<description>At the time of the second time leak-down, an offset for the slosh compensation final value computation</description>
-	</table>
 	
 	\\Lamp Treatment//
 	
@@ -5747,39 +5795,7 @@
 	<description>Addition drive power subtraction value</description>
 	</table>
 	
-	\\Pull Down Start//
-	
-	<table type="2D" name="Pull Down Start TP Upper Limit" category="Pull Down Start" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
-		<scaling units="ms" expression="x*.125" to_byte="x/.125" format="0.00"/>
-	<table type="Y Axis" name="ms" sizey="1">
-			<data>Above</data>
-	</table>
-	<description>Pull-down start TP upper limit</description>
-	</table>
 
-	<table type="2D" name="Pull Down Start TP Lower Limit" category="Pull Down Start" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
-		<scaling units="ms" expression="x*.125" to_byte="x/.125" format="0.00"/>
-	<table type="Y Axis" name="ms" sizey="1">
-			<data>Above</data>
-	</table>
-	<description>Pull-down start TP lower limit</description>
-	</table>
-	
-	<table type="2D" name="Pull Down Start TVO Upper Limit" category="Pull Down Start" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
-		<scaling units="Deg" expression="x*.35" to_byte="x/.35" format="0.00"/>
-	<table type="Y Axis" name="Deg" sizey="1">
-			<data>Deg</data>
-	</table>
-	<description>Pull-down start throttle open-degree upper limit</description>
-	</table>
-
-	<table type="2D" name="Pull Down Start TVO Lower Limit" category="Pull Down Start" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
-		<scaling units="Deg" expression="x*.35" to_byte="x/.35" format="0.00"/>
-	<table type="Y Axis" name="Deg" sizey="1">
-			<data>Deg</data>
-	</table>
-	<description>Pull-down start throttle open-degree lower limit</description>
-	</table>
 	
 	\\Torque Converter//
 	
@@ -6742,6 +6758,62 @@
 	<description>Engine speed limitation condition 1</description>
 	</table>
 
+	<table type="2D" name="KLMRT Rotation Lattice Low" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="RPM" expression="x*50" to_byte="x/50" format="0.00"/>
+	<table type="Y Axis" name="RPM" sizey="1">
+			<data>Above</data>
+	</table>
+	<description>KLMRT Rotation Lattice Low</description>
+	</table>
+
+	<table type="2D" name="KLMRT Rotation Lattice High" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="RPM" expression="x*50" to_byte="x/50" format="0.00"/>
+	<table type="Y Axis" name="RPM" sizey="1">
+			<data>Above</data>
+	</table>
+	<description>KLMRT Rotation Lattice High</description>
+	</table>
+
+	<table type="2D" name="ADV F/B Start Bias Speed (Upper Limit)" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="RPM" expression="x*12.5" to_byte="x/12.5" format="0.00"/>
+	<table type="Y Axis" name="RPM" sizey="1">
+			<data>Above</data>
+	</table>
+	<description>ADV F/B Start bias speed (upper limit value)</description>
+	</table>
+
+	<table type="2D" name="ADV F/B Start Bias Speed" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="RPM" expression="x*12.5" to_byte="x/12.5" format="0.00"/>
+	<table type="Y Axis" name="RPM" sizey="1">
+			<data>Above</data>
+	</table>
+	<description>ADV F/B Start bias speed</description>
+	</table>
+
+	<table type="2D" name="ADV F/B Start Delay" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
+	<table type="Y Axis" name="ms" sizey="1">
+			<data>Above</data>
+	</table>
+	<description>ADV F/B Start delay (After it starts.)</description>
+	</table>
+
+	<table type="2D" name="Basic Pulse Width Lattice Low" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*.125" to_byte="x/.125" format="0.00"/>
+	<table type="Y Axis" name="ms" sizey="1">
+			<data>Above</data>
+	</table>
+	<description>KLMRT Basic Pulse Width Lattice Low</description>
+	</table>
+
+	<table type="2D" name="Basic Pulse Width Lattice High" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
+		<scaling units="ms" expression="x*.125" to_byte="x/.125" format="0.00"/>
+	<table type="Y Axis" name="ms" sizey="1">
+			<data>Above</data>
+	</table>
+	<description>KLMRT Basic Pulse Width Lattice High</description>
+	</table>
+	
 	<table type="2D" name="Engine Speed Limitation Condition 2" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
 		<scaling units="RPM" expression="x*50" to_byte="x/50" format="0"/>
 	<table type="Y Axis" name="RPM" sizey="1">
@@ -16105,26 +16177,6 @@
 	<description>mTKUBN2- Temperature non-balance rotation table</description>
 	</table>
 
-	<table type="2D" name="Number of TMFR Cut Cylinders" category="Fuel Cut" storagetype="uint8" sizey="3" endian="big" userlevel="5" >
-		<scaling units="%n" expression="x" to_byte="x" format="0.00"/>
-	<table type="Y Axis" name="-" sizey="3">
-			<data>0</data>
-			<data>1</data>
-			<data>2</data>
-	</table>
-	<description>mTMFRCNT- The number of TMFR cut cylinders</description>
-	</table>
-
-	<table type="2D" name="TMFR Cut Start Time" category="Fuel Cut" storagetype="uint8" sizey="3" endian="big" userlevel="5" >
-		<scaling units="ms" expression="x*10" to_byte="x/10" format="0.00"/>
-	<table type="Y Axis" name="-" sizey="3">
-			<data>0</data>
-			<data>1</data>
-			<data>2</data>
-	</table>
-	<description>mTMFRTM- TMFR cut start time</description>
-	</table>
-
 	<table type="2D" name="Minus KTW Compensation Advance Rate Table (Rotation)" category="Unknown" storagetype="uint8" sizey="8" endian="big" userlevel="5" >
 		<scaling units="|" expression="x*0.0078125" to_byte="x/0.0078125" format="0.00"/>
 	<table type="Y Axis" name="rpm" sizey="8">
@@ -18498,28 +18550,12 @@
 	<description>mLEANLMT- Lean side combustion limit A/F</description>
 	</table>
 
-  	<table type="2D" name="For 0.02in Leak Diagnosis" category="EVAP" storagetype="uint16" sizey="1" endian="big" userlevel="5" >
-		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
-	<table type="Y Axis" name="Above" sizey="1">
-			<data>-</data>
-	</table>
-	<description>mLEKMX2- For the 0.02inch leak diagnosis</description>
-	</table>
-
   	<table type="2D" name="DVP5 Measuring Permission Leak Down Time Lower Limit" category="Unknown" storagetype="uint16" sizey="1" endian="big" userlevel="5" >
 		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
 	<table type="Y Axis" name="Above" sizey="1">
 			<data>-</data>
 	</table>
 	<description>mLEKMX3- DVP5 measuring permission leak-down time lower limit</description>
-	</table>
-
-  	<table type="2D" name="0.04in Leak Diagnosis DVP5 Measuring Permission Leak Down Time Lower Limit" category="EVAP" storagetype="uint16" sizey="1" endian="big" userlevel="5" >
-		<scaling units="ms" expression="x*100" to_byte="x/100" format="0.00"/>
-	<table type="Y Axis" name="Above" sizey="1">
-			<data>-</data>
-	</table>
-	<description>mLEKMX4- 0.04inch leak diagnosis DVP5 measuring permission leak-down time lower limit</description>
 	</table>
 
   	<table type="2D" name="KNST Lower Limit Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
@@ -18960,14 +18996,6 @@
 			<data>-</data>
 	</table>
 	<description>mSOLMLDLY- Solenoid diagnosis NG judgement number of times</description>
-	</table>
-
-	<table type="2D" name="Activated Charcoal Specific Heat" category="EVAP" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
-		<scaling units="kmole/j" expression="x*0.03" to_byte="x/0.03" format="0.00"/>
-	<table type="Y Axis" name="Above" sizey="1">
-			<data>-</data>
-	</table>
-	<description>mSPFCHEAT- Activated charcoal specific heat</description>
 	</table>
 
 	<table type="2D" name="STRAG Normalize Coefficient" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
@@ -19690,14 +19718,6 @@
 	<description>mTGIGN2- An integral gain (bank 2)</description>
 	</table>
 
-	<table type="2D" name="Mode 8 Evapo Test Permission Executive Time-Out Time" category="EVAP" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
-		<scaling units="s" expression="x*10" to_byte="x/10" format="0.00"/>
-	<table type="Y Axis" name="Above" sizey="1">
-			<data>-</data>
-	</table>
-	<description>mTGM8ET- Mode 8 evapo test permission executive time-out time</description>
-	</table>
-
 	<table type="2D" name="Calibration Target AFR Condition Continuation Time" category="AFR" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
 		<scaling units="s" expression="x*0.1" to_byte="x/0.1" format="0.00"/>
 	<table type="Y Axis" name="Above" sizey="1">
@@ -19842,14 +19862,6 @@
 	<description>mLKKGZR- At the time of the urgent slowdown, KGZR</description>
 	</table>
 
-	<table type="2D" name="Lambda Control Clamp Time Upper Limit Value" category="AFR" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
-		<scaling units="Rev" expression="x" to_byte="x" format="0.00"/>
-	<table type="Y Axis" name="Above" sizey="1">
-			<data>-</data>
-	</table>
-	<description>mLMCLSMX- Lambda control clamp time upper limit value</description>
-	</table>
-
 	<table type="2D" name="QFBI Limiter (Addition Side)" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
 		<scaling units="L/min" expression="x" to_byte="x" format="0.00"/>
 	<table type="Y Axis" name="Above" sizey="1">
@@ -19880,22 +19892,6 @@
 			<data>-</data>
 	</table>
 	<description>mMSU- Misfire parameter unit coefficient</description>
-	</table>
-
-	<table type="2D" name="Second Learning Requirement Maximum AFR Change Target Value" category="AFR" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
-		<scaling units="%" expression="x*0.1" to_byte="x/0.1" format="0.00"/>
-	<table type="Y Axis" name="Above" sizey="1">
-			<data>-</data>
-	</table>
-	<description>mMXDLALP2- The second learning requirement maximum air-fuel ratio change target value</description>
-	</table>
-
-	<table type="2D" name="Maximum AFR Change Target Value" category="AFR" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
-		<scaling units="%" expression="x*0.1" to_byte="x/0.1" format="0.00"/>
-	<table type="Y Axis" name="Above" sizey="1">
-			<data>-</data>
-	</table>
-	<description>mMXDLTALP- Maximum air-fuel ratio change target value</description>
 	</table>
 
 	<table type="2D" name="Target Purge Rate Maximum Value" category="Unknown" storagetype="uint8" sizey="1" endian="big" userlevel="5" >
