@@ -451,8 +451,8 @@ Maps
 	<table name="Rotation Condition Lower Limit 2" storageaddress="0x7DC3"/>
 	<table name="Pull Down Start Rotation Lower Limit" storageaddress="0x7DC4"/>
 	<table name="Speed Condition Lower Limit" storageaddress="0x7E11"/>
-	<table name="Continuous NO. Load Cut" storageaddress="0x7E49"/>
-	<table name="Continuous NO. Load Recover" storageaddress="0x7E4A"/>
+	<table name="Continuous NO Load Cut" storageaddress="0x7E49"/>
+	<table name="Continuous NO Load Recover" storageaddress="0x7E4A"/>
 	<table name="Engine Stall Judgement Speed" storageaddress="0x7E6E"/>
 	<table name="Learning Speed Condition Upper Limit" storageaddress="0x7EFC"/>
 	<table name="Learning Speed Condition Lower Limit" storageaddress="0x7EFD"/>
@@ -504,8 +504,8 @@ Maps
 	<table name="VTC Drive Permission Engine Rotation Lower Limit" storageaddress="0x8571"/>
 	<table name="VTC Offset Diagnosis Permission Upper Limit" storageaddress="0x8576"/>
 	<table name="VTC Offset Diagnosis Permission Lower Limit" storageaddress="0x8577"/>
-	<table name="Engine Rotation Upper Limit Value" storageaddress="0x80A8"/>
-	<table name="Engine Rotation Lower Limit Value" storageaddress="0x80A9"/>
+	<table name="Engine Rotation Upper Limit" storageaddress="0x80A8"/>
+	<table name="Engine Rotation Lower Limit" storageaddress="0x80A9"/>
 	<table name="Engine Rotation Middle Value" storageaddress="0x80AA"/>
 	<table name="Engine Rotation Recover Lower Limit" storageaddress="0x80AC"/>
 	<table name="Waste Time (QA Region #1)" storageaddress="0x7CB5"/>
@@ -606,7 +606,7 @@ Maps
 	<table name="Cylinder Distinction NG Count Value Slice Level" storageaddress="0x7C90"/>
 	<table name="Delta AFR Monotone Increasing Judgement Value" storageaddress="0x8622"/>
 	<table name="Response Deterioration Diagnosis Criteria" storageaddress="0x877A"/>
-	<table name="Ignition Timing Time COmpensation Rate Decrease Value" storageaddress="0x8794"/>
+	<table name="Ignition Timing Time Compensation Rate Decrease Value" storageaddress="0x8794"/>
 	<table name="Canister Model Desorption Coefficient" storageaddress="0x8796"/>
 	<table name="Weighted Average for DLTOUTR" storageaddress="0x7D31"/>
 	<table name="Slosh Judgement Value for .02" storageaddress="0x87C2"/>
